@@ -1,13 +1,12 @@
 {
-  "private": true,
-  "name": "wp-block-hmr-demo",
+  "name": "adv-block-examples",
   "version": "0.1.0",
-  "description": "A plugin demonstrating block and plugin auto-loading with hot module replacement.",
+  "description": "A plugin for the Advanced Block Development Course.",
   "keywords": [
     "wordpress",
     "plugin"
   ],
-  "author": "K Adam White",
+  "author": "Zac Gordon",
   "license": "(Artistic-2.0 OR GPL-2.0-or-later)",
   "scripts": {
     "build": "webpack --config=.config/webpack.config.prod.js",
