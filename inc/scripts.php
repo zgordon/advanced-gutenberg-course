@@ -2,9 +2,9 @@
 /**
  * Register scripts in development and production.
  */
-namespace HMR_Demo\Scripts;
+namespace JSFORWP_Adv_Blocks\Scripts;
 
-use HMR_Demo\Asset_Loader;
+use JSFORWP_Adv_Blocks\Asset_Loader;
 
 function setup() {
 	add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\\enqueue_block_editor_assets' );
