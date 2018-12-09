@@ -2,6 +2,9 @@ node_modules/
 vendor/
 *.log
 
+.DS_Store
+.DS_Store?
+
 build/
 
 package-lock.json
