@@ -1,0 +1,58 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"X-Generator: babel-plugin-makepot\n"
+
+#: blocks/01-static/index.js:18
+msgid "Example - Static Block"
+msgstr ""
+
+#: blocks/01-static/index.js:19
+msgid "Demonstration of how to make a static call to action block."
+msgstr ""
+
+#: blocks/01-static/index.js:29
+#: blocks/02-richtext/index.js:28
+msgid "Banner"
+msgstr ""
+
+#: blocks/01-static/index.js:30
+msgid "CTA"
+msgstr ""
+
+#: blocks/01-static/index.js:31
+msgid "Shout Out"
+msgstr ""
+
+#: blocks/01-static/index.js:37
+msgid "Static Call to Action"
+msgstr ""
+
+#: blocks/01-static/index.js:41
+msgid "✋ Sorry! You cannot edit this block ✋"
+msgstr ""
+
+#: blocks/01-static/index.js:50
+#: blocks/02-richtext/index.js:59
+msgid "Call to Action"
+msgstr ""
+
+#: blocks/01-static/index.js:51
+msgid "This is really important!"
+msgstr ""
+
+#: blocks/02-richtext/index.js:20
+msgid "Example - RichText"
+msgstr ""
+
+#: blocks/02-richtext/index.js:21
+msgid "How to use the RichText component for building your own editable blocks."
+msgstr ""
+
+#: blocks/02-richtext/index.js:30
+msgid "Message"
+msgstr ""
+
+#: blocks/02-richtext/index.js:48
+msgid "Add your custom message"
+msgstr ""
