@@ -1,9 +1,0 @@
-{
-	"presets": [ "@wordpress/default" ],
-	"plugins": [
-		[ "@wordpress/babel-plugin-makepot", {
-			"output": "languages/jsforwpadvblocks.pot"
-		} ],
-		"transform-class-properties"
-	]
-}
