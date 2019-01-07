@@ -27,7 +27,6 @@
     "webpack": "^3.11.0"
   },
   "dependencies": {
-    "react-google-maps": "^9.4.5",
     "react-images": "^0.5.19",
     "react-photo-gallery": "^6.2.2"
   }

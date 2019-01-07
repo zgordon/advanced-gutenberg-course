@@ -15,19 +15,7 @@ function register_blocks() {
 
     // List all of the blocks for your plugin
     $blocks = [
-        'jsforwpadvblocks/gallery',
-        // 'jsforwpadvblocks/richtext',
-        // 'jsforwpadvblocks/text-alignment-toolbar',
-        // 'jsforwpadvblocks/block-alignment-toolbar',
-        // 'jsforwpadvblocks/custom-toolbar',
-        // 'jsforwpadvblocks/inspector-controls',
-        // 'jsforwpadvblocks/inspector-control-fields',
-        // 'jsforwpadvblocks/form-fields',
-        // 'jsforwpadvblocks/media-upload',
-        // 'jsforwpadvblocks/url-input',
-        // 'jsforwpadvblocks/url-input-conditional',
-        // 'jsforwpadvblocks/dynamic',
-        // 'jsforwpadvblocks/meta-box',
+        'jsforwpadvblocks/gallery'
     ];
 
     // Register each block with same CSS and JS

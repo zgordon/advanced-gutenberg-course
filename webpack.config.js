@@ -9,9 +9,6 @@ const blocksCSSPlugin = new ExtractTextPlugin({
 const editBlocksCSSPlugin = new ExtractTextPlugin({
   filename: "./assets/css/blocks.editor.css"
 });
-const pluginCSSPlugin = new ExtractTextPlugin({
-  filename: "./assets/css/plugins.editor.css"
-});
 
 // Configuration for the ExtractTextPlugin.
 const extractConfig = {
@@ -61,7 +58,6 @@ wpDependencies.forEach(wpDependency => {
 module.exports = {
   entry: {
     "./assets/js/blocks.editor": "./blocks/index.js",
-    "./assets/js/plugins.editor": "./plugins/index.js",
     "./assets/js/blocks.frontend": "./blocks/frontend.js"
   },
   output: {
@@ -87,12 +83,8 @@ module.exports = {
       {
         test: /editor\.s?css$/,
         use: editBlocksCSSPlugin.extract(extractConfig)
-      },
-      {
-        test: /plugin\.s?css$/,
-        use: pluginCSSPlugin.extract(extractConfig)
       }
     ]
   },
-  plugins: [blocksCSSPlugin, editBlocksCSSPlugin, pluginCSSPlugin]
+  plugins: [blocksCSSPlugin, editBlocksCSSPlugin]
 };
