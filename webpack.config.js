@@ -30,41 +30,14 @@ const extractConfig = {
   ]
 };
 
-const externals = {
-  react: "React",
-  "react-dom": "ReactDOM"
-};
-
-const wpDependencies = [
-  "components",
-  "element",
-  "blocks",
-  "utils",
-  "date",
-  "data",
-  "i18n",
-  "editPost",
-  "plugins",
-  "apiRequest",
-  "editor",
-  "compose"
-];
-wpDependencies.forEach(wpDependency => {
-  externals["@wordpress/" + wpDependency] = {
-    this: ["wp", wpDependency]
-  };
-});
-
 module.exports = {
   entry: {
-    "./assets/js/blocks.editor": "./blocks/index.js",
-    "./assets/js/blocks.frontend": "./blocks/frontend.js"
+    "./assets/js/blocks.editor": "./blocks/index.js"
   },
   output: {
     path: path.resolve(__dirname),
     filename: "[name].js"
   },
-  externals,
   watch: "production" !== process.env.NODE_ENV,
   devtool: "cheap-module-source-map",
   module: {
