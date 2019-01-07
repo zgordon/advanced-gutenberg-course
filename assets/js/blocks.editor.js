@@ -3197,9 +3197,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__style_scss__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__editor_scss__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__editor_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__editor_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__wordpress_element__ = __webpack_require__(86);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__wordpress_element___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__wordpress_element__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_photo_gallery__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_photo_gallery__ = __webpack_require__(44);
 
 /**
  * Block dependencies
@@ -3211,8 +3209,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /**
  * Internal block libraries
  */
-
-// const { Fragment } = wp.element;
+var Fragment = wp.element.Fragment;
 var __ = wp.i18n.__;
 var registerBlockType = wp.blocks.registerBlockType;
 var _wp$editor = wp.editor,
@@ -3281,7 +3278,7 @@ var _wp$components = wp.components,
       });
     };
     return wp.element.createElement(
-      __WEBPACK_IMPORTED_MODULE_4__wordpress_element__["Fragment"],
+      Fragment,
       null,
       wp.element.createElement(
         InspectorControls,
@@ -3347,7 +3344,7 @@ var _wp$components = wp.components,
         "div",
         { className: className + " " + direction },
         !!!images.length && wp.element.createElement(
-          __WEBPACK_IMPORTED_MODULE_4__wordpress_element__["Fragment"],
+          Fragment,
           null,
           wp.element.createElement(MediaPlaceholder, {
             icon: __WEBPACK_IMPORTED_MODULE_1__icon__["a" /* default */],
@@ -3360,7 +3357,7 @@ var _wp$components = wp.components,
             multiple: true
           })
         ),
-        !!images.length && wp.element.createElement(__WEBPACK_IMPORTED_MODULE_5_react_photo_gallery__["a" /* default */], { photos: images, direction: direction })
+        !!images.length && wp.element.createElement(__WEBPACK_IMPORTED_MODULE_4_react_photo_gallery__["a" /* default */], { photos: images, direction: direction })
       )
     );
   },
@@ -3497,12 +3494,6 @@ var icon = wp.element.createElement(
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 86 */
-/***/ (function(module, exports) {
-
-module.exports = undefined;
 
 /***/ })
 /******/ ]);

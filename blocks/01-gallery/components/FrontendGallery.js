@@ -2,36 +2,31 @@ import Gallery from "react-photo-gallery";
 import Lightbox from "react-images";
 
 export default class FrontendGallery extends React.Component {
-  constructor() {
-    super();
-    this.state = { currentImage: 0 };
-    this.closeLightbox = this.closeLightbox.bind(this);
-    this.openLightbox = this.openLightbox.bind(this);
-    this.gotoNext = this.gotoNext.bind(this);
-    this.gotoPrevious = this.gotoPrevious.bind(this);
-  }
-  openLightbox(event, obj) {
+  state = {
+    currentImage: 0
+  };
+  openLightbox = (event, obj) => {
     this.setState({
       currentImage: obj.index,
       lightboxIsOpen: true
     });
-  }
-  closeLightbox() {
+  };
+  closeLightbox = () => {
     this.setState({
       currentImage: 0,
       lightboxIsOpen: false
     });
-  }
-  gotoPrevious() {
+  };
+  gotoPrevious = () => {
     this.setState({
       currentImage: this.state.currentImage - 1
     });
-  }
-  gotoNext() {
+  };
+  gotoNext = () => {
     this.setState({
       currentImage: this.state.currentImage + 1
     });
-  }
+  };
   render() {
     return (
       <div>

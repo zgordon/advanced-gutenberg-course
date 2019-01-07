@@ -3,42 +3,42 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: blocks/01-gallery/index.js:128
+#: blocks/01-gallery/index.js:127
 msgid "Edit Gallery"
 msgstr ""
 
-#: blocks/01-gallery/index.js:144
+#: blocks/01-gallery/index.js:143
 msgid "Gallery"
 msgstr ""
 
-#: blocks/01-gallery/index.js:145
+#: blocks/01-gallery/index.js:144
 msgid "Drag images, upload new ones or select files from your library."
 msgstr ""
 
-#: blocks/01-gallery/index.js:36
+#: blocks/01-gallery/index.js:35
 msgid "Gallery1"
 msgstr ""
 
-#: blocks/01-gallery/index.js:37
+#: blocks/01-gallery/index.js:36
 msgid "A demo custom gallery block."
 msgstr ""
 
-#: blocks/01-gallery/index.js:41
+#: blocks/01-gallery/index.js:40
 msgid "Masonry"
 msgstr ""
 
-#: blocks/01-gallery/index.js:42
+#: blocks/01-gallery/index.js:41
 msgid "Images Media"
 msgstr ""
 
-#: blocks/01-gallery/index.js:43
+#: blocks/01-gallery/index.js:42
 msgid "Lightbox"
 msgstr ""
 
-#: blocks/01-gallery/index.js:90
+#: blocks/01-gallery/index.js:89
 msgid "Gallery Settings"
 msgstr ""
 
-#: blocks/01-gallery/index.js:95
+#: blocks/01-gallery/index.js:94
 msgid "Grid Style"
 msgstr ""
