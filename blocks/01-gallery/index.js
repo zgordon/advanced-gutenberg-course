@@ -32,7 +32,7 @@ import Gallery from "react-photo-gallery";
  * Register block
  */
 export default registerBlockType("jsforwpadvblocks/gallery", {
-  title: __("Gallery", "jsforwpadvblocks"),
+  title: __("Gallery1", "jsforwpadvblocks"),
   description: __("A demo custom gallery block.", "jsforwpadvblocks"),
   category: "jsforwpadvblocks",
   icon,

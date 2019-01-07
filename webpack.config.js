@@ -35,26 +35,6 @@ const externals = {
   "react-dom": "ReactDOM"
 };
 
-const wpDependencies = [
-  "components",
-  "element",
-  "blocks",
-  "utils",
-  "date",
-  "data",
-  "i18n",
-  "editPost",
-  "plugins",
-  "apiRequest",
-  "editor",
-  "compose"
-];
-wpDependencies.forEach(wpDependency => {
-  externals["@wordpress/" + wpDependency] = {
-    this: ["wp", wpDependency]
-  };
-});
-
 module.exports = {
   entry: {
     "./assets/js/blocks.editor": "./blocks/index.js",
