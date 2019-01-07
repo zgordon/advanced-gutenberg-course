@@ -1,7 +1,7 @@
 /**
  * Block dependencies
  */
-import icons from "./icons";
+import icon from "./icon";
 import "./style.scss";
 import "./editor.scss";
 
@@ -24,55 +24,50 @@ const {
   PanelBody,
   PanelRow,
   RadioControl,
+  ToggleControl,
   Toolbar
 } = wp.components;
 
 import Gallery from "react-photo-gallery";
 
 /**
- * Register example block
+ * Register block
  */
 export default registerBlockType("jsforwpadvblocks/gallery", {
   title: __("Gallery", "jsforwpadvblocks"),
   description: __("A demo custom gallery block.", "jsforwpadvblocks"),
   category: "jsforwpadvblocks",
-  icon: {
-    background: "rgba(254, 243, 224, 0.52)",
-    src: icons.upload
-  },
-  keywords: [__("Media", "jsforwpadvblocks"), __("Images", "jsforwpadvblocks")],
+  icon,
+  keywords: [
+    __("Masonry", "jsforwpadvblocks"),
+    __("Images Media", "jsforwpadvblocks"),
+    __("Lightbox", "jsforwpadvblocks")
+  ],
   attributes: {
-    direction: {
-      type: "string",
-      default: "row"
-    },
     images: {
       type: "array",
       default: []
     },
-    blockAlignment: {
+    direction: {
       type: "string",
-      default: "wide"
+      default: "row"
+    },
+    isLightboxEnabled: {
+      type: "boolean",
+      default: true
     }
   },
-  getEditWrapperProps({ blockAlignment }) {
-    if (
-      "left" === blockAlignment ||
-      "right" === blockAlignment ||
-      "full" === blockAlignment
-    ) {
-      return { "data-align": blockAlignment };
-    }
+  supports: {
+    align: ["full", "wide"]
   },
   edit: props => {
     const {
-      attributes: { direction, images, blockAlignment },
+      attributes: { direction, images, isLightboxEnabled },
       className,
-      setAttributes,
-      isSelected
+      setAttributes
     } = props;
-    const onSelectImages = photos => {
-      const images = photos.map(img =>
+    const onSelectImages = newImages => {
+      const images = newImages.map(img =>
         Object.assign(
           {},
           {
@@ -82,7 +77,6 @@ export default registerBlockType("jsforwpadvblocks/gallery", {
             id: img.id,
             alt: img.alt,
             caption: img.caption
-            // sizes: img.sizes
           }
         )
       );
@@ -99,61 +93,32 @@ export default registerBlockType("jsforwpadvblocks/gallery", {
           >
             <PanelRow>
               <RadioControl
-                label={__("Flex Direction", "jsforwpblocks")}
+                label={__("Gridy Style", "jsforwpblocks")}
                 selected={direction}
                 options={[
-                  { label: "Row", value: "row" },
-                  { label: "Column", value: "column" }
+                  { label: "Rows", value: "row" },
+                  { label: "Columns", value: "column" }
                 ]}
                 onChange={direction => setAttributes({ direction })}
               />
             </PanelRow>
+            <PanelRow>
+              <ToggleControl
+                label="Enable / disable lightbox"
+                checked={isLightboxEnabled}
+                onChange={isLightboxEnabled =>
+                  setAttributes({ isLightboxEnabled })
+                }
+              />
+            </PanelRow>
           </PanelBody>
         </InspectorControls>
-        <BlockControls>
-          <BlockAlignmentToolbar
-            value={blockAlignment}
-            onChange={blockAlignment => setAttributes({ blockAlignment })}
-          />
-
-          {!!images.length && (
-            <Toolbar>
-              <MediaUpload
-                onSelect={onSelectImages}
-                allowedTypes={["image"]}
-                multiple
-                gallery
-                value={images.map(img => img.id)}
-                render={({ open }) => (
-                  <IconButton
-                    className="components-toolbar__control"
-                    label={__("Edit Gallery")}
-                    icon="edit"
-                    onClick={open}
-                  />
-                )}
-              />
-            </Toolbar>
-          )}
-        </BlockControls>
 
         <div className={`${className} ${direction}`}>
           {!!!images.length && (
             <Fragment>
-              {/* <MediaUpload
-              onSelect={onSelectImages}
-              type="image"
-              multiple="true"
-              render={({ open }) => (
-                <Button className={"button button-large"} onClick={open}>
-                {icons.upload}
-                {__(" Upload Image", "jsforwpadvblocks")}
-                </Button>
-                )}
-              /> */}
               <MediaPlaceholder
-                icon="format-gallery"
-                className={className}
+                icon={icon}
                 labels={{
                   title: __("Gallery"),
                   instructions: __(
@@ -162,10 +127,7 @@ export default registerBlockType("jsforwpadvblocks/gallery", {
                 }}
                 onSelect={onSelectImages}
                 accept="image/*"
-                //allowedTypes={ALLOWED_MEDIA_TYPES}
                 multiple
-                //notices={noticeUI}
-                //onError={noticeOperations.createErrorNotice}
               />
             </Fragment>
           )}
@@ -175,11 +137,12 @@ export default registerBlockType("jsforwpadvblocks/gallery", {
     );
   },
   save: props => {
-    const { direction, images, blockAlignment } = props.attributes;
+    const { direction, images, isLightboxEnabled } = props.attributes;
     return (
       <div
-        className={`align${blockAlignment} ${direction}`}
+        className={`${direction}`}
         data-direction={direction}
+        data-lightbox={isLightboxEnabled}
       >
         <div class="react-photo-gallery--gallery server-side">
           <div style="display: flex; flex-flow: row wrap;">
