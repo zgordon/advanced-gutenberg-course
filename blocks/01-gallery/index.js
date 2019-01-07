@@ -15,11 +15,9 @@ const {
   InspectorControls,
   MediaUpload,
   MediaPlaceholder,
-  BlockControls,
-  BlockAlignmentToolbar
+  BlockControls
 } = wp.editor;
 const {
-  Button,
   IconButton,
   PanelBody,
   PanelRow,
@@ -93,7 +91,7 @@ export default registerBlockType("jsforwpadvblocks/gallery", {
           >
             <PanelRow>
               <RadioControl
-                label={__("Gridy Style", "jsforwpblocks")}
+                label={__("Grid Style", "jsforwpblocks")}
                 selected={direction}
                 options={[
                   { label: "Rows", value: "row" },
@@ -113,6 +111,28 @@ export default registerBlockType("jsforwpadvblocks/gallery", {
             </PanelRow>
           </PanelBody>
         </InspectorControls>
+
+        <BlockControls>
+          {!!images.length && (
+            <Toolbar>
+              <MediaUpload
+                onSelect={onSelectImages}
+                allowedTypes={["image"]}
+                multiple
+                gallery
+                value={images.map(img => img.id)}
+                render={({ open }) => (
+                  <IconButton
+                    className="components-toolbar__control"
+                    label={__("Edit Gallery")}
+                    icon="edit"
+                    onClick={open}
+                  />
+                )}
+              />
+            </Toolbar>
+          )}
+        </BlockControls>
 
         <div className={`${className} ${direction}`}>
           {!!!images.length && (

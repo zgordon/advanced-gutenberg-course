@@ -9,7 +9,7 @@
  * @wordpress-plugin
  * Plugin Name: Gutenberg - Advanced Examples
  * Plugin URI:  https://javascriptforwp.com/
- * Description: A plugin containing advanced examples for developers.  From <a href="https://gutenberg.courses/development">Zac Gordon's Advanced Gutenberg Development Course</a>.
+ * Description: A plugin containing advanced examples for developers.  From <a href="https://javascriptforwp.com/product/advanced-gutenberg-development/">Zac Gordon's Advanced Gutenberg Development Course</a>.
  * Version:     1.0.0
  * Author:      Zac Gordon
  * Author URI:  https://twitter.com/zgordon
@@ -57,14 +57,6 @@ function _get_plugin_url() {
 }
 
 
-// Internationalization
-// include __DIR__ . '/lib/i18n.php';
-
-// Options Table Setup
-include __DIR__ . '/lib/wp-options.php';
-
-// Custom REST API Endpoints
-include __DIR__ . '/lib/rest-api-endpoints.php';
 
 // Enqueue JS and CSS
 include __DIR__ . '/lib/register-scripts.php';
@@ -74,12 +66,3 @@ include __DIR__ . '/lib/register-blocks.php';
 
 // Register block server side
 include __DIR__ . '/lib/block-categories.php';
-
-// Dynamic Blocks
-// include __DIR__ . '/blocks/12-dynamic/index.php';
-
-// Register meta boxes
-// include __DIR__ . '/lib/meta-boxes.php';
-
-// Block Templates
-// include __DIR__ . '/lib/block-templates.php';
