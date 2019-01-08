@@ -40,21 +40,19 @@ function register_block_assets() {
 
 }
 
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\frontend_assets' );
+add_action( "wp_enqueue_scripts", __NAMESPACE__ . '\frontend_assets' );
 /**
- * Enqueue block editor only JavaScript and CSS.
+ * Enqueue block frontend JavaScript
  */
-function frontend_assets() {
+function frontend_assets(){
 
-	$frontend_js_path = '/assets/js/blocks.frontend.js';
-	
-	// Register the bundled block JS file
-	wp_enqueue_script(
-		'jsforwp-adv-gb-sfrontend-js',
+	$frontend_js_path = "/assets/js/blocks.frontend.js";
+
+	wp_enqueue_script( 
+		"jsforwp-adv-gb-frontend-js",
 		_get_plugin_url() . $frontend_js_path,
-		[ 'wp-element' ],
+		['wp-element'],
 		filemtime( _get_plugin_directory() . $frontend_js_path ),
 		true
-	);	
+	);
 }
-

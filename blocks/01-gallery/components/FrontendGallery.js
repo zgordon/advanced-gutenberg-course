@@ -35,7 +35,7 @@ export default class FrontendGallery extends React.Component {
           direction={this.props.direction}
           onClick={this.openLightbox}
         />
-        {this.props.isLightboxEnabled == "true" && (
+        {this.props.islightboxenabled == "true" && (
           <Lightbox
             images={this.props.photos}
             onClose={this.closeLightbox}

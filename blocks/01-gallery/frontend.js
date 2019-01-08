@@ -1,3 +1,5 @@
+const { render } = wp.element;
+
 import FrontendGallery from "./components/FrontendGallery";
 
 const galleries = document.querySelectorAll(
@@ -6,7 +8,7 @@ const galleries = document.querySelectorAll(
 
 galleries.forEach((gallery, index) => {
   const direction = gallery.dataset.direction;
-  const isLightboxEnabled = gallery.dataset.lightbox;
+  const islightboxenabled = gallery.dataset.islightboxenabled;
   const images = gallery.querySelectorAll("img");
   const photos = [];
   images.forEach(image => {
@@ -18,11 +20,11 @@ galleries.forEach((gallery, index) => {
       caption: image.title
     });
   });
-  wp.element.render(
+  render(
     <FrontendGallery
       photos={photos}
       direction={direction}
-      isLightboxEnabled={isLightboxEnabled}
+      islightboxenabled={islightboxenabled}
     />,
     gallery
   );

@@ -14,9 +14,7 @@ function register_blocks() {
 	}
 
     // List all of the blocks for your plugin
-    $blocks = [
-        'jsforwpadvblocks/gallery'
-    ];
+    $blocks = ["jsforwpadvblocks/gallery"];
 
     // Register each block with same CSS and JS
     foreach( $blocks as $block ) {

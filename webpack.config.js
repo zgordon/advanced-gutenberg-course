@@ -30,11 +30,14 @@ const extractConfig = {
   ]
 };
 
+<<<<<<< HEAD
 const externals = {
   react: "React",
   "react-dom": "ReactDOM"
 };
 
+=======
+>>>>>>> demo
 module.exports = {
   entry: {
     "./assets/js/blocks.editor": "./blocks/index.js",
@@ -44,7 +47,10 @@ module.exports = {
     path: path.resolve(__dirname),
     filename: "[name].js"
   },
-  externals,
+  externals: {
+    react: "React",
+    "react-dom": "ReactDOM"
+  },
   watch: "production" !== process.env.NODE_ENV,
   devtool: "cheap-module-source-map",
   module: {
