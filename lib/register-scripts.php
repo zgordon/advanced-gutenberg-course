@@ -13,7 +13,7 @@ function register_block_assets() {
 	$editor_style_path = '/assets/css/blocks.editor.css';
 	$style_path = '/assets/css/blocks.style.css';
 
-	$js_dependencies = [ 'wp-plugins', 'wp-element', 'wp-edit-post', 'wp-i18n', 'wp-api-request', 'wp-data', 'wp-hooks', 'wp-components', 'wp-blocks', 'wp-editor', 'wp-compose' ];
+	$js_dependencies = [ 'wp-plugins', 'wp-element', 'wp-edit-post', 'wp-i18n', 'wp-api-request', 'wp-data', 'wp-hooks', 'wp-plugins', 'wp-components', 'wp-blocks', 'wp-editor', 'wp-compose' ];
 
 	// Register the bundled block JS file
 	wp_register_script(
@@ -50,6 +50,8 @@ add_action( "enqueue_block_editor_assets", __NAMESPACE__ . '\block_filters', 100
 function block_filters(){
 
 	$filters_js_path = "/assets/js/blocks.filters.js";
+	$plugins_js_path = "/assets/js/plugins.editor.js";
+	$plugins_style_path = '/assets/css/plugins.editor.css';
 
 	// Enqueue our block filters
 	wp_enqueue_script( 
@@ -58,6 +60,23 @@ function block_filters(){
 		['wp-hooks', 'lodash'],
 		filemtime( _get_plugin_directory() . $filters_js_path ),
 		true
+	);
+
+	// Enqueue our plugin JavaScript
+	wp_enqueue_script( 
+		"jsforwp-adv-gb-plugins-js",
+		_get_plugin_url() . $plugins_js_path,
+		$js_dependencies,
+		filemtime( _get_plugin_directory() . $plugins_js_path ),
+		true
+	);
+
+	// Enqueue our plugin JavaScript
+	wp_enqueue_style( 
+		"jsforwp-adv-gb-plugins-css",
+		_get_plugin_url() . $plugins_style_path,
+		[],
+		filemtime( _get_plugin_directory() . $plugins_style_path )		
 	);
 }
 

@@ -9,6 +9,9 @@ const blocksCSSPlugin = new ExtractTextPlugin({
 const editBlocksCSSPlugin = new ExtractTextPlugin({
   filename: "./assets/css/blocks.editor.css"
 });
+const pluginCSSPlugin = new ExtractTextPlugin({
+  filename: "./assets/css/plugins.editor.css"
+});
 
 // Configuration for the ExtractTextPlugin.
 const extractConfig = {
@@ -34,7 +37,8 @@ module.exports = {
   entry: {
     "./assets/js/blocks.editor": "./blocks/index.js",
     "./assets/js/blocks.frontend": "./blocks/frontend.js",
-    "./assets/js/blocks.filters": "./blocks/filters/index.js"
+    "./assets/js/blocks.filters": "./filters/index.js",
+    "./assets/js/plugins.editor": "./plugins/index.js"
   },
   output: {
     path: path.resolve(__dirname),
@@ -62,8 +66,12 @@ module.exports = {
       {
         test: /editor\.s?css$/,
         use: editBlocksCSSPlugin.extract(extractConfig)
+      },
+      {
+        test: /plugin\.s?css$/,
+        use: pluginCSSPlugin.extract(extractConfig)
       }
     ]
   },
-  plugins: [blocksCSSPlugin, editBlocksCSSPlugin]
+  plugins: [blocksCSSPlugin, editBlocksCSSPlugin, pluginCSSPlugin]
 };
