@@ -23,21 +23,17 @@
   .wp-block-jsforwpadvblocks-shoutout-styles.is-style-colorful h2 {
     font-family: fantasy;
     color: #CAA8F5; }
-.wp-block-jsforwpadvblocks-google-map {
-  min-height: 400px;
-  min-width: 100%;
-  border: 1px black solid; }
 .editor-styles-wrapper .wp-block-quote:not(.is-large):not(.is-style-large).is-style-colorful-quote,
-.wp-block-quote.is-style-colorful-quote,
 .entry .entry-content .wp-block-quote:not(.is-large).is-style-colorful-quote,
-.entry .entry-content .wp-block-quote:not(.is-style-large).is-style-colorful-quote {
+.entry .entry-content .wp-block-quote:not(.is-style-large).is-style-colorful-quote,
+.wp-block-quote.is-style-colorful-quote {
   border-left: 10px #9C8CFF solid;
   background-color: #87F5FB;
   padding: 1rem; }
 
 .editor-styles-wrapper .wp-block-quote:not(.is-large):not(.is-style-large).is-style-colorful-quote p,
-.wp-block-quote.is-style-colorful-quote p,
-.entry .entry-content .wp-block-quote.is-style-colorful-quote p {
+.entry .entry-content .wp-block-quote.is-style-colorful-quote p,
+.wp-block-quote.is-style-colorful-quote p {
   font-size: 2rem;
   color: #0F1108;
   font-weight: bold;

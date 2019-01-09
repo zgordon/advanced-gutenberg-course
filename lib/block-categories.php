@@ -10,7 +10,7 @@ add_filter( 'block_categories', function( $categories, $post ) {
 			[
                 'slug' => 'jsforwpadvblocks',
                 'icon' => 'wordpress-alt',
-				'title' => __( 'Advanced Blocks - JS for WP', 'jsforwpadvblocks' ),
+				'title' => __( 'JS for WP - Advanced Blocks', 'jsforwpadvblocks' ),
 			],
 		]
 	);

@@ -9,9 +9,6 @@ const blocksCSSPlugin = new ExtractTextPlugin({
 const editBlocksCSSPlugin = new ExtractTextPlugin({
   filename: "./assets/css/blocks.editor.css"
 });
-const pluginCSSPlugin = new ExtractTextPlugin({
-  filename: "./assets/css/plugins.editor.css"
-});
 
 // Configuration for the ExtractTextPlugin.
 const extractConfig = {
@@ -33,42 +30,20 @@ const extractConfig = {
   ]
 };
 
-const externals = {
-  react: "React",
-  "react-dom": "ReactDOM"
-};
-
-const wpDependencies = [
-  "components",
-  "element",
-  "blocks",
-  "utils",
-  "date",
-  "data",
-  "i18n",
-  "editPost",
-  "plugins",
-  "apiRequest",
-  "editor",
-  "compose"
-];
-wpDependencies.forEach(wpDependency => {
-  externals["@wordpress/" + wpDependency] = {
-    this: ["wp", wpDependency]
-  };
-});
-
 module.exports = {
   entry: {
     "./assets/js/blocks.editor": "./blocks/index.js",
-    "./assets/js/plugins.editor": "./plugins/index.js",
-    "./assets/js/blocks.frontend": "./blocks/frontend.js"
+    "./assets/js/blocks.frontend": "./blocks/frontend.js",
+    "./assets/js/blocks.filters": "./blocks/filters/index.js"
   },
   output: {
     path: path.resolve(__dirname),
     filename: "[name].js"
   },
-  externals,
+  externals: {
+    react: "React",
+    "react-dom": "ReactDOM"
+  },
   watch: "production" !== process.env.NODE_ENV,
   devtool: "cheap-module-source-map",
   module: {
@@ -87,12 +62,8 @@ module.exports = {
       {
         test: /editor\.s?css$/,
         use: editBlocksCSSPlugin.extract(extractConfig)
-      },
-      {
-        test: /plugin\.s?css$/,
-        use: pluginCSSPlugin.extract(extractConfig)
       }
     ]
   },
-  plugins: [blocksCSSPlugin, editBlocksCSSPlugin, pluginCSSPlugin]
+  plugins: [blocksCSSPlugin, editBlocksCSSPlugin]
 };

@@ -3,6 +3,10 @@
   "version": "3.0.0",
   "license": "MIT",
   "main": "blocks/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zgordon/advanced-gutenberg-course.git"
+  },
   "scripts": {
     "start": "cross-env BABEL_ENV=default webpack --watch",
     "build": "cross-env BABEL_ENV=default NODE_ENV=production webpack -p"
@@ -27,8 +31,7 @@
     "webpack": "^3.11.0"
   },
   "dependencies": {
-    "react-google-maps": "^9.4.5",
     "react-images": "^0.5.19",
-    "react-photo-gallery": "^6.2.2"
+    "react-photo-gallery": "^6.3.0"
   }
 }
