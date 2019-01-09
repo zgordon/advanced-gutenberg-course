@@ -60,14 +60,17 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 176);
+/******/ 	return __webpack_require__(__webpack_require__.s = 183);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 176:
-/***/ (function(module, exports) {
+/***/ 183:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__add_code_attributes_and_controls__ = __webpack_require__(184);
 /**
  * Import example filters
  */
@@ -78,7 +81,167 @@
 // import "./block-edit";
 // import "./remove-cover-block-alignment";
 // import "./add-heading-full-align";
-// import "./add-code-attributes-and-controls";
+
+
+/***/ }),
+
+/***/ 184:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss__ = __webpack_require__(185);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__style_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
+var createHigherOrderComponent = wp.compose.createHigherOrderComponent;
+var Fragment = wp.element.Fragment;
+var InspectorControls = wp.editor.InspectorControls;
+var _wp$components = wp.components,
+    PanelBody = _wp$components.PanelBody,
+    ToggleControl = _wp$components.ToggleControl;
+var addFilter = wp.hooks.addFilter;
+
+
+
+
+
+// Add new attribute to code block
+addFilter("blocks.registerBlockType", "jsforwp-advgb/add-code-attributes", addCodeAttributes);
+// Modify the Edit Setting to Add Prop and Controls
+addFilter("editor.BlockEdit", "jsforwp-advgb/add-code-inspector-controls", addCodeInspectorControls);
+// Modify save function
+addFilter("blocks.getSaveElement", "jsforwp-advgb/modify-save-setting", modifySaveSetting);
+
+function addCodeAttributes(settings, name) {
+  if (name !== "core/code") return settings;
+
+  settings.supports = lodash.merge({}, settings.supports, {
+    align: ["full", "wide"]
+  });
+  settings.attributes.align = {
+    type: "string",
+    default: "full"
+  };
+  settings.attributes.highContrast = {
+    type: "boolean",
+    default: false
+  };
+  return settings;
+}
+
+function addCodeInspectorControls(BlockEdit) {
+  var withInspectorControls = createHigherOrderComponent(function (BlockEdit) {
+    return function (props) {
+      if (props.name !== "core/code") return wp.element.createElement(BlockEdit, props);
+
+      return wp.element.createElement(
+        Fragment,
+        null,
+        wp.element.createElement(
+          "div",
+          {
+            className: __WEBPACK_IMPORTED_MODULE_1_classnames___default()({
+              "high-contrast": props.attributes.highContrast
+            })
+          },
+          wp.element.createElement(BlockEdit, props)
+        ),
+        wp.element.createElement(
+          InspectorControls,
+          null,
+          wp.element.createElement(
+            PanelBody,
+            null,
+            wp.element.createElement(ToggleControl, {
+              label: "High Contrast",
+              checked: props.attributes.highContrast,
+              onChange: function onChange(highContrast) {
+                return props.setAttributes({ highContrast: highContrast });
+              }
+            })
+          )
+        )
+      );
+    };
+  }, "withInspectorControl");
+  return withInspectorControls(BlockEdit);
+}
+
+function modifySaveSetting(el, type, attributes) {
+  if (type.name === "core/code" && attributes.highContrast) {
+    el.props.className = __WEBPACK_IMPORTED_MODULE_1_classnames___default()(el.props.className, {
+      "high-contrast": attributes.highContrast
+    });
+  }
+  return el;
+}
+
+/***/ }),
+
+/***/ 185:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 77:
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+  Copyright (c) 2017 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames () {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg) && arg.length) {
+				var inner = classNames.apply(null, arg);
+				if (inner) {
+					classes.push(inner);
+				}
+			} else if (argType === 'object') {
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (typeof module !== 'undefined' && module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else if (true) {
+		// register as 'classnames', consistent with npm package name
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+			return classNames;
+		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else {
+		window.classNames = classNames;
+	}
+}());
+
 
 /***/ })
 

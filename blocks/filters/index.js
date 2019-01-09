@@ -8,4 +8,4 @@
 // import "./block-edit";
 // import "./remove-cover-block-alignment";
 // import "./add-heading-full-align";
-// import "./add-code-attributes-and-controls";
+import "./add-code-attributes-and-controls";

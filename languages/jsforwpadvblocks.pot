@@ -55,22 +55,6 @@ msgstr ""
 msgid "Shoutout Text"
 msgstr ""
 
-#: blocks/03-google-map/edit.js:72
-msgid "API Key"
-msgstr ""
-
-#: blocks/03-google-map/index.js:26
-msgid "Google Map"
-msgstr ""
-
-#: blocks/03-google-map/index.js:27
-msgid "An example block for working with the Google Maps API."
-msgstr ""
-
-#: blocks/03-google-map/index.js:36
-msgid "Location"
-msgstr ""
-
 #: plugins/01-toc/index.js:18
 #: plugins/02-layout-switcher/index.js:42
 msgid "JS for WP TOC"
