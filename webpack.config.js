@@ -30,18 +30,11 @@ const extractConfig = {
   ]
 };
 
-<<<<<<< HEAD
-const externals = {
-  react: "React",
-  "react-dom": "ReactDOM"
-};
-
-=======
->>>>>>> demo
 module.exports = {
   entry: {
     "./assets/js/blocks.editor": "./blocks/index.js",
-    "./assets/js/blocks.frontend": "./blocks/frontend.js"
+    "./assets/js/blocks.frontend": "./blocks/frontend.js",
+    "./assets/js/blocks.filters": "./blocks/filters/index.js"
   },
   output: {
     path: path.resolve(__dirname),
