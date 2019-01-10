@@ -1,16 +1,17 @@
 const { getBlockType } = wp.blocks;
 const { Button } = wp.components;
-const { dispatch, withSelect } = wp.data;
+const { select, dispatch, withSelect } = wp.data;
 
 import classnames from "classnames";
 
+console.log(select("core/editor"));
+
 const BlockButton = ({ block, isBlockSelected }) => {
   const blockType = getBlockType(block.name);
-  console.log(isBlockSelected(block.clientId));
   return (
     <Button
       className={classnames("editor-block-navigation__item-button", {
-        "is-selected": isBlockSelected(block.clientId)
+        "is-selected": isBlockSelected
       })}
       onClick={() => dispatch("core/editor").selectBlock(block.clientId)}
     >
@@ -21,7 +22,9 @@ const BlockButton = ({ block, isBlockSelected }) => {
 };
 
 // export default BlockButton;
-export default withSelect(select => {
-  const { isBlockSelected } = select("core/editor");
-  return { isBlockSelected };
+export default withSelect((select, ownProps) => {
+  const { clientId } = ownProps.block;
+  return {
+    isBlockSelected: select("core/editor").isBlockSelected(clientId)
+  };
 })(BlockButton);
