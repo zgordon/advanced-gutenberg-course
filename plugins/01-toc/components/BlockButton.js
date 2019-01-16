@@ -4,8 +4,6 @@ const { select, dispatch, withSelect } = wp.data;
 
 import classnames from "classnames";
 
-console.log(select("core/editor"));
-
 const BlockButton = ({ block, isBlockSelected }) => {
   const blockType = getBlockType(block.name);
   return (

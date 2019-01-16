@@ -63,6 +63,23 @@ msgstr ""
 msgid "Shoutout Text"
 msgstr ""
 
+#: blocks/03-data-example/components/ButtonWithDispatch.js:11
+#: blocks/03-data-example/components/ListItemsWithCompose.js:18
+msgid "X"
+msgstr ""
+
+#: blocks/03-data-example/components/ListItemsWithCompose.js:9
+msgid "With Compose"
+msgstr ""
+
+#: blocks/03-data-example/index.js:13
+msgid "Data Example"
+msgstr ""
+
+#: blocks/03-data-example/index.js:14
+msgid "Demo of select, distaptch, withSelect and withDispatch"
+msgstr ""
+
 #: plugins/01-toc/index.js:23
 msgid "Table of Contents"
 msgstr ""
