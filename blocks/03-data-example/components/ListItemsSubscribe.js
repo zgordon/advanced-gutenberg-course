@@ -1,24 +1,33 @@
 const { Component } = wp.element;
-const { subscribe, select } = wp.data;
+const { subscribe, select, dispatch } = wp.data;
+const { Button } = wp.components;
+
+import {
+  core,
+  coreBlocks,
+  coreEditor,
+  coreEditPost,
+  coreNotices,
+  coreNux,
+  coreViewport
+} from "../selectors";
 
 export default class ListItemsSubscribe extends Component {
   state = {
-    blockAdded: false,
-    blockRemoved: false
+    blockCount: select("core/editor").getBlockCount()
   };
-  displayBlockAddedMessage = () => {
-    this.setState({ blockAdded: true });
-    setTimeout(() => {
-      this.setState({ blockAdded: false });
-    }, 2600);
-  };
+
   componentDidMount() {
-    const prevBlockCount = select("core/editor").getBlockCount();
     const unsubscribe = subscribe(() => {
       const blockCount = select("core/editor").getBlockCount();
-      if (prevBlockCount < blockCount) {
-        this.displayBlockAddedMessage();
-      }
+      this.setState({ blockCount });
+      // core();
+      // coreBlocks();
+      // coreEditor();
+      // coreEditPost();
+      // coreNotices();
+      // coreNux();
+      coreViewport();
     });
   }
 
@@ -26,10 +35,19 @@ export default class ListItemsSubscribe extends Component {
   render() {
     return (
       <div>
-        <p>
-          Block Notice:
-          {!!this.state.blockAdded && <strong>Block Added!</strong>}
-        </p>
+        <p>Block Count: {this.state.blockCount}</p>
+        <Button
+          onClick={() => {
+            dispatch("core/nux").triggerGuide([
+              "core/editor.inserter",
+              "core/editor.settings",
+              "core/editor.preview",
+              "core/editor.publish"
+            ]);
+          }}
+        >
+          Trigger Guide
+        </Button>
       </div>
     );
   }

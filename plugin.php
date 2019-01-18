@@ -61,8 +61,11 @@ function _get_plugin_url() {
 // Enqueue JS and CSS
 include __DIR__ . '/lib/register-scripts.php';
 
-// Register block server side
+// Register block categories
+include __DIR__ . '/lib/block-categories.php';
+
+// Register blocks server side
 include __DIR__ . '/lib/register-blocks.php';
 
-// Register block server side
-include __DIR__ . '/lib/block-categories.php';
+// Register block tempaltes
+// include __DIR__ . '/lib/block-templates.php';

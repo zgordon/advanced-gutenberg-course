@@ -15,11 +15,11 @@ import BlockList from "./components/BlockList";
 const TableOfContents = props => {
   return (
     <Fragment>
-      <PluginSidebarMoreMenuItem target="jsforwpadvgb-toc">
+      <PluginSidebarMoreMenuItem target="toc">
         {__("Table of Contents", "jsforwpadvblocks")}
       </PluginSidebarMoreMenuItem>
       <PluginSidebar
-        name="jsforwpadvgb-toc"
+        name="toc"
         title={__("Table of Contents", "jsforwpadvblocks")}
       >
         <PanelRow>
@@ -30,7 +30,7 @@ const TableOfContents = props => {
   );
 };
 
-registerPlugin("jsforwpadvgb-toc", {
+registerPlugin("jsforwpadvgb", {
   icon,
   render: TableOfContents
 });
