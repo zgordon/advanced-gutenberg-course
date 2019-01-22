@@ -1,12 +1,13 @@
 const { __ } = wp.i18n;
-const { Component } = wp.element;
 const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 const { Button } = wp.components;
 
-const ListItemsWithCompose = ({ blocks, removeBlock }) => (
+const WithComposeDemo = ({ blocks, removeBlock }) => (
   <div>
-    <h3>{__("With Compose", "jsforwpadvblocks")}</h3>
+    <pre>
+      <code>{"compose([withSelect(),withDispatch()])(WithComposeDemo)"}</code>
+    </pre>
     <ul>
       {blocks.map(block => (
         <li>
@@ -34,4 +35,4 @@ export default compose([
       removeBlock: dispatch("core/editor").removeBlock
     };
   })
-])(ListItemsWithCompose);
+])(WithComposeDemo);

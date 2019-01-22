@@ -14,7 +14,6 @@ const DeleteButton = ({ clientId, removeBlock }) => {
 };
 
 export default withDispatch((dispatch, ownProps) => {
-  const removeBlock = dispatch("core/editor").removeBlock;
   return {
     removeBlock: dispatch("core/editor").removeBlock
   };

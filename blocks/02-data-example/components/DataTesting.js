@@ -12,7 +12,12 @@ import {
   coreViewport
 } from "../selectors";
 
-export default class ListItemsSubscribe extends Component {
+import {
+  core as coreDispatch,
+  coreEditor as coreEditorDispatch
+} from "../dispatch";
+
+export default class DataApiTest extends Component {
   state = {
     blockCount: select("core/editor").getBlockCount()
   };
@@ -23,11 +28,11 @@ export default class ListItemsSubscribe extends Component {
       this.setState({ blockCount });
       // core();
       // coreBlocks();
-      // coreEditor();
+      coreEditor();
       // coreEditPost();
       // coreNotices();
       // coreNux();
-      coreViewport();
+      // coreViewport();
     });
   }
 
@@ -37,16 +42,12 @@ export default class ListItemsSubscribe extends Component {
       <div>
         <p>Block Count: {this.state.blockCount}</p>
         <Button
+          isPrimary
           onClick={() => {
-            dispatch("core/nux").triggerGuide([
-              "core/editor.inserter",
-              "core/editor.settings",
-              "core/editor.preview",
-              "core/editor.publish"
-            ]);
+            coreEditorDispatch();
           }}
         >
-          Trigger Guide
+          Trigger
         </Button>
       </div>
     );
