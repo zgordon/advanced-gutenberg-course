@@ -1,0 +1,108 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"X-Generator: babel-plugin-makepot\n"
+
+#: blocks/01-gallery/index.js:103
+msgid "Enable / disable lightbox"
+msgstr ""
+
+#: blocks/01-gallery/index.js:124
+msgid "Edit Gallery"
+msgstr ""
+
+#: blocks/01-gallery/index.js:138
+msgid "Gallery"
+msgstr ""
+
+#: blocks/01-gallery/index.js:139
+msgid "Drag images, upload new ones or select files from your library"
+msgstr ""
+
+#: blocks/01-gallery/index.js:36
+msgid "A demo custom gallery block"
+msgstr ""
+
+#: blocks/01-gallery/index.js:40
+msgid "Masonry"
+msgstr ""
+
+#: blocks/01-gallery/index.js:41
+msgid "Images Media"
+msgstr ""
+
+#: blocks/01-gallery/index.js:42
+msgid "Lightbox"
+msgstr ""
+
+#: blocks/01-gallery/index.js:87
+msgid "Gallery Settings"
+msgstr ""
+
+#: blocks/01-gallery/index.js:92
+msgid "Grid Style"
+msgstr ""
+
+#: blocks/02-data-example/components/DeleteButton.js:11
+#: blocks/02-data-example/components/DispatchDemo.js:21
+#: blocks/02-data-example/components/WithComposeDemo.js:19
+#: blocks/03-data-example/components/ButtonWithDispatch.js:11
+#: blocks/03-data-example/components/DeleteButton.js:11
+#: blocks/03-data-example/components/DispatchDemo.js:21
+#: blocks/03-data-example/components/ListItemsWithCompose.js:18
+#: blocks/03-data-example/components/WithComposeDemo.js:19
+msgid "X"
+msgstr ""
+
+#: blocks/02-data-example/components/SelectDemo.js:12
+#: blocks/02-data-example/components/SubscribeDemo.js:30
+#: blocks/02-data-example/components/WithSelectDemo.js:10
+#: blocks/03-data-example/components/SelectDemo.js:12
+#: blocks/03-data-example/components/SubscribeDemo.js:30
+#: blocks/03-data-example/components/SubscribeDemo.js:32
+#: blocks/03-data-example/components/WithSelectDemo.js:10
+msgid "Block Count:"
+msgstr ""
+
+#: blocks/02-data-example/index.js:16
+#: blocks/03-data-example/index.js:16
+msgid "Demo of select, subscribe, dispatch, withSelect and withDispatch"
+msgstr ""
+
+#: blocks/02-data-example/index.js:37
+#: blocks/03-data-example/index.js:37
+msgid "Data API Example"
+msgstr ""
+
+#: blocks/02-shoutout-styles/index.js:20
+#: blocks/03-shoutout-styles/index.js:20
+msgid "Shoutout"
+msgstr ""
+
+#: blocks/02-shoutout-styles/index.js:21
+#: blocks/03-shoutout-styles/index.js:21
+msgid "An example block for working with Styles API."
+msgstr ""
+
+#: blocks/02-shoutout-styles/index.js:30
+#: blocks/03-shoutout-styles/index.js:30
+msgid "Call to Action"
+msgstr ""
+
+#: blocks/02-shoutout-styles/index.js:61
+#: blocks/03-shoutout-styles/index.js:61
+msgid "Headline"
+msgstr ""
+
+#: blocks/02-shoutout-styles/index.js:66
+#: blocks/03-shoutout-styles/index.js:66
+msgid "Shoutout Text"
+msgstr ""
+
+#: blocks/03-data-example/components/ListItemsWithCompose.js:9
+msgid "With Compose"
+msgstr ""
+
+#: plugins/01-toc/index.js:23
+msgid "Table of Contents"
+msgstr ""
