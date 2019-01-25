@@ -3,5 +3,7 @@
 
 .wp-block-jsforwpadvblocks-gallery.row img {
   height: 100%; }
+.wp-block-jsforwpadvblocks-data-example li {
+  margin-left: 1.3em; }
 
 /*# sourceMappingURL=blocks.style.css.map*/
