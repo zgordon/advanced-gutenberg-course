@@ -4,7 +4,7 @@
 
 ## A Course from Zac Gordon on JS for WP
 
-[View the course on https://javascriptforwp.com/ >>](https://javascriptforwp.com/product/advanced-gutenberg-development-presale/)
+[View the course on https://javascriptforwp.com/ >>](https://javascriptforwp.com/product/advanced-gutenberg-development/)
 
 ## Course Outline
 
