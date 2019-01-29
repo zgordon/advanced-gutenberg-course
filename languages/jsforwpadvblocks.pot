@@ -52,7 +52,6 @@ msgid "Enable / disable lightbox"
 msgstr ""
 
 #: blocks/02-data-example/components/DeleteButton.js:12
-#: blocks/02-data-example/components/DeleteButton.js:10
 #: blocks/02-data-example/components/DispatchDemo.js:20
 #: blocks/02-data-example/components/WithComposeDemo.js:19
 msgid "X"
@@ -70,4 +69,12 @@ msgstr ""
 
 #: blocks/02-data-example/index.js:40
 msgid "Data API Example"
+msgstr ""
+
+#: plugins/01-plugin-sidebar-demo/index.js:19
+msgid "Plugin Sidebar Demo"
+msgstr ""
+
+#: plugins/01-plugin-sidebar-demo/index.js:23
+msgid "Plugin Sidebar Content"
 msgstr ""
