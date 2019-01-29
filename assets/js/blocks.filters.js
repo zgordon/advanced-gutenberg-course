@@ -60,12 +60,20 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
+<<<<<<< HEAD
 /******/ 	return __webpack_require__(__webpack_require__.s = 183);
+=======
+/******/ 	return __webpack_require__(__webpack_require__.s = 186);
+>>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
 /******/ })
 /************************************************************************/
 /******/ ({
 
+<<<<<<< HEAD
 /***/ 183:
+=======
+/***/ 186:
+>>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
 /***/ (function(module, exports) {
 
 /**

@@ -24,10 +24,9 @@ export default registerBlockType("jsforwpadvblocks/data-example", {
     const { className } = props;
     return (
       <div className={className}>
-        <p>{__("Data API Example", "jsforwpadvblocks")}</p>
         <SelectDemo />
         <SubscribeDemo />
-        <WithSelectDemo text="TEST" />
+        <WithSelectDemo />
         <DispatchDemo />
         <WithDispatchDemo />
         <WithComposeDemo />
@@ -35,10 +34,6 @@ export default registerBlockType("jsforwpadvblocks/data-example", {
     );
   },
   save: props => {
-    return (
-      <div>
-        <p>{__("Data API Example", "jsforwpadvblocks")}</p>
-      </div>
-    );
+    return <p>{__("Data API Example", "jsforwpadvblocks")}</p>;
   }
 });
