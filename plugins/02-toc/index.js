@@ -5,7 +5,7 @@ const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 const { registerPlugin } = wp.plugins;
 const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
-const { PanelRow } = wp.components;
+const { PanelBody, PanelRow } = wp.components;
 
 import classnames from "classnames";
 import icon from "./icon";
@@ -15,22 +15,24 @@ import BlockList from "./components/BlockList";
 const TableOfContents = props => {
   return (
     <Fragment>
-      <PluginSidebarMoreMenuItem target="toc">
+      <PluginSidebarMoreMenuItem target="jsforwpadvgb-toc">
         {__("Table of Contents", "jsforwpadvblocks")}
       </PluginSidebarMoreMenuItem>
       <PluginSidebar
-        name="toc"
+        name="jsforwpadvgb-toc"
         title={__("Table of Contents", "jsforwpadvblocks")}
       >
-        <PanelRow>
-          <BlockList />
-        </PanelRow>
+        <PanelBody>
+          <PanelRow>
+            <BlockList />
+          </PanelRow>
+        </PanelBody>
       </PluginSidebar>
     </Fragment>
   );
 };
 
-registerPlugin("jsforwpadvgb", {
+registerPlugin("jsforwpadvgb-toc", {
   icon,
   render: TableOfContents
 });

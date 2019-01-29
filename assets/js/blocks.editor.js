@@ -4284,17 +4284,15 @@ $export($export.S, 'Object', { create: __webpack_require__(28) });
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__01_gallery__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__02_data_example__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__03_shoutout_styles__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__block_styles__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__02_data_example__ = __webpack_require__(125);
 /**
  * Import example blocks
  */
 
 
+// import "./03-shoutout-styles";
 
-
-
+// import "./block-styles";
 
 /***/ }),
 /* 118 */
@@ -4591,102 +4589,19 @@ var icon = wp.element.createElement(
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 125 */,
-/* 126 */,
-/* 127 */,
-/* 128 */,
-/* 129 */,
-/* 130 */,
-/* 131 */,
-/* 132 */,
-/* 133 */,
-/* 134 */,
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 139 */,
-/* 140 */,
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */,
-/* 167 */,
-/* 168 */,
-/* 169 */,
-/* 170 */,
-/* 171 */,
-/* 172 */,
-/* 173 */,
-/* 174 */,
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */,
-/* 181 */,
-/* 182 */,
-/* 183 */,
-/* 184 */,
-/* 185 */,
-/* 186 */,
-/* 187 */,
-/* 188 */,
-/* 189 */,
-/* 190 */,
-/* 191 */,
-/* 192 */,
-/* 193 */,
-/* 194 */,
-/* 195 */,
-/* 196 */,
-/* 197 */,
-/* 198 */,
-/* 199 */,
-/* 200 */,
-/* 201 */,
-/* 202 */,
-/* 203 */
+/* 125 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__icon__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style_scss__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__icon__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style_scss__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__style_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_SelectDemo__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_SubscribeDemo__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_WithSelectDemo__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_DispatchDemo__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_WithDispatchDemo__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_WithComposeDemo__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_SelectDemo__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_SubscribeDemo__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_WithSelectDemo__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_DispatchDemo__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_WithDispatchDemo__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_WithComposeDemo__ = __webpack_require__(134);
 var __ = wp.i18n.__;
 var registerBlockType = wp.blocks.registerBlockType;
 
@@ -4703,7 +4618,7 @@ var registerBlockType = wp.blocks.registerBlockType;
 
 /* unused harmony default export */ var _unused_webpack_default_export = (registerBlockType("jsforwpadvblocks/data-example", {
   title: __("Data API Example", "jsforwpadvblocks"),
-  description: __("Demo of select, subscribe, dispatch, withSelect and withDispatch", "jsforwpadvblocks"),
+  description: __("Demo of select, subscribe, dispatch, withSelect, withDispatch and compose", "jsforwpadvblocks"),
   category: "jsforwpadvblocks",
   icon: __WEBPACK_IMPORTED_MODULE_0__icon__["a" /* default */],
   attributes: {},
@@ -4713,9 +4628,14 @@ var registerBlockType = wp.blocks.registerBlockType;
     return wp.element.createElement(
       "div",
       { className: className },
+      wp.element.createElement(
+        "p",
+        null,
+        __("Data API Example", "jsforwpadvblocks")
+      ),
       wp.element.createElement(__WEBPACK_IMPORTED_MODULE_2__components_SelectDemo__["a" /* default */], null),
       wp.element.createElement(__WEBPACK_IMPORTED_MODULE_3__components_SubscribeDemo__["a" /* default */], null),
-      wp.element.createElement(__WEBPACK_IMPORTED_MODULE_4__components_WithSelectDemo__["a" /* default */], null),
+      wp.element.createElement(__WEBPACK_IMPORTED_MODULE_4__components_WithSelectDemo__["a" /* default */], { text: "TEST" }),
       wp.element.createElement(__WEBPACK_IMPORTED_MODULE_5__components_DispatchDemo__["a" /* default */], null),
       wp.element.createElement(__WEBPACK_IMPORTED_MODULE_6__components_WithDispatchDemo__["a" /* default */], null),
       wp.element.createElement(__WEBPACK_IMPORTED_MODULE_7__components_WithComposeDemo__["a" /* default */], null)
@@ -4723,15 +4643,19 @@ var registerBlockType = wp.blocks.registerBlockType;
   },
   save: function save(props) {
     return wp.element.createElement(
-      "p",
+      "div",
       null,
-      __("Data API Example", "jsforwpadvblocks")
+      wp.element.createElement(
+        "p",
+        null,
+        __("Data API Example", "jsforwpadvblocks")
+      )
     );
   }
 }));
 
 /***/ }),
-/* 204 */
+/* 126 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4749,13 +4673,13 @@ var icon = wp.element.createElement(
 /* harmony default export */ __webpack_exports__["a"] = (icon);
 
 /***/ }),
-/* 205 */
+/* 127 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 206 */
+/* 128 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4763,8 +4687,9 @@ var __ = wp.i18n.__;
 var select = wp.data.select;
 
 
-var SelectDemo = function SelectDemo(props) {
+var SelectDemo = function SelectDemo(prop) {
   var blockCount = select("core/editor").getBlockCount();
+
   return wp.element.createElement(
     "div",
     null,
@@ -4790,7 +4715,7 @@ var SelectDemo = function SelectDemo(props) {
 /* harmony default export */ __webpack_exports__["a"] = (SelectDemo);
 
 /***/ }),
-/* 207 */
+/* 129 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4842,10 +4767,17 @@ var SubscribeDemo = function (_Component) {
       var unsubscribe = subscribe(function () {
         var blockCount = select("core/editor").getBlockCount();
 
-        console.group("State Updated");
-        console.log("Previous Count:", _this2.state.blockCount);
-        console.log("Current Count:", blockCount);
-        console.groupEnd();
+        // console.group("State Changed!");
+        // console.log("Prev Count:", this.state.blockCount);
+        // console.log("New Count:", blockCount);
+        // console.groupEnd();
+
+        // if (this.state.blockCount < blockCount) {
+        //   console.log("Block Added!");
+        // }
+        // if (this.state.blockCount > blockCount) {
+        //   console.log("Block Removed!");
+        // }
 
         _this2.setState({ blockCount: blockCount });
       });
@@ -4882,7 +4814,7 @@ var SubscribeDemo = function (_Component) {
 /* harmony default export */ __webpack_exports__["a"] = (SubscribeDemo);
 
 /***/ }),
-/* 208 */
+/* 130 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4901,7 +4833,7 @@ var WithSelectDemo = function WithSelectDemo(_ref) {
       wp.element.createElement(
         "code",
         null,
-        "withSelect(() => {})(WithSelectDemo)"
+        "withSelect(()=> {})(WithSelectDemo)"
       )
     ),
     wp.element.createElement(
@@ -4915,21 +4847,22 @@ var WithSelectDemo = function WithSelectDemo(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (withSelect(function (select, ownProps) {
-  // console.log("Props", ownProps);
+  // console.log(ownProps);
   return {
     blockCount: select("core/editor").getBlockCount()
   };
 })(WithSelectDemo));
 
 /***/ }),
-/* 209 */
+/* 131 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 var __ = wp.i18n.__;
 var Button = wp.components.Button;
-var dispatch = wp.data.dispatch;
-var withSelect = wp.data.withSelect;
+var _wp$data = wp.data,
+    withSelect = _wp$data.withSelect,
+    dispatch = _wp$data.dispatch;
 
 
 var DispatchDemo = function DispatchDemo(_ref) {
@@ -4952,7 +4885,7 @@ var DispatchDemo = function DispatchDemo(_ref) {
       blocks.map(function (block) {
         return wp.element.createElement(
           "li",
-          null,
+          { key: block.clientId },
           block.name,
           " ",
           wp.element.createElement(
@@ -4978,20 +4911,21 @@ var DispatchDemo = function DispatchDemo(_ref) {
 })(DispatchDemo));
 
 /***/ }),
-/* 210 */
+/* 132 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__DeleteButton__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__DeleteButton__ = __webpack_require__(133);
 var __ = wp.i18n.__;
 var Button = wp.components.Button;
-var dispatch = wp.data.dispatch;
-var withSelect = wp.data.withSelect;
+var _wp$data = wp.data,
+    withSelect = _wp$data.withSelect,
+    dispatch = _wp$data.dispatch;
 
 
 
 
-var WithDispatchDemo = function WithDispatchDemo(_ref) {
+var DispatchDemo = function DispatchDemo(_ref) {
   var blocks = _ref.blocks;
   return wp.element.createElement(
     "div",
@@ -5002,7 +4936,7 @@ var WithDispatchDemo = function WithDispatchDemo(_ref) {
       wp.element.createElement(
         "code",
         null,
-        "withDispatch(() => {})(WithDispatchDemo)"
+        "withDispatch(()=>{})(WithDispatchDemo)"
       )
     ),
     wp.element.createElement(
@@ -5011,9 +4945,8 @@ var WithDispatchDemo = function WithDispatchDemo(_ref) {
       blocks.map(function (block) {
         return wp.element.createElement(
           "li",
-          null,
+          { key: block.clientId },
           block.name,
-          " ",
           wp.element.createElement(__WEBPACK_IMPORTED_MODULE_0__DeleteButton__["a" /* default */], { clientId: block.clientId })
         );
       })
@@ -5025,10 +4958,10 @@ var WithDispatchDemo = function WithDispatchDemo(_ref) {
   return {
     blocks: select("core/editor").getBlocks()
   };
-})(WithDispatchDemo));
+})(DispatchDemo));
 
 /***/ }),
-/* 211 */
+/* 133 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5040,13 +4973,12 @@ var withDispatch = wp.data.withDispatch;
 var DeleteButton = function DeleteButton(_ref) {
   var clientId = _ref.clientId,
       removeBlock = _ref.removeBlock;
-
   return wp.element.createElement(
     Button,
     {
       className: "is-button is-default",
       onClick: function onClick() {
-        return removeBlock(clientId);
+        removeBlock(clientId);
       }
     },
     __("X", "jsforwpadvblocks")
@@ -5060,16 +4992,16 @@ var DeleteButton = function DeleteButton(_ref) {
 })(DeleteButton));
 
 /***/ }),
-/* 212 */
+/* 134 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 var __ = wp.i18n.__;
-var compose = wp.compose.compose;
+var Button = wp.components.Button;
 var _wp$data = wp.data,
     withSelect = _wp$data.withSelect,
     withDispatch = _wp$data.withDispatch;
-var Button = wp.components.Button;
+var compose = wp.compose.compose;
 
 
 var WithComposeDemo = function WithComposeDemo(_ref) {
@@ -5084,7 +5016,7 @@ var WithComposeDemo = function WithComposeDemo(_ref) {
       wp.element.createElement(
         "code",
         null,
-        "compose([withSelect(),withDispatch()])(WithComposeDemo)"
+        "compose([])(WithComposeDemo)"
       )
     ),
     wp.element.createElement(
@@ -5093,9 +5025,8 @@ var WithComposeDemo = function WithComposeDemo(_ref) {
       blocks.map(function (block) {
         return wp.element.createElement(
           "li",
-          null,
+          { key: block.clientId },
           block.name,
-          " ",
           wp.element.createElement(
             Button,
             {
@@ -5121,130 +5052,6 @@ var WithComposeDemo = function WithComposeDemo(_ref) {
     removeBlock: dispatch("core/editor").removeBlock
   };
 })])(WithComposeDemo));
-
-/***/ }),
-/* 213 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__style_scss__);
-/**
- * Block dependencies
- */
-// import icons from "./icons";
-
-// import "./editor.scss";
-
-/**
- * Internal block libraries
- */
-var Fragment = wp.element.Fragment;
-var __ = wp.i18n.__;
-var registerBlockType = wp.blocks.registerBlockType;
-var RichText = wp.editor.RichText;
-
-/**
- * Register example block
- */
-
-/* unused harmony default export */ var _unused_webpack_default_export = (registerBlockType("jsforwpadvblocks/shoutout-styles", {
-  title: __("Shoutout", "jsforwpadvblocks"),
-  description: __("An example block for working with Styles API.", "jsforwpadvblocks"),
-  category: "jsforwpadvblocks",
-  icon: {
-    // background: "rgba(254, 243, 224, 0.52)",
-    src: "edit"
-  },
-  keywords: [__("Call to Action", "jsforwpadvblocks")],
-  attributes: {
-    headline: {
-      type: "string"
-    },
-    text: {
-      type: "html"
-    }
-  },
-  edit: function edit(props) {
-    var _props$attributes = props.attributes,
-        headline = _props$attributes.headline,
-        text = _props$attributes.text,
-        className = props.className,
-        setAttributes = props.setAttributes,
-        isSelected = props.isSelected;
-
-
-    return wp.element.createElement(
-      "div",
-      { className: className },
-      wp.element.createElement(RichText, {
-        value: headline,
-        tagName: "h2",
-        placeholder: __("Headline", "jsforwpadvblocks"),
-        onChange: function onChange(headline) {
-          return setAttributes({ headline: headline });
-        }
-      }),
-      wp.element.createElement(RichText, {
-        value: text,
-        placeholder: __("Shoutout Text", "jsforwpadvblocks"),
-        onChange: function onChange(text) {
-          return setAttributes({ text: text });
-        }
-      })
-    );
-  },
-  save: function save(props) {
-    var _props$attributes2 = props.attributes,
-        headline = _props$attributes2.headline,
-        text = _props$attributes2.text;
-
-    return wp.element.createElement(
-      "div",
-      null,
-      wp.element.createElement(RichText.Content, { value: headline, tagName: "h2" }),
-      wp.element.createElement(RichText.Content, { value: text, tagName: "div" })
-    );
-  }
-}));
-
-/***/ }),
-/* 214 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 215 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__style_scss__);
-var registerBlockStyle = wp.blocks.registerBlockStyle;
-
-
-
-
-registerBlockStyle("core/quote", {
-  name: "colorful-quote",
-  label: "Colorful Quote"
-});
-
-registerBlockStyle("jsforwpadvblocks/shoutout-styles", {
-  name: "default",
-  label: "Default"
-});
-
-registerBlockStyle("jsforwpadvblocks/shoutout-styles", {
-  name: "serious",
-  label: "Serious"
-});
-
-registerBlockStyle("jsforwpadvblocks/shoutout-styles", {
-  name: "colorful",
-  label: "Colorful"
-});
 
 /***/ })
 /******/ ]);
