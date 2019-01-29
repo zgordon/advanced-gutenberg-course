@@ -43,7 +43,6 @@ msgstr ""
 msgid "Grid Style"
 msgstr ""
 
-<<<<<<< HEAD
 #: blocks/02-data-example/components/DeleteButton.js:12
 #: blocks/02-data-example/components/DispatchDemo.js:20
 #: blocks/02-data-example/components/WithComposeDemo.js:19
@@ -60,7 +59,7 @@ msgstr ""
 msgid "Demo of select, subscribe, dispatch, withSelect, withDispatch and compose"
 msgstr ""
 
-#: blocks/02-data-example/index.js:40
+#: blocks/02-data-example/index.js:37
 msgid "Data API Example"
 msgstr ""
 
@@ -73,45 +72,5 @@ msgid "Plugin Sidebar Demo"
 msgstr ""
 
 #: plugins/02-toc/index.js:23
-=======
-#: blocks/02-shoutout-styles/index.js:20
-msgid "Shoutout"
-msgstr ""
-
-#: blocks/02-shoutout-styles/index.js:21
-msgid "An example block for working with Styles API."
-msgstr ""
-
-#: blocks/02-shoutout-styles/index.js:30
-msgid "Call to Action"
-msgstr ""
-
-#: blocks/02-shoutout-styles/index.js:61
-msgid "Headline"
-msgstr ""
-
-#: blocks/02-shoutout-styles/index.js:66
-msgid "Shoutout Text"
-msgstr ""
-
-#: blocks/03-data-example/components/ButtonWithDispatch.js:11
-#: blocks/03-data-example/components/ListItemsWithCompose.js:18
-msgid "X"
-msgstr ""
-
-#: blocks/03-data-example/components/ListItemsWithCompose.js:9
-msgid "With Compose"
-msgstr ""
-
-#: blocks/03-data-example/index.js:13
-msgid "Data Example"
-msgstr ""
-
-#: blocks/03-data-example/index.js:14
-msgid "Demo of select, distaptch, withSelect and withDispatch"
-msgstr ""
-
-#: plugins/01-toc/index.js:23
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
 msgid "Table of Contents"
 msgstr ""

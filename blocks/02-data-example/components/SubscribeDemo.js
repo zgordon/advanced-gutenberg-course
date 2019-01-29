@@ -11,7 +11,6 @@ export default class SubscribeDemo extends Component {
     const unsubscribe = subscribe(() => {
       const blockCount = select("core/editor").getBlockCount();
 
-<<<<<<< HEAD
       // console.group("State Changed!");
       // console.log("Prev Count:", this.state.blockCount);
       // console.log("New Count:", blockCount);
@@ -23,12 +22,6 @@ export default class SubscribeDemo extends Component {
       // if (this.state.blockCount > blockCount) {
       //   console.log("Block Removed!");
       // }
-=======
-      console.group("State Updated");
-      console.log("Previous Count:", this.state.blockCount);
-      console.log("Current Count:", blockCount);
-      console.groupEnd();
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
 
       this.setState({ blockCount });
     });

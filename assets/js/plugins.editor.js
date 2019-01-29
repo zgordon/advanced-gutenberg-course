@@ -60,11 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-<<<<<<< HEAD
 /******/ 	return __webpack_require__(__webpack_require__.s = 184);
-=======
-/******/ 	return __webpack_require__(__webpack_require__.s = 187);
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -129,29 +125,20 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ 184:
-=======
-/***/ 187:
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__01_plugin_sidebar_demo__ = __webpack_require__(185);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__01_plugin_sidebar_demo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__01_plugin_sidebar_demo__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__02_toc__ = __webpack_require__(186);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__01_toc__ = __webpack_require__(188);
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
 /**
  * Import Sidebar Plugins
  */
 
 
 
-<<<<<<< HEAD
 
 /***/ }),
 
@@ -212,27 +199,15 @@ registerPlugin("jsforwpadvgb-demo", {
 /***/ }),
 
 /***/ 186:
-=======
-/***/ }),
-
-/***/ 188:
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_classnames__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_classnames__);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__icon__ = __webpack_require__(187);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__plugin_scss__ = __webpack_require__(188);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__plugin_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__plugin_scss__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_BlockList__ = __webpack_require__(189);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__icon__ = __webpack_require__(189);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__plugin_scss__ = __webpack_require__(190);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__plugin_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__plugin_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_BlockList__ = __webpack_require__(191);
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
 /**
  * Get dependencies
  */
@@ -242,13 +217,9 @@ var registerPlugin = wp.plugins.registerPlugin;
 var _wp$editPost = wp.editPost,
     PluginSidebar = _wp$editPost.PluginSidebar,
     PluginSidebarMoreMenuItem = _wp$editPost.PluginSidebarMoreMenuItem;
-<<<<<<< HEAD
 var _wp$components = wp.components,
     PanelBody = _wp$components.PanelBody,
     PanelRow = _wp$components.PanelRow;
-=======
-var PanelRow = wp.components.PanelRow;
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
 
 
 
@@ -262,17 +233,12 @@ var TableOfContents = function TableOfContents(props) {
     null,
     wp.element.createElement(
       PluginSidebarMoreMenuItem,
-<<<<<<< HEAD
       { target: "jsforwpadvgb-toc" },
-=======
-      { target: "toc" },
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
       __("Table of Contents", "jsforwpadvblocks")
     ),
     wp.element.createElement(
       PluginSidebar,
       {
-<<<<<<< HEAD
         name: "jsforwpadvgb-toc",
         title: __("Table of Contents", "jsforwpadvblocks")
       },
@@ -284,36 +250,19 @@ var TableOfContents = function TableOfContents(props) {
           null,
           wp.element.createElement(__WEBPACK_IMPORTED_MODULE_3__components_BlockList__["a" /* default */], null)
         )
-=======
-        name: "toc",
-        title: __("Table of Contents", "jsforwpadvblocks")
-      },
-      wp.element.createElement(
-        PanelRow,
-        null,
-        wp.element.createElement(__WEBPACK_IMPORTED_MODULE_3__components_BlockList__["a" /* default */], null)
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
       )
     )
   );
 };
 
-<<<<<<< HEAD
 registerPlugin("jsforwpadvgb-toc", {
-=======
-registerPlugin("jsforwpadvgb", {
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
   icon: __WEBPACK_IMPORTED_MODULE_1__icon__["a" /* default */],
   render: TableOfContents
 });
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ 187:
-=======
-/***/ 189:
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -334,30 +283,18 @@ var icon = wp.element.createElement(
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ 188:
-=======
-/***/ 190:
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ 189:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BlockItem__ = __webpack_require__(190);
-=======
-/***/ 191:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BlockItem__ = __webpack_require__(192);
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
 var withSelect = wp.data.withSelect;
 
 
@@ -384,19 +321,11 @@ var BlockList = function BlockList(_ref) {
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ 190:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BlockButton__ = __webpack_require__(191);
-=======
-/***/ 192:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BlockButton__ = __webpack_require__(193);
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
 
 
 var BlockItem = function BlockItem(_ref) {
@@ -425,11 +354,7 @@ var BlockItem = function BlockItem(_ref) {
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ 191:
-=======
-/***/ 193:
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

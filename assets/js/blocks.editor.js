@@ -4284,27 +4284,15 @@ $export($export.S, 'Object', { create: __webpack_require__(28) });
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__01_gallery__ = __webpack_require__(118);
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__02_data_example__ = __webpack_require__(125);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__02_shoutout_styles__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__03_data_example__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__style_variations__ = __webpack_require__(136);
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
 /**
  * Import example blocks
  */
 
 
-<<<<<<< HEAD
 // import "./03-shoutout-styles";
 
 // import "./block-styles";
-=======
-
-
-
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
 
 /***/ }),
 /* 118 */
@@ -4605,7 +4593,6 @@ var icon = wp.element.createElement(
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__icon__ = __webpack_require__(126);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style_scss__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__style_scss__);
@@ -4621,110 +4608,6 @@ var registerBlockType = wp.blocks.registerBlockType;
 
 
 
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__style_scss__);
-/**
- * Block dependencies
- */
-// import icons from "./icons";
-
-// import "./editor.scss";
-
-/**
- * Internal block libraries
- */
-var Fragment = wp.element.Fragment;
-var __ = wp.i18n.__;
-var registerBlockType = wp.blocks.registerBlockType;
-var RichText = wp.editor.RichText;
-
-/**
- * Register example block
- */
-
-/* unused harmony default export */ var _unused_webpack_default_export = (registerBlockType("jsforwpadvblocks/shoutout-styles", {
-  title: __("Shoutout", "jsforwpadvblocks"),
-  description: __("An example block for working with Styles API.", "jsforwpadvblocks"),
-  category: "jsforwpadvblocks",
-  icon: {
-    // background: "rgba(254, 243, 224, 0.52)",
-    src: "edit"
-  },
-  keywords: [__("Call to Action", "jsforwpadvblocks")],
-  attributes: {
-    headline: {
-      type: "string"
-    },
-    text: {
-      type: "html"
-    }
-  },
-  edit: function edit(props) {
-    var _props$attributes = props.attributes,
-        headline = _props$attributes.headline,
-        text = _props$attributes.text,
-        className = props.className,
-        setAttributes = props.setAttributes,
-        isSelected = props.isSelected;
-
-
-    return wp.element.createElement(
-      "div",
-      { className: className },
-      wp.element.createElement(RichText, {
-        value: headline,
-        tagName: "h2",
-        placeholder: __("Headline", "jsforwpadvblocks"),
-        onChange: function onChange(headline) {
-          return setAttributes({ headline: headline });
-        }
-      }),
-      wp.element.createElement(RichText, {
-        value: text,
-        placeholder: __("Shoutout Text", "jsforwpadvblocks"),
-        onChange: function onChange(text) {
-          return setAttributes({ text: text });
-        }
-      })
-    );
-  },
-  save: function save(props) {
-    var _props$attributes2 = props.attributes,
-        headline = _props$attributes2.headline,
-        text = _props$attributes2.text;
-
-    return wp.element.createElement(
-      "div",
-      null,
-      wp.element.createElement(RichText.Content, { value: headline, tagName: "h2" }),
-      wp.element.createElement(RichText.Content, { value: text, tagName: "div" })
-    );
-  }
-}));
-
-/***/ }),
-/* 126 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 127 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__icon__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_CoreData__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_ListItemsSelect__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_ListItemsWithSelect__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_ListItemsWithCompose__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_ListItemsSubscribe__ = __webpack_require__(134);
-var __ = wp.i18n.__;
-var registerBlockType = wp.blocks.registerBlockType;
-var Fragment = wp.element.Fragment;
-
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
 
 
 
@@ -4734,67 +4617,36 @@ var Fragment = wp.element.Fragment;
 
 
 /* unused harmony default export */ var _unused_webpack_default_export = (registerBlockType("jsforwpadvblocks/data-example", {
-<<<<<<< HEAD
   title: __("Data API Example", "jsforwpadvblocks"),
   description: __("Demo of select, subscribe, dispatch, withSelect, withDispatch and compose", "jsforwpadvblocks"),
-=======
-  title: __("Data Example", "jsforwpadvblocks"),
-  description: __("Demo of select, distaptch, withSelect and withDispatch", "jsforwpadvblocks"),
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
   category: "jsforwpadvblocks",
   icon: __WEBPACK_IMPORTED_MODULE_0__icon__["a" /* default */],
   attributes: {},
   edit: function edit(props) {
-<<<<<<< HEAD
     var className = props.className;
 
     return wp.element.createElement(
       "div",
       { className: className },
-      wp.element.createElement(
-        "p",
-        null,
-        __("Data API Example", "jsforwpadvblocks")
-      ),
       wp.element.createElement(__WEBPACK_IMPORTED_MODULE_2__components_SelectDemo__["a" /* default */], null),
       wp.element.createElement(__WEBPACK_IMPORTED_MODULE_3__components_SubscribeDemo__["a" /* default */], null),
-      wp.element.createElement(__WEBPACK_IMPORTED_MODULE_4__components_WithSelectDemo__["a" /* default */], { text: "TEST" }),
+      wp.element.createElement(__WEBPACK_IMPORTED_MODULE_4__components_WithSelectDemo__["a" /* default */], null),
       wp.element.createElement(__WEBPACK_IMPORTED_MODULE_5__components_DispatchDemo__["a" /* default */], null),
       wp.element.createElement(__WEBPACK_IMPORTED_MODULE_6__components_WithDispatchDemo__["a" /* default */], null),
       wp.element.createElement(__WEBPACK_IMPORTED_MODULE_7__components_WithComposeDemo__["a" /* default */], null)
-=======
-    return wp.element.createElement(
-      Fragment,
-      null,
-      wp.element.createElement(__WEBPACK_IMPORTED_MODULE_5__components_ListItemsSubscribe__["a" /* default */], null)
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
     );
   },
   save: function save(props) {
     return wp.element.createElement(
-<<<<<<< HEAD
-      "div",
-      null,
-      wp.element.createElement(
-        "p",
-        null,
-        __("Data API Example", "jsforwpadvblocks")
-      )
-=======
       "p",
       null,
-      "DATA"
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
+      __("Data API Example", "jsforwpadvblocks")
     );
   }
 }));
 
 /***/ }),
-<<<<<<< HEAD
 /* 126 */
-=======
-/* 128 */
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4812,7 +4664,6 @@ var icon = wp.element.createElement(
 /* harmony default export */ __webpack_exports__["a"] = (icon);
 
 /***/ }),
-<<<<<<< HEAD
 /* 127 */
 /***/ (function(module, exports) {
 
@@ -4827,25 +4678,13 @@ var __ = wp.i18n.__;
 var select = wp.data.select;
 
 
-var SelectDemo = function SelectDemo(prop) {
+var SelectDemo = function SelectDemo(props) {
   var blockCount = select("core/editor").getBlockCount();
 
-=======
-/* 129 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var Component = wp.element.Component;
-var select = wp.data.select;
-
-
-var CoreData = function CoreData() {
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
   return wp.element.createElement(
     "div",
     null,
     wp.element.createElement(
-<<<<<<< HEAD
       "pre",
       null,
       wp.element.createElement(
@@ -4860,16 +4699,10 @@ var CoreData = function CoreData() {
       __("Block Count:", "jsforwpadvblocks"),
       " ",
       blockCount
-=======
-      "h3",
-      null,
-      "Core Data"
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
     )
   );
 };
 
-<<<<<<< HEAD
 /* harmony default export */ __webpack_exports__["a"] = (SelectDemo);
 
 /***/ }),
@@ -4970,16 +4803,12 @@ var SubscribeDemo = function (_Component) {
 }(Component);
 
 /* harmony default export */ __webpack_exports__["a"] = (SubscribeDemo);
-=======
-/* unused harmony default export */ var _unused_webpack_default_export = (CoreData);
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
 
 /***/ }),
 /* 130 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-<<<<<<< HEAD
 var __ = wp.i18n.__;
 var withSelect = wp.data.withSelect;
 
@@ -5029,21 +4858,10 @@ var _wp$data = wp.data,
 
 var DispatchDemo = function DispatchDemo(_ref) {
   var blocks = _ref.blocks;
-=======
-var Component = wp.element.Component;
-var select = wp.data.select;
-
-
-var ListItemsSelect = function ListItemsSelect(_ref) {
-  var heading = _ref.heading;
-
-  var blocks = select("core/editor").getBlocks();
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
   return wp.element.createElement(
     "div",
     null,
     wp.element.createElement(
-<<<<<<< HEAD
       "pre",
       null,
       wp.element.createElement(
@@ -5051,11 +4869,6 @@ var ListItemsSelect = function ListItemsSelect(_ref) {
         null,
         "dispatch()"
       )
-=======
-      "h3",
-      null,
-      heading
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
     ),
     wp.element.createElement(
       "ul",
@@ -5063,7 +4876,6 @@ var ListItemsSelect = function ListItemsSelect(_ref) {
       blocks.map(function (block) {
         return wp.element.createElement(
           "li",
-<<<<<<< HEAD
           { key: block.clientId },
           block.name,
           " ",
@@ -5077,17 +4889,12 @@ var ListItemsSelect = function ListItemsSelect(_ref) {
             },
             __("X", "jsforwpadvblocks")
           )
-=======
-          null,
-          block.name
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
         );
       })
     )
   );
 };
 
-<<<<<<< HEAD
 /* harmony default export */ __webpack_exports__["a"] = (withSelect(function (select) {
   return {
     blocks: select("core/editor").getBlocks()
@@ -5109,33 +4916,12 @@ var _wp$data = wp.data,
 
 
 
-var DispatchDemo = function DispatchDemo(_ref) {
+var WithDispatchDemo = function WithDispatchDemo(_ref) {
   var blocks = _ref.blocks;
-=======
-/* unused harmony default export */ var _unused_webpack_default_export = (ListItemsSelect);
-
-/***/ }),
-/* 131 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ButtonWithDispatch__ = __webpack_require__(132);
-var Component = wp.element.Component;
-var withSelect = wp.data.withSelect;
-
-// import DeleteButton from "./ButtonDispatch";
-
-
-
-var ListItemsWithSelect = function ListItemsWithSelect(_ref) {
-  var blocks = _ref.blocks,
-      heading = _ref.heading;
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
   return wp.element.createElement(
     "div",
     null,
     wp.element.createElement(
-<<<<<<< HEAD
       "pre",
       null,
       wp.element.createElement(
@@ -5143,11 +4929,6 @@ var ListItemsWithSelect = function ListItemsWithSelect(_ref) {
         null,
         "withDispatch(()=>{})(WithDispatchDemo)"
       )
-=======
-      "h3",
-      null,
-      heading
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
     ),
     wp.element.createElement(
       "ul",
@@ -5155,42 +4936,23 @@ var ListItemsWithSelect = function ListItemsWithSelect(_ref) {
       blocks.map(function (block) {
         return wp.element.createElement(
           "li",
-<<<<<<< HEAD
           { key: block.clientId },
           block.name,
           wp.element.createElement(__WEBPACK_IMPORTED_MODULE_0__DeleteButton__["a" /* default */], { clientId: block.clientId })
-=======
-          null,
-          block.name,
-          " ",
-          wp.element.createElement(__WEBPACK_IMPORTED_MODULE_0__ButtonWithDispatch__["a" /* default */], { clientId: block.clientId })
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
         );
       })
     )
   );
 };
 
-<<<<<<< HEAD
 /* harmony default export */ __webpack_exports__["a"] = (withSelect(function (select) {
   return {
     blocks: select("core/editor").getBlocks()
   };
-})(DispatchDemo));
+})(WithDispatchDemo));
 
 /***/ }),
 /* 133 */
-=======
-/* unused harmony default export */ var _unused_webpack_default_export = (withSelect(function (select, ownProps) {
-  // console.log(ownProps);
-  return {
-    blocks: select("core/editor").getBlocks()
-  };
-})(ListItemsWithSelect));
-
-/***/ }),
-/* 132 */
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5202,20 +4964,12 @@ var withDispatch = wp.data.withDispatch;
 var DeleteButton = function DeleteButton(_ref) {
   var clientId = _ref.clientId,
       removeBlock = _ref.removeBlock;
-<<<<<<< HEAD
-=======
-
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
   return wp.element.createElement(
     Button,
     {
       className: "is-button is-default",
       onClick: function onClick() {
-<<<<<<< HEAD
         removeBlock(clientId);
-=======
-        return removeBlock(clientId);
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
       }
     },
     __("X", "jsforwpadvblocks")
@@ -5223,26 +4977,17 @@ var DeleteButton = function DeleteButton(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (withDispatch(function (dispatch, ownProps) {
-<<<<<<< HEAD
-=======
-  var removeBlock = dispatch("core/editor").removeBlock;
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
   return {
     removeBlock: dispatch("core/editor").removeBlock
   };
 })(DeleteButton));
 
 /***/ }),
-<<<<<<< HEAD
 /* 134 */
-=======
-/* 133 */
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 var __ = wp.i18n.__;
-<<<<<<< HEAD
 var Button = wp.components.Button;
 var _wp$data = wp.data,
     withSelect = _wp$data.withSelect,
@@ -5251,24 +4996,12 @@ var compose = wp.compose.compose;
 
 
 var WithComposeDemo = function WithComposeDemo(_ref) {
-=======
-var Component = wp.element.Component;
-var compose = wp.compose.compose;
-var _wp$data = wp.data,
-    withSelect = _wp$data.withSelect,
-    withDispatch = _wp$data.withDispatch;
-var Button = wp.components.Button;
-
-
-var ListItemsWithCompose = function ListItemsWithCompose(_ref) {
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
   var blocks = _ref.blocks,
       removeBlock = _ref.removeBlock;
   return wp.element.createElement(
     "div",
     null,
     wp.element.createElement(
-<<<<<<< HEAD
       "pre",
       null,
       wp.element.createElement(
@@ -5276,11 +5009,6 @@ var ListItemsWithCompose = function ListItemsWithCompose(_ref) {
         null,
         "compose([])(WithComposeDemo)"
       )
-=======
-      "h3",
-      null,
-      __("With Compose", "jsforwpadvblocks")
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
     ),
     wp.element.createElement(
       "ul",
@@ -5288,14 +5016,8 @@ var ListItemsWithCompose = function ListItemsWithCompose(_ref) {
       blocks.map(function (block) {
         return wp.element.createElement(
           "li",
-<<<<<<< HEAD
           { key: block.clientId },
           block.name,
-=======
-          null,
-          block.name,
-          " ",
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
           wp.element.createElement(
             Button,
             {
@@ -5312,11 +5034,7 @@ var ListItemsWithCompose = function ListItemsWithCompose(_ref) {
   );
 };
 
-<<<<<<< HEAD
 /* harmony default export */ __webpack_exports__["a"] = (compose([withSelect(function (select) {
-=======
-/* unused harmony default export */ var _unused_webpack_default_export = (compose([withSelect(function (select) {
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
   return {
     blocks: select("core/editor").getBlocks()
   };
@@ -5324,473 +5042,7 @@ var ListItemsWithCompose = function ListItemsWithCompose(_ref) {
   return {
     removeBlock: dispatch("core/editor").removeBlock
   };
-<<<<<<< HEAD
 })])(WithComposeDemo));
-=======
-})])(ListItemsWithCompose));
-
-/***/ }),
-/* 134 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_get_prototype_of__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_get_prototype_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_get_prototype_of__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_classCallCheck__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_classCallCheck___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_classCallCheck__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_createClass__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_createClass___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_createClass__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_possibleConstructorReturn__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_possibleConstructorReturn___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_possibleConstructorReturn__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_inherits__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_inherits___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_inherits__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__selectors__ = __webpack_require__(194);
-
-
-
-
-
-var Component = wp.element.Component;
-var _wp$data = wp.data,
-    subscribe = _wp$data.subscribe,
-    select = _wp$data.select,
-    dispatch = _wp$data.dispatch;
-var Button = wp.components.Button;
-
-
-
-
-var ListItemsSubscribe = function (_Component) {
-  __WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_inherits___default()(ListItemsSubscribe, _Component);
-
-  function ListItemsSubscribe() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_classCallCheck___default()(this, ListItemsSubscribe);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_possibleConstructorReturn___default()(this, (_ref = ListItemsSubscribe.__proto__ || __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_get_prototype_of___default()(ListItemsSubscribe)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      blockCount: select("core/editor").getBlockCount()
-    }, _temp), __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_possibleConstructorReturn___default()(_this, _ret);
-  }
-
-  __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_createClass___default()(ListItemsSubscribe, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      var unsubscribe = subscribe(function () {
-        var blockCount = select("core/editor").getBlockCount();
-        _this2.setState({ blockCount: blockCount });
-        // core();
-        // coreBlocks();
-        // coreEditor();
-        // coreEditPost();
-        // coreNotices();
-        // coreNux();
-        Object(__WEBPACK_IMPORTED_MODULE_5__selectors__["a" /* coreViewport */])();
-      });
-    }
-
-    //   console.log(blocks);
-
-  }, {
-    key: "render",
-    value: function render() {
-      return wp.element.createElement(
-        "div",
-        null,
-        wp.element.createElement(
-          "p",
-          null,
-          "Block Count: ",
-          this.state.blockCount
-        ),
-        wp.element.createElement(
-          Button,
-          {
-            onClick: function onClick() {
-              dispatch("core/nux").triggerGuide(["core/editor.inserter", "core/editor.settings", "core/editor.preview", "core/editor.publish"]);
-            }
-          },
-          "Trigger Guide"
-        )
-      );
-    }
-  }]);
-
-  return ListItemsSubscribe;
-}(Component);
-
-/* harmony default export */ __webpack_exports__["a"] = (ListItemsSubscribe);
-
-/***/ }),
-/* 135 */,
-/* 136 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss__ = __webpack_require__(137);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__style_scss__);
-var registerBlockStyle = wp.blocks.registerBlockStyle;
-
-
-
-
-registerBlockStyle("core/quote", {
-  name: "colorful-quote",
-  label: "Colorful Quote"
-});
-
-registerBlockStyle("jsforwpadvblocks/shoutout-styles", {
-  name: "default",
-  label: "Default"
-});
-
-registerBlockStyle("jsforwpadvblocks/shoutout-styles", {
-  name: "serious",
-  label: "Serious"
-});
-
-registerBlockStyle("jsforwpadvblocks/shoutout-styles", {
-  name: "colorful",
-  label: "Colorful"
-});
-
-/***/ }),
-/* 137 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 138 */,
-/* 139 */,
-/* 140 */,
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */,
-/* 167 */,
-/* 168 */,
-/* 169 */,
-/* 170 */,
-/* 171 */,
-/* 172 */,
-/* 173 */,
-/* 174 */,
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */,
-/* 181 */,
-/* 182 */,
-/* 183 */,
-/* 184 */,
-/* 185 */,
-/* 186 */,
-/* 187 */,
-/* 188 */,
-/* 189 */,
-/* 190 */,
-/* 191 */,
-/* 192 */,
-/* 193 */,
-/* 194 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export core */
-/* unused harmony export coreBlocks */
-/* unused harmony export coreEditor */
-/* unused harmony export coreEditPost */
-/* unused harmony export coreNotices */
-/* unused harmony export coreNux */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return coreViewport; });
-var _wp$data = wp.data,
-    select = _wp$data.select,
-    dispatch = _wp$data.dispatch;
-
-var core = function core() {
-  console.group("wp.data.select('core')");
-  console.log("getAuthors: ", select("core").getAuthors());
-  console.log("getEmbedPreview: ", select("core").getEmbedPreview());
-  console.log("getEntity: ", select("core").getEntity("postType", "post"));
-  console.log("getEntity2: ", select("core").getEntity("root", "postType"));
-  console.log("getEntityRecord: ", select("core").getEntityRecord("postType", "post", 628));
-  console.log("getEntityRecords: ", select("core").getEntityRecords("postType", "post"));
-  console.log("getMediaItems: ", select("core").getMediaItems());
-  console.log("getMedia: ", select("core").getMedia(10));
-  console.log("getPostTypes: ", select("core").getPostTypes());
-  console.log("getPostType: ", select("core").getPostType("post"));
-  console.log("getTaxonomies: ", select("core").getTaxonomies());
-  console.log("getTaxonomy: ", select("core").getTaxonomy("category"));
-  console.log("getThemeSupports: ", select("core").getThemeSupports());
-  // Still not sure how this works, or if only internal?
-  console.log("getUserQueryResults: ", select("core").getUserQueryResults("author"));
-  console.log("hasUploadPermissions: ", select("core").hasUploadPermissions());
-  console.log("isPreviewEmbedFallback: ", select("core").isPreviewEmbedFallback());
-  console.log("isRequestingEmbedPreview: ", select("core").isRequestingEmbedPreview());
-  console.groupEnd();
-};
-
-var coreBlocks = function coreBlocks() {
-  console.group('wp.data.select("core/blocks")');
-  console.log("getBlockStyles", select("core/blocks").getBlockStyles("core/quote"));
-  // Not sure how to get working for core blocks
-  console.log("getBlockSupport", select("core/blocks").getBlockSupport("jsforwpadvblocks/gallery", "align"));
-  console.log("getBlockType", select("core/blocks").getBlockType("core/quote"));
-  console.log("getBlockTypes", select("core/blocks").getBlockTypes());
-  console.log("getCategories", select("core/blocks").getCategories());
-  console.log("getChildBlockNames", select("core/blocks").getChildBlockNames("kadence/rowlayout"));
-  console.log("getDefaultBlockName", select("core/blocks").getDefaultBlockName());
-  console.log("getFreeformFallbackBlockName", select("core/blocks").getFreeformFallbackBlockName());
-  console.log("getUnregisteredFallbackBlockName", select("core/blocks").getUnregisteredFallbackBlockName());
-  // How to get working for core blocks
-  console.log("hasBlockSupport", select("core/blocks").hasBlockSupport("jsforwpadvblocks/gallery", "align"));
-  console.log("hasChildBlocks", select("core/blocks").hasChildBlocks("kadence/rowlayout"));
-  console.log("hasChildBlocksWithInserterSupport", select("core/blocks").hasChildBlocksWithInserterSupport("kadence/rowlayout"));
-  console.groupEnd();
-};
-
-var coreEditor = function coreEditor() {
-  console.group("core/editor");
-  console.log("canInsertBlockType", select("core/editor").canInsertBlockType("core/paragraph"));
-
-  // Uses logged in user
-  console.log("canUserUseUnfilteredHTML", select("core/editor").canUserUseUnfilteredHTML());
-
-  console.log("didPostSaveRequestFail", select("core/editor").didPostSaveRequestFail());
-
-  console.log("didPostSaveRequestSucceed", select("core/editor").didPostSaveRequestSucceed());
-
-  console.log("getActivePostLock", select("core/editor").getActivePostLock());
-  console.log("getAdjacentBlockClientId", select("core/editor").getAdjacentBlockClientId());
-  console.log("getAutosave", select("core/editor").getAutosave());
-  console.log("getAutosaveAttribute", select("core/editor").getAutosaveAttribute());
-  console.log("getBlock", select("core/editor").getBlock());
-  console.log("getBlockAttributes", select("core/editor").getBlockAttributes());
-  console.log("getBlockCount", select("core/editor").getBlockCount());
-  console.log("getBlockDependantsCacheBust", select("core/editor").getBlockDependantsCacheBust());
-  console.log("getBlockHierarchyRootClientId", select("core/editor").getBlockHierarchyRootClientId());
-  console.log("getBlockIndex", select("core/editor").getBlockIndex());
-  console.log("getBlockIndex", select("core/editor").getBlockIndex());
-  console.log("getBlockInsertionPoint", select("core/editor").getBlockInsertionPoint());
-  console.log("getBlockListSettings", select("core/editor").getBlockListSettings());
-  console.log("getBlockMode", select("core/editor").getBlockMode());
-  console.log("getBlockName", select("core/editor").getBlockName());
-  console.log("getBlockOrder", select("core/editor").getBlockOrder());
-  console.log("getBlockRootClientId", select("core/editor").getBlockRootClientId());
-  console.log("getBlockSelectionEnd", select("core/editor").getBlockSelectionEnd());
-  console.log("getBlockSelectionEnd", select("core/editor").getBlockSelectionEnd());
-  console.log("getBlockSelectionStart", select("core/editor").getBlockSelectionStart());
-  console.log("getBlocks", select("core/editor").getBlocks());
-  console.log("getBlocksByClientId", select("core/editor").getBlocksByClientId());
-  console.log("getBlocksForSerialization", select("core/editor").getBlocksForSerialization());
-  console.log("getClientIdsOfDescendants", select("core/editor").getClientIdsOfDescendants());
-  console.log("getClientIdsWithDescendants", select("core/editor").getClientIdsWithDescendants());
-  console.log("getCurrentPost", select("core/editor").getCurrentPost());
-
-  // Takes as a parameter any property from getCurrentPost()
-  console.log("getCurrentPostAttribute", select("core/editor").getCurrentPostAttribute("id"));
-  console.log("getCurrentPostId", select("core/editor").getCurrentPostId());
-  console.log("getCurrentPostLastRevisionId", select("core/editor").getCurrentPostLastRevisionId());
-  console.log("getCurrentPostRevisionsCount", select("core/editor").getCurrentPostRevisionsCount());
-  console.log("getCurrentPostType", select("core/editor").getCurrentPostType());
-  console.log("getEditedPostAttribute", select("core/editor").getEditedPostAttribute());
-  // getEditedPostAttribute
-  // getEditedPostContent
-  // getEditedPostPreviewLink
-  // getEditedPostVisibility
-
-  // getEditorSettings
-  console.log("getEditorSettings", select("core/editor").getEditorSettings());
-  // getFirstMultiSelectedBlockClientId
-
-  // Includes inner blocks VS getBlockCount is
-  // just parent blocks
-  console.log("getGlobalBlockCount", select("core/editor").getGlobalBlockCount());
-  // getInserterItems
-  console.log("getInserterItems", select("core/editor").getInserterItems());
-  // getLastMultiSelectedBlockClientId
-  // getMultiSelectedBlockClientIds
-  // getMultiSelectedBlocks
-  console.log("getMultiSelectedBlocks", select("core/editor").getMultiSelectedBlocks());
-
-  // getMultiSelectedBlocksEndClientId
-  // getMultiSelectedBlocksStartClientId
-  // getNextBlockClientId
-  console.log("getNextBlockClientId", select("core/editor").getNextBlockClientId());
-  // getPermalink
-  console.log("getPermalink", select("core/editor").getPermalink());
-  // getPermalinkParts
-  console.log("getPermalinkParts", select("core/editor").getPermalinkParts());
-
-  // getPostEdits
-  // getPostLockUser
-  // getPreviousBlockClientId
-  // getReferenceByDistinctEdits
-  // getSelectedBlock;
-  console.log("getSelectedBlock", select("core/editor").getSelectedBlock());
-  // getSelectedBlockClientId
-  console.log("getSelectedBlockClientId", select("core/editor").getSelectedBlockClientId());
-  // getSelectedBlockCount
-  // getSelectedBlocksInitialCaretPosition - Couldn't get working
-  console.log("getSelectedBlocksInitialCaretPosition", select("core/editor").getSelectedBlocksInitialCaretPosition());
-  // getStateBeforeOptimisticTransaction
-  // getSuggestedPostFormat - Would not work in block, but would work in sidebar or outside a block.  Requires single block in editor
-  console.log("getSuggestedPostFormat", select("core/editor").getSuggestedPostFormat());
-  // getTemplate;
-  console.log("getTemplate", select("core/editor").getTemplate());
-  // getTemplateLock
-  console.log("getTemplateLock", select("core/editor").getTemplateLock());
-  // getTokenSettings - not sure what tokens to pass
-  // console.log("getTokenSettings", select("core/editor").getTokenSettings());
-  // hasAutosave
-  // hasChangedContent
-  console.log("hasChangedContent", select("core/editor").hasChangedContent("className"));
-  // hasEditorRedo
-  // hasEditorUndo
-  // hasInserterItems
-  // hasMultiSelection
-  // hasSelectedBlock
-  console.log("hasSelectedBlock", select("core/editor").hasSelectedBlock());
-  // hasSelectedInnerBlock - Seems to return false when a inner block is actually selected
-  console.log("hasSelectedInnerBlock", select("core/editor").hasSelectedInnerBlock());
-  // inSomeHistory
-  // isAncestorMultiSelected
-  // isAutosavingPost
-  // isBlockInsertionPointVisible
-  // isBlockMultiSelected
-  // isBlockSelected
-  // Takes clientID
-  console.log("isBlockSelected", select("core/editor").isBlockSelected());
-  // isBlockValid
-  // isBlockWithinSelection
-  // isCaretWithinFormattedText
-  // isCleanNewPost
-  // isCurrentPostPending
-  // isCurrentPostPublished
-  console.log("isCurrentPostPublished", select("core/editor").isCurrentPostPublished());
-  // isCurrentPostScheduled
-  // isEditedPostAutosaveable
-  // isEditedPostBeingScheduled
-  // isEditedPostDateFloating
-  // isEditedPostDirty
-  // isEditedPostEmpty
-  // isEditedPostNew
-  console.log("isEditedPostNew", select("core/editor").isEditedPostNew());
-  // isEditedPostPublishable
-  // isEditedPostSaveable
-  // isFirstMultiSelectedBlock
-  // isMultiSelecting
-  // isPermalinkEditable
-  // isPostLockTakeover
-  // isPostLocked
-  // isPostSavingLocked
-  // isPreviewingPost - Seems to only get triggered first time
-  console.log("isPreviewingPost", select("core/editor").isPreviewingPost());
-  // isPublishSidebarEnabled
-  // isPublishingPost
-  console.log("isPublishingPost", select("core/editor").isPublishingPost());
-  // isSavingPost
-  console.log("isSavingPost", select("core/editor").isSavingPost());
-  // isSelectionEnabled
-  // isTyping - COOL.  Returns false once mouse moves (along with other things probably)
-  console.log("isTyping", select("core/editor").isTyping());
-  // isValidTemplate
-  console.groupEnd();
-};
-
-var coreEditPost = function coreEditPost() {
-  console.group("core/edit-post");
-  console.log("getActiveGeneralSidebarName", select("core/edit-post").getActiveGeneralSidebarName());
-  // getActiveMetaBoxLocations:
-  // getAllMetaBoxes:
-  // getEditorMode:
-  console.log("getEditorMode", select("core/edit-post").getEditorMode());
-
-  // getMetaBoxesPerLocation:
-  // getPreference:
-  console.log("getPreference('isGeneralSidebarDismissed)'", select("core/edit-post").getPreference("isGeneralSidebarDismissed"));
-  // getPreferences:
-  console.log("getPreferences", select("core/edit-post").getPreferences());
-  // hasMetaBoxes:
-  // isEditorPanelEnabled:
-  // isEditorPanelOpened - Works with document setting panels, not sure how to get panel name of custom panels
-  console.log("isEditorPanelOpened", select("core/edit-post").isEditorPanelOpened("discussion-panel"), select("core/edit-post").isEditorPanelOpened("featured-image"));
-  // isEditorPanelRemoved:
-  // isEditorSidebarOpened:
-  console.log("isEditorSidebarOpened", select("core/edit-post").isEditorSidebarOpened("core/edit-post"));
-  // isFeatureActive: focusMode, fixedToolbar
-  console.log("isFeatureActive", select("core/edit-post").isFeatureActive("fullscreenMode"));
-  // isMetaBoxLocationActive:
-  // isMetaBoxLocationVisible:
-  // isModalActive: ['edit-post/options']
-  console.log("isModalActive", select("core/edit-post").isModalActive("edit-post/keyboard-shortcut-help"));
-  // isPluginItemPinned:
-  console.log("isPluginItemPinned", select("core/edit-post").isPluginItemPinned("jsforwpadvgb/toc"));
-  // isPluginSidebarOpened:
-  console.log("isPluginSidebarOpened", select("core/edit-post").isPluginSidebarOpened("jsforwpadvgb/toc"));
-  // isPublishSidebarOpened:
-  console.log("isPublishSidebarOpened", select("core/edit-post").isPublishSidebarOpened());
-  // isSavingMetaBoxes:
-  console.groupEnd();
-};
-
-var coreNotices = function coreNotices() {
-  console.group("core/notices");
-  console.log("getNotices", select("core/notices").getNotices());
-  console.groupEnd();
-};
-
-var coreNux = function coreNux() {
-  console.group("core/nux");
-  console.log("areTipsEnabled", select("core/nux").areTipsEnabled());
-  // Possible core guides?
-  // "core/editor.inserter", "core/editor.settings",
-  // "core/editor.preview", "core/editor.publish"
-  console.log("getAssociatedGuide", select("core/nux").getAssociatedGuide("core/editor.settings"));
-  // console.log("isTipVisible", select("core/nux").isTipVisible());
-  console.groupEnd();
-};
-
-var coreViewport = function coreViewport() {
-  console.group("core/viewport");
-  console.log("isViewportMatch", select("core/viewport").isViewportMatch("< medium"));
-  // NOTE: ifViewportMatches HOC
-  console.groupEnd();
-};
->>>>>>> f5cb6b4e299d6f9893722582ad2f6423b4028ae5
 
 /***/ })
 /******/ ]);
