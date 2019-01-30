@@ -65,8 +65,12 @@ module.exports = {
       {
         test: /editor\.s?css$/,
         use: editBlocksCSSPlugin.extract(extractConfig)
+      },
+      {
+        test: /plugin\.s?css$/,
+        use: pluginCSSPlugin.extract(extractConfig)
       }
     ]
   },
-  plugins: [blocksCSSPlugin, editBlocksCSSPlugin]
+  plugins: [blocksCSSPlugin, editBlocksCSSPlugin, pluginCSSPlugin]
 };
