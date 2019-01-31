@@ -6,6 +6,7 @@ const { PanelBody, PanelRow } = wp.components;
 
 import icon from "./icon";
 import "./plugin.scss";
+import BlockList from "./components/BlockList";
 
 const TableOfContents = props => {
   return (
@@ -18,7 +19,9 @@ const TableOfContents = props => {
         title={__("Table of Contents", "jsforwpadvblocks")}
       >
         <PanelBody>
-          <PanelRow>{__("Table of Contents", "jsforwpadvblocks")}</PanelRow>
+          <PanelRow>
+            <BlockList />
+          </PanelRow>
         </PanelBody>
       </PluginSidebar>
     </Fragment>

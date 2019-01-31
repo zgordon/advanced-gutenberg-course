@@ -67,6 +67,7 @@ add_action( "enqueue_block_editor_assets", __NAMESPACE__ . '\plugin_assets' );
 function plugin_assets() {
 
 	$plugin_js_path = "/assets/js/plugins.editor.js";
+	$plugin_css_path = "/assets/css/plugins.editor.css";
 
 	wp_enqueue_script( 
 		"jsforwp-adv-gb-plugin-js",
@@ -74,6 +75,13 @@ function plugin_assets() {
 		$js_dependencies,
 		filemtime( _get_plugin_directory() . $plugin_js_path ),
 		true	
+	);
+
+	wp_enqueue_style(
+		'jsforwp-adv-gb-plugin-css',
+		_get_plugin_url() . $plugin_css_path,
+		[],
+		filemtime( _get_plugin_directory() . $plugin_css_path )
 	);
 
 }

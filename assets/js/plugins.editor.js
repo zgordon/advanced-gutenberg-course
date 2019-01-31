@@ -143,6 +143,7 @@ registerPlugin("jsforwpadvgb-demo", {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__icon__ = __webpack_require__(182);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__plugin_scss__ = __webpack_require__(183);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__plugin_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__plugin_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_BlockList__ = __webpack_require__(184);
 var __ = wp.i18n.__;
 var Fragment = wp.element.Fragment;
 var registerPlugin = wp.plugins.registerPlugin;
@@ -152,6 +153,7 @@ var _wp$editPost = wp.editPost,
 var _wp$components = wp.components,
     PanelBody = _wp$components.PanelBody,
     PanelRow = _wp$components.PanelRow;
+
 
 
 
@@ -178,7 +180,7 @@ var TableOfContents = function TableOfContents(props) {
         wp.element.createElement(
           PanelRow,
           null,
-          __("Table of Contents", "jsforwpadvblocks")
+          wp.element.createElement(__WEBPACK_IMPORTED_MODULE_2__components_BlockList__["a" /* default */], null)
         )
       )
     )
@@ -217,6 +219,177 @@ var icon = wp.element.createElement(
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 184:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BlockItem__ = __webpack_require__(185);
+var withSelect = wp.data.withSelect;
+
+
+
+
+var BlockList = function BlockList(_ref) {
+  var blocks = _ref.blocks;
+
+  return wp.element.createElement(
+    "ul",
+    { className: "jsforwp-toc" },
+    blocks.map(function (block) {
+      return wp.element.createElement(__WEBPACK_IMPORTED_MODULE_0__BlockItem__["a" /* default */], { block: block });
+    })
+  );
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (withSelect(function (select) {
+  return {
+    blocks: select("core/editor").getBlocks()
+  };
+})(BlockList));
+
+/***/ }),
+
+/***/ 185:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BlockButton__ = __webpack_require__(186);
+
+
+var BlockItem = function BlockItem(_ref) {
+  var block = _ref.block;
+
+  var childBlocks = null;
+
+  if (block.innerBlocks) {
+    childBlocks = block.innerBlocks.map(function (innerBlock) {
+      return wp.element.createElement(BlockItem, { block: innerBlock });
+    });
+  }
+  return wp.element.createElement(
+    "li",
+    { key: block.clientId },
+    wp.element.createElement(__WEBPACK_IMPORTED_MODULE_0__BlockButton__["a" /* default */], { block: block }),
+    childBlocks && wp.element.createElement(
+      "ul",
+      null,
+      childBlocks
+    )
+  );
+};
+/* harmony default export */ __webpack_exports__["a"] = (BlockItem);
+
+/***/ }),
+
+/***/ 186:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_classnames__ = __webpack_require__(187);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_classnames__);
+var getBlockType = wp.blocks.getBlockType;
+var Button = wp.components.Button;
+var _wp$data = wp.data,
+    dispatch = _wp$data.dispatch,
+    withSelect = _wp$data.withSelect;
+
+
+
+
+var BlockButton = function BlockButton(_ref) {
+  var block = _ref.block,
+      isBlockSelected = _ref.isBlockSelected;
+
+  var blockType = getBlockType(block.name);
+  return wp.element.createElement(
+    Button,
+    {
+      className: __WEBPACK_IMPORTED_MODULE_0_classnames___default()("editor-block-navigation__item-button", {
+        "is-selected": isBlockSelected
+      }),
+      onClick: function onClick() {
+        return dispatch("core/editor").selectBlock(block.clientId);
+      }
+    },
+    wp.element.createElement(
+      "span",
+      { className: "editor-block-icon has-colors" },
+      blockType.icon.src
+    ),
+    blockType.title
+  );
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (withSelect(function (select, ownProps) {
+  var clientId = ownProps.block.clientId;
+
+  return {
+    isBlockSelected: select("core/editor").isBlockSelected(clientId)
+  };
+})(BlockButton));
+
+/***/ }),
+
+/***/ 187:
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+  Copyright (c) 2017 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames () {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg) && arg.length) {
+				var inner = classNames.apply(null, arg);
+				if (inner) {
+					classes.push(inner);
+				}
+			} else if (argType === 'object') {
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (typeof module !== 'undefined' && module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else if (true) {
+		// register as 'classnames', consistent with npm package name
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+			return classNames;
+		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else {
+		window.classNames = classNames;
+	}
+}());
+
 
 /***/ })
 
