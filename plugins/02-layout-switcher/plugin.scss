@@ -1,11 +1,5 @@
-.jsforwp-toc li {
-    margin: 0 0 0 0;
-    list-style-position: inside;
-    font-size: 1rem;
-}
-.jsforwp-toc li ul {
-    margin-left: 16px; 
-}
-.jsforwp-toc li span {
-
+.layout-switcher {
+    display: grid;
+    grid-template-columns: 100px 100px;
+    grid-gap: 2px;
 }

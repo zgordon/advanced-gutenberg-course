@@ -59,3 +59,7 @@ msgstr ""
 #: plugins/02-layout-switcher/index.js:42
 msgid "JS for WP TOC"
 msgstr ""
+
+#: plugins/02-layout-switcher/index.js:48
+msgid "Layouts"
+msgstr ""

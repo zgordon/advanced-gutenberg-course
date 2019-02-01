@@ -2,15 +2,16 @@ const { registerPlugin } = wp.plugins;
 const { getBlockType, createBlock } = wp.blocks;
 const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
 const { Fragment, Component } = wp.element;
-const { Button, IconButton, PanelBody, PanelRow } = wp.components;
+const { Button, IconButton, Icon, PanelBody, PanelRow } = wp.components;
 const { withSelect, withDispatch } = wp.data;
 const { compose } = wp.compose;
 const { __ } = wp.i18n;
 
+import icons from "./icons";
 import "./plugin.scss";
 import classnames from "classnames";
 
-const TableOfContents = ({
+const LayoutSwitcher = ({
   getBlocks,
   insertBlocks,
   insertBlock,
@@ -35,55 +36,45 @@ const TableOfContents = ({
       createBlock("core/paragraph", { placeholder: "Outro text" })
     ]
   };
-  // console.log(coverBlock);
   return (
     <Fragment>
-      <PluginSidebarMoreMenuItem icon="edit" target="jsforwp-layout-switcher">
+      <PluginSidebarMoreMenuItem target="jsforwpadvgb-layout-switcher">
         {__("JS for WP TOC", "jsforwpadvblocks")}
       </PluginSidebarMoreMenuItem>
       <PluginSidebar
-        icon="edit"
         name="jsforwp-layout-switcher"
         title="JS for WP Layout Switcher"
       >
-        {/* <p>
-          <Button
-            className="components-button is-button is-default"
-            onClick={() => removeBlocks(blockIds)}
-          >
-            Remove Blocks
-          </Button>
-        </p> */}
-
-        <p>
-          <Button
-            className="components-button is-button"
-            onClick={() => {
-              removeBlocks(blockIds);
-              insertBlocks(layouts.hero);
-            }}
-          >
-            Hero Layout
-          </Button>
-        </p>
-
-        <p>
-          <Button
-            className="components-button is-button"
-            onClick={() => {
-              removeBlocks(blockIds);
-              insertBlocks(layouts.featured);
-            }}
-          >
-            Featured Layout
-          </Button>
-        </p>
+        <PanelBody title={__("Layouts", "jsforwpadvblocks")} opened>
+          <PanelRow className="layout-switcher">
+            <Button
+              className="is-button switcher-button"
+              onClick={() => {
+                removeBlocks(blockIds);
+                insertBlocks(layouts.hero);
+              }}
+            >
+              <Icon icon={icons.hero} />
+              Hero Layout
+            </Button>
+            <Button
+              className="components-button is-button switcher-button"
+              onClick={() => {
+                removeBlocks(blockIds);
+                insertBlocks(layouts.featured);
+              }}
+            >
+              {icons.featured}
+              Featured Layout
+            </Button>
+          </PanelRow>
+        </PanelBody>
       </PluginSidebar>
     </Fragment>
   );
 };
 
-const TOC = compose(
+const LayoutSwitcherWithCompose = compose(
   withDispatch((dispatch, ownProps) => {
     const { removeBlocks, insertBlocks, insertBlock } = dispatch("core/editor");
     return {
@@ -98,9 +89,9 @@ const TOC = compose(
       getBlocks: select("core/editor").getBlocks
     };
   })
-)(TableOfContents);
+)(LayoutSwitcher);
 
-const TocList = registerPlugin("jsforwp-layout-switcher", {
-  icon: "edit",
-  render: TOC
+registerPlugin("jsforwpadvgb-layout-switcher", {
+  icon: icons.switcher,
+  render: LayoutSwitcherWithCompose
 });
