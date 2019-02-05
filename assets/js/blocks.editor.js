@@ -4285,14 +4285,16 @@ $export($export.S, 'Object', { create: __webpack_require__(28) });
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__01_gallery__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__02_data_example__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__03_shoutout_styles__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__block_styles__ = __webpack_require__(194);
 /**
  * Import example blocks
  */
 
 
-// import "./03-shoutout-styles";
 
-// import "./block-styles";
+
+
 
 /***/ }),
 /* 118 */
@@ -5043,6 +5045,193 @@ var WithComposeDemo = function WithComposeDemo(_ref) {
     removeBlock: dispatch("core/editor").removeBlock
   };
 })])(WithComposeDemo));
+
+/***/ }),
+/* 135 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__style_scss__);
+/**
+ * Block dependencies
+ */
+// import icons from "./icons";
+
+// import "./editor.scss";
+
+/**
+ * Internal block libraries
+ */
+var Fragment = wp.element.Fragment;
+var __ = wp.i18n.__;
+var registerBlockType = wp.blocks.registerBlockType;
+var RichText = wp.editor.RichText;
+
+/**
+ * Register example block
+ */
+
+/* unused harmony default export */ var _unused_webpack_default_export = (registerBlockType("jsforwpadvblocks/shoutout-styles", {
+  title: __("Shoutout", "jsforwpadvblocks"),
+  description: __("An example block for working with Styles API.", "jsforwpadvblocks"),
+  category: "jsforwpadvblocks",
+  icon: {
+    // background: "rgba(254, 243, 224, 0.52)",
+    src: "edit"
+  },
+  keywords: [__("Call to Action", "jsforwpadvblocks")],
+  attributes: {
+    headline: {
+      type: "string"
+    },
+    text: {
+      type: "html"
+    }
+  },
+  edit: function edit(props) {
+    var _props$attributes = props.attributes,
+        headline = _props$attributes.headline,
+        text = _props$attributes.text,
+        className = props.className,
+        setAttributes = props.setAttributes,
+        isSelected = props.isSelected;
+
+
+    return wp.element.createElement(
+      "div",
+      { className: className },
+      wp.element.createElement(RichText, {
+        value: headline,
+        tagName: "h2",
+        placeholder: __("Headline", "jsforwpadvblocks"),
+        onChange: function onChange(headline) {
+          return setAttributes({ headline: headline });
+        }
+      }),
+      wp.element.createElement(RichText, {
+        value: text,
+        placeholder: __("Shoutout Text", "jsforwpadvblocks"),
+        onChange: function onChange(text) {
+          return setAttributes({ text: text });
+        }
+      })
+    );
+  },
+  save: function save(props) {
+    var _props$attributes2 = props.attributes,
+        headline = _props$attributes2.headline,
+        text = _props$attributes2.text;
+
+    return wp.element.createElement(
+      "div",
+      null,
+      wp.element.createElement(RichText.Content, { value: headline, tagName: "h2" }),
+      wp.element.createElement(RichText.Content, { value: text, tagName: "div" })
+    );
+  }
+}));
+
+/***/ }),
+/* 136 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */,
+/* 141 */,
+/* 142 */,
+/* 143 */,
+/* 144 */,
+/* 145 */,
+/* 146 */,
+/* 147 */,
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */,
+/* 167 */,
+/* 168 */,
+/* 169 */,
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */,
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */,
+/* 184 */,
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */,
+/* 193 */,
+/* 194 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__style_scss__);
+var registerBlockStyle = wp.blocks.registerBlockStyle;
+
+
+
+
+registerBlockStyle("core/quote", {
+  name: "colorful-quote",
+  label: "Colorful Quote"
+});
+
+registerBlockStyle("jsforwpadvblocks/shoutout-styles", {
+  name: "default",
+  label: "Default"
+});
+
+registerBlockStyle("jsforwpadvblocks/shoutout-styles", {
+  name: "serious",
+  label: "Serious"
+});
+
+registerBlockStyle("jsforwpadvblocks/shoutout-styles", {
+  name: "colorful",
+  label: "Colorful"
+});
+
+/***/ }),
+/* 195 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

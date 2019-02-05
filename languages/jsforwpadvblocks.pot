@@ -63,6 +63,26 @@ msgstr ""
 msgid "Data API Example"
 msgstr ""
 
+#: blocks/03-shoutout-styles/index.js:20
+msgid "Shoutout"
+msgstr ""
+
+#: blocks/03-shoutout-styles/index.js:21
+msgid "An example block for working with Styles API."
+msgstr ""
+
+#: blocks/03-shoutout-styles/index.js:30
+msgid "Call to Action"
+msgstr ""
+
+#: blocks/03-shoutout-styles/index.js:61
+msgid "Headline"
+msgstr ""
+
+#: blocks/03-shoutout-styles/index.js:66
+msgid "Shoutout Text"
+msgstr ""
+
 #: plugins/01-plugin-sidebar-demo/index.js:20
 msgid "Sidebar Header"
 msgstr ""
