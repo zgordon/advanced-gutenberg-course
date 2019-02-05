@@ -253,8 +253,8 @@ var TocList = registerPlugin("jsforwptoc", {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__icons__ = __webpack_require__(187);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__plugin_scss__ = __webpack_require__(182);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__icons__ = __webpack_require__(182);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__plugin_scss__ = __webpack_require__(183);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__plugin_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__plugin_scss__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_classnames__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_classnames__);
@@ -320,21 +320,23 @@ var LayoutSwitcher = function LayoutSwitcher(_ref) {
           PanelRow,
           { className: "layout-switcher" },
           wp.element.createElement(
-            Button,
+            "button",
             {
-              className: "is-button switcher-button",
               onClick: function onClick() {
                 removeBlocks(blockIds);
                 insertBlocks(layouts.hero);
               }
             },
             wp.element.createElement(Icon, { icon: __WEBPACK_IMPORTED_MODULE_0__icons__["a" /* default */].hero }),
-            "Hero Layout"
+            wp.element.createElement(
+              "span",
+              null,
+              "Hero Layout"
+            )
           ),
           wp.element.createElement(
             Button,
             {
-              className: "components-button is-button switcher-button",
               onClick: function onClick() {
                 removeBlocks(blockIds);
                 insertBlocks(layouts.featured);
@@ -375,13 +377,6 @@ registerPlugin("jsforwpadvgb-layout-switcher", {
 /***/ }),
 
 /***/ 182:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 187:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -400,8 +395,8 @@ icons.switcher = wp.element.createElement(
 icons.hero = wp.element.createElement(
   "svg",
   {
-    width: "20px",
-    height: "20px",
+    width: "40px",
+    height: "40px",
     viewBox: "0 0 100 100",
     xmlns: "http://www.w3.org/2000/svg"
   },
@@ -410,8 +405,8 @@ icons.hero = wp.element.createElement(
 icons.featured = wp.element.createElement(
   "svg",
   {
-    width: "20px",
-    height: "20px",
+    width: "40px",
+    height: "40px",
     viewBox: "0 0 100 100",
     xmlns: "http://www.w3.org/2000/svg"
   },
@@ -420,6 +415,13 @@ icons.featured = wp.element.createElement(
   wp.element.createElement("path", { d: "m94.039 34.57h-0.035156c-4.6211 0.039063-9.2422 0.074219-13.867 0.11328-5.2383 0.042968-10.48 0.085937-15.723 0.12891-2.6719-9.4766-5.3438-18.953-8.0156-28.43-1.6875-5.9844-10.023-5.7188-11.832 0-2.9453 9.3281-5.8945 18.656-8.8438 27.984-5.1914-0.20313-10.383-0.41016-15.574-0.61328-4.3906-0.17188-8.7852-0.34766-13.176-0.51953-0.34766-0.015625-0.69531-0.027344-1.0469-0.042969-6.5898-0.26172-7.707 8.1367-3.0977 11.434 0.14844 0.10547 0.29688 0.21094 0.44141 0.31641 7.7266 5.5195 15.453 11.035 23.18 16.555-3.2461 8.793-6.4883 17.582-9.7344 26.375-0.23047 0.625-0.46094 1.2461-0.69141 1.875-1.793 4.8555 4.7461 10.078 9.0117 6.9297 0.48828-0.35938 0.98047-0.72266 1.4688-1.082 3.4414-2.5469 6.8828-5.0898 10.324-7.6289 4.1836-3.0938 8.3672-6.1836 12.547-9.2734 4.1055 3.2344 8.207 6.4727 12.312 9.707l9.5156 7.5c0.28125 0.22656 0.56641 0.44531 0.85156 0.67187 4.3555 3.4336 12.402 0.47656 10.254-5.9688-0.25781-0.77734-0.51953-1.5547-0.77734-2.3359-2.8945-8.6758-5.793-17.355-8.6914-26.035 8.0977-5.4062 16.191-10.816 24.289-16.227 0.027344-0.019531 0.046875-0.042968 0.074219-0.058594 4.8164-3.3164 3.1836-11.426-3.1641-11.375zm-31.582 19.867c-2.2109 1.4766-3.7227 4.2227-2.8164 6.9297 1.4922 4.4727 2.9844 8.9414 4.4805 13.414-3.4258-2.6992-6.8516-5.4023-10.277-8.1055-2.0117-1.5859-5.0625-2.7109-7.4336-0.96094-3.8828 2.8672-7.7617 5.7383-11.645 8.6055 1.6562-4.4844 3.3125-8.9688 4.9648-13.453 1.1289-3.0625-0.21875-5.3984-2.3828-6.582-0.14062-0.11719-0.28125-0.23438-0.4375-0.34766-3.5859-2.5625-7.1719-5.1211-10.754-7.6797 4.6719 0.18359 9.3438 0.36719 14.012 0.55469 2.7852 0.10938 5.1133-1.9688 5.918-4.5039 1.3555-4.293 2.7109-8.5859 4.0664-12.875 1.2383 4.3945 2.4766 8.7891 3.7148 13.184 0.73828 2.6133 3.1797 4.5273 5.918 4.5039 4.5977-0.035156 9.1953-0.074219 13.797-0.11328-3.7109 2.4727-7.418 4.9492-11.125 7.4297z" })
 );
 /* harmony default export */ __webpack_exports__["a"] = (icons);
+
+/***/ }),
+
+/***/ 183:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 

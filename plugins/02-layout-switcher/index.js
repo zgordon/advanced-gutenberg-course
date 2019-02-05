@@ -47,18 +47,16 @@ const LayoutSwitcher = ({
       >
         <PanelBody title={__("Layouts", "jsforwpadvblocks")} opened>
           <PanelRow className="layout-switcher">
-            <Button
-              className="is-button switcher-button"
+            <button
               onClick={() => {
                 removeBlocks(blockIds);
                 insertBlocks(layouts.hero);
               }}
             >
               <Icon icon={icons.hero} />
-              Hero Layout
-            </Button>
+              <span>Hero Layout</span>
+            </button>
             <Button
-              className="components-button is-button switcher-button"
               onClick={() => {
                 removeBlocks(blockIds);
                 insertBlocks(layouts.featured);

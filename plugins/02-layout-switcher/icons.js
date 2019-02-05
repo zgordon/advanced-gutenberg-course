@@ -12,8 +12,8 @@ icons.switcher = (
 );
 icons.hero = (
   <svg
-    width="20px"
-    height="20px"
+    width="40px"
+    height="40px"
     viewBox="0 0 100 100"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -22,8 +22,8 @@ icons.hero = (
 );
 icons.featured = (
   <svg
-    width="20px"
-    height="20px"
+    width="40px"
+    height="40px"
     viewBox="0 0 100 100"
     xmlns="http://www.w3.org/2000/svg"
   >
