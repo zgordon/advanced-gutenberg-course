@@ -1,6 +1,6 @@
 .layout-switcher {
     display: grid;
-    grid-column-gap: 1rem;
+    grid-column-gap: 1rem;    
     grid-template-columns: repeat(2, 1fr); 
 
     button {
@@ -22,4 +22,14 @@
         }
     }
     
+}
+
+.layout-switcher-reset {
+    .components-modal__header {
+        background: red;
+    }
+    h1.components-modal__header-heading {        
+        color: white;
+        font-weight: bold;
+    }
 }

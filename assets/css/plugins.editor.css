@@ -26,4 +26,11 @@
       font-size: .8rem;
       padding: 2px 0; }
 
+.layout-switcher-reset .components-modal__header {
+  background: red; }
+
+.layout-switcher-reset h1.components-modal__header-heading {
+  color: white;
+  font-weight: bold; }
+
 /*# sourceMappingURL=plugins.editor.css.map*/
