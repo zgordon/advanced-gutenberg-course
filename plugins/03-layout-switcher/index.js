@@ -1,25 +1,16 @@
-const { registerPlugin } = wp.plugins;
-const { getBlockType, createBlock } = wp.blocks;
-const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
-const { Fragment, Component } = wp.element;
-const { Button, IconButton, Icon, PanelBody, PanelRow } = wp.components;
-const { withSelect, withDispatch } = wp.data;
-const { compose } = wp.compose;
 const { __ } = wp.i18n;
+const { createBlock } = wp.blocks;
+const { registerPlugin } = wp.plugins;
+const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
+const { Fragment } = wp.element;
 
 import icons from "./icons";
 import "./plugin.scss";
-import classnames from "classnames";
+import SwitcherControls from "./components/SwitcherControls";
 
-const LayoutSwitcher = ({
-  getBlocks,
-  insertBlocks,
-  insertBlock,
-  removeBlocks,
-  blocks
-}) => {
-  const blockIds = blocks.map(block => block.clientId);
+const LayoutSwitcher = () => {
   const layouts = {
+    default: [createBlock("core/paragraph", {})],
     hero: [
       createBlock("core/cover", { align: "full" }),
       createBlock("core/button", { text: "Call to Action", align: "center" }),
@@ -39,59 +30,19 @@ const LayoutSwitcher = ({
   return (
     <Fragment>
       <PluginSidebarMoreMenuItem target="jsforwpadvgb-layout-switcher">
-        {__("JS for WP TOC", "jsforwpadvblocks")}
+        {__("Layout Switcher", "jsforwpadvblocks")}
       </PluginSidebarMoreMenuItem>
       <PluginSidebar
         name="jsforwp-layout-switcher"
-        title="JS for WP Layout Switcher"
+        title={__("Layout Switcher", "jsforwpadvblocks")}
       >
-        <PanelBody title={__("Layouts", "jsforwpadvblocks")} opened>
-          <PanelRow className="layout-switcher">
-            <Button
-              className="is-button switcher-button"
-              onClick={() => {
-                removeBlocks(blockIds);
-                insertBlocks(layouts.hero);
-              }}
-            >
-              <Icon icon={icons.hero} />
-              Hero Layout
-            </Button>
-            <Button
-              className="components-button is-button switcher-button"
-              onClick={() => {
-                removeBlocks(blockIds);
-                insertBlocks(layouts.featured);
-              }}
-            >
-              {icons.featured}
-              Featured Layout
-            </Button>
-          </PanelRow>
-        </PanelBody>
+        <SwitcherControls layouts={layouts} icons={icons} />
       </PluginSidebar>
     </Fragment>
   );
 };
 
-const LayoutSwitcherWithCompose = compose(
-  withDispatch((dispatch, ownProps) => {
-    const { removeBlocks, insertBlocks, insertBlock } = dispatch("core/editor");
-    return {
-      removeBlocks,
-      insertBlocks,
-      insertBlock
-    };
-  }),
-  withSelect(select => {
-    return {
-      blocks: select("core/editor").getBlocks(),
-      getBlocks: select("core/editor").getBlocks
-    };
-  })
-)(LayoutSwitcher);
-
 registerPlugin("jsforwpadvgb-layout-switcher", {
   icon: icons.switcher,
-  render: LayoutSwitcherWithCompose
+  render: LayoutSwitcher
 });

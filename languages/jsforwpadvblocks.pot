@@ -94,3 +94,40 @@ msgstr ""
 #: plugins/02-toc/index.js:23
 msgid "Table of Contents"
 msgstr ""
+
+#: plugins/03-layout-switcher/components/ResetControls.js:10
+#: plugins/03-layout-switcher/components/SwitcherControls.js:29
+msgid "Reset Layout"
+msgstr ""
+
+#: plugins/03-layout-switcher/components/ResetControls.js:16
+msgid "Warning!"
+msgstr ""
+
+#: plugins/03-layout-switcher/components/ResetControls.js:20
+msgid "This action will remove all blocks."
+msgstr ""
+
+#: plugins/03-layout-switcher/components/ResetControls.js:22
+msgid "This can be undone before saving with the Undo option."
+msgstr ""
+
+#: plugins/03-layout-switcher/components/ResetControls.js:36
+msgid "Reset Layout."
+msgstr ""
+
+#: plugins/03-layout-switcher/components/SwitcherControls.js:13
+msgid "Layout Choices"
+msgstr ""
+
+#: plugins/03-layout-switcher/components/SwitcherControls.js:19
+msgid "Hero"
+msgstr ""
+
+#: plugins/03-layout-switcher/components/SwitcherControls.js:25
+msgid "Featured"
+msgstr ""
+
+#: plugins/03-layout-switcher/index.js:37
+msgid "Layout Switcher"
+msgstr ""
