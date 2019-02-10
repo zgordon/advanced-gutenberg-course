@@ -587,7 +587,9 @@ var SwitcherControls = function SwitcherControls(_ref) {
 
 "use strict";
 var Icon = wp.components.Icon;
-var withDispatch = wp.data.withDispatch;
+var _wp$data = wp.data,
+    withDispatch = _wp$data.withDispatch,
+    select = _wp$data.select;
 
 
 var SwitcherButton = function SwitcherButton(_ref) {
@@ -596,6 +598,7 @@ var SwitcherButton = function SwitcherButton(_ref) {
       resetBlocks = _ref.resetBlocks,
       insertBlock = _ref.insertBlock,
       insertBlocks = _ref.insertBlocks,
+      selectBlock = _ref.selectBlock,
       icon = _ref.icon,
       label = _ref.label,
       layout = _ref.layout;
@@ -622,13 +625,15 @@ var SwitcherButton = function SwitcherButton(_ref) {
       removeBlocks = _dispatch.removeBlocks,
       resetBlocks = _dispatch.resetBlocks,
       insertBlocks = _dispatch.insertBlocks,
-      insertBlock = _dispatch.insertBlock;
+      insertBlock = _dispatch.insertBlock,
+      selectBlock = _dispatch.selectBlock;
 
   return {
     removeBlocks: removeBlocks,
     resetBlocks: resetBlocks,
     insertBlocks: insertBlocks,
-    insertBlock: insertBlock
+    insertBlock: insertBlock,
+    selectBlock: selectBlock
   };
 })(SwitcherButton));
 
