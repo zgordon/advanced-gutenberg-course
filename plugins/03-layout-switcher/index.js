@@ -1,8 +1,8 @@
 const { __ } = wp.i18n;
+const { Fragment } = wp.element;
 const { createBlock } = wp.blocks;
 const { registerPlugin } = wp.plugins;
 const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
-const { Fragment } = wp.element;
 
 import icons from "./icons";
 import "./plugin.scss";
@@ -13,7 +13,10 @@ const LayoutSwitcher = () => {
     default: [createBlock("core/paragraph", {})],
     hero: [
       createBlock("core/cover", { align: "full" }),
-      createBlock("core/button", { text: "Call to Action", align: "center" }),
+      createBlock("core/button", {
+        text: __("Layout Switcher", "jsforwpadvblocks"),
+        align: "center"
+      }),
       createBlock("core/columns", { columns: 3 })
     ],
     featured: [
@@ -24,19 +27,22 @@ const LayoutSwitcher = () => {
       createBlock("core/quote", {}),
       createBlock("core/spacer", { height: "20" }),
       createBlock("core/media-text", { mediaPosition: "right" }),
-      createBlock("core/paragraph", { placeholder: "Outro text" })
+      createBlock("core/paragraph", {
+        placeholder: __("Outro Text", "jsforwpadvblocks")
+      })
     ]
   };
+
   return (
     <Fragment>
       <PluginSidebarMoreMenuItem target="jsforwpadvgb-layout-switcher">
         {__("Layout Switcher", "jsforwpadvblocks")}
       </PluginSidebarMoreMenuItem>
       <PluginSidebar
-        name="jsforwp-layout-switcher"
+        name="jsforwpadvgb-layout-switcher"
         title={__("Layout Switcher", "jsforwpadvblocks")}
       >
-        <SwitcherControls layouts={layouts} icons={icons} />
+        <SwitcherControls icons={icons} layouts={layouts} />
       </PluginSidebar>
     </Fragment>
   );

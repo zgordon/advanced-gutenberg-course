@@ -2,20 +2,21 @@ const { Icon } = wp.components;
 const { withDispatch } = wp.data;
 
 const SwitcherButton = ({
+  label,
+  icon,
+  layout,
   blockIds,
   removeBlocks,
   resetBlocks,
   insertBlock,
-  insertBlocks,
-  icon,
-  label,
-  layout
+  insertBlocks
 }) => {
   return (
     <button
       onClick={() => {
-        removeBlocks(blockIds);
-        // resetBlocks([]); // Also works
+        console.log(label);
+        // removeBlocks(blockIds);
+        resetBlocks([]);
         insertBlocks(layout);
       }}
     >
@@ -24,14 +25,15 @@ const SwitcherButton = ({
     </button>
   );
 };
-export default withDispatch((dispatch, ownProps) => {
+
+export default withDispatch(dispatch => {
   const { removeBlocks, resetBlocks, insertBlocks, insertBlock } = dispatch(
     "core/editor"
   );
   return {
     removeBlocks,
     resetBlocks,
-    insertBlocks,
-    insertBlock
+    insertBlock,
+    insertBlocks
   };
 })(SwitcherButton);
