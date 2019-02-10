@@ -1,5 +1,5 @@
 const { Icon } = wp.components;
-const { withDispatch } = wp.data;
+const { withDispatch, select } = wp.data;
 
 const SwitcherButton = ({
   label,
