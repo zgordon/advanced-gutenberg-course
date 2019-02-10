@@ -24,8 +24,7 @@ export default registerBlockType("jsforwpadvblocks/shoutout-styles", {
   ),
   category: "jsforwpadvblocks",
   icon: {
-    // background: "rgba(254, 243, 224, 0.52)",
-    src: "edit"
+    src: "megaphone"
   },
   keywords: [__("Call to Action", "jsforwpadvblocks")],
   attributes: {
