@@ -73,10 +73,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__01_plugin_sidebar_demo__ = __webpack_require__(180);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__01_plugin_sidebar_demo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__01_plugin_sidebar_demo__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__02_toc__ = __webpack_require__(181);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__03_layout_switcher__ = __webpack_require__(188);
 /**
  * Import Sidebar Plugins
  *
  */
+
 
 
 
@@ -390,6 +392,326 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	}
 }());
 
+
+/***/ }),
+
+/***/ 188:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__icons__ = __webpack_require__(189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__plugin_scss__ = __webpack_require__(190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__plugin_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__plugin_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_SwitcherControls__ = __webpack_require__(191);
+var __ = wp.i18n.__;
+var Fragment = wp.element.Fragment;
+var createBlock = wp.blocks.createBlock;
+var registerPlugin = wp.plugins.registerPlugin;
+var _wp$editPost = wp.editPost,
+    PluginSidebar = _wp$editPost.PluginSidebar,
+    PluginSidebarMoreMenuItem = _wp$editPost.PluginSidebarMoreMenuItem;
+
+
+
+
+
+
+var LayoutSwitcher = function LayoutSwitcher() {
+  var layouts = {
+    default: [createBlock("core/paragraph", {})],
+    hero: [createBlock("core/cover", { align: "full" }), createBlock("core/button", {
+      text: __("Layout Switcher", "jsforwpadvblocks"),
+      align: "center"
+    }), createBlock("core/columns", { columns: 3 })],
+    featured: [createBlock("core/heading", {}), createBlock("core/spacer", { height: "10" }), createBlock("core/media-text", { align: "full" }), createBlock("core/spacer", { height: "40" }), createBlock("core/quote", {}), createBlock("core/spacer", { height: "20" }), createBlock("core/media-text", { mediaPosition: "right" }), createBlock("core/paragraph", {
+      placeholder: __("Outro Text", "jsforwpadvblocks")
+    })]
+  };
+
+  return wp.element.createElement(
+    Fragment,
+    null,
+    wp.element.createElement(
+      PluginSidebarMoreMenuItem,
+      { target: "jsforwpadvgb-layout-switcher" },
+      __("Layout Switcher", "jsforwpadvblocks")
+    ),
+    wp.element.createElement(
+      PluginSidebar,
+      {
+        name: "jsforwpadvgb-layout-switcher",
+        title: __("Layout Switcher", "jsforwpadvblocks")
+      },
+      wp.element.createElement(__WEBPACK_IMPORTED_MODULE_2__components_SwitcherControls__["a" /* default */], { icons: __WEBPACK_IMPORTED_MODULE_0__icons__["a" /* default */], layouts: layouts })
+    )
+  );
+};
+
+registerPlugin("jsforwpadvgb-layout-switcher", {
+  icon: __WEBPACK_IMPORTED_MODULE_0__icons__["a" /* default */].switcher,
+  render: LayoutSwitcher
+});
+
+/***/ }),
+
+/***/ 189:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var icons = {};
+icons.switcher = wp.element.createElement(
+  "svg",
+  {
+    width: "20px",
+    height: "20px",
+    viewBox: "0 0 100 100",
+    xmlns: "http://www.w3.org/2000/svg"
+  },
+  wp.element.createElement("path", { d: "m12 45.699 5.1992-6c2-2.3008 5-3.6992 8-3.6992h33.898l-2.1992 11c-0.60156 2.8008 2.6016 4.8008 4.8984 3.1016l28.301-21c1.6992-1.1992 1.6992-3.8008 0-5l-28.301-21c-2.3008-1.6992-5.5 0.30078-4.8984 3.1016l2.1992 10.898h-34.598c-8.8008 0-15.898 7.1016-15.898 15.898v11.398c0 1.8008 2.1992 2.7031 3.3984 1.3008z" }),
+  wp.element.createElement("path", { d: "m88.801 51c-1.8008-0.69922-3.6992-0.19922-5 1.3008l-4.8008 5.5977c-1.3984 1.6016-3.3984 2.5-5.6016 2.5h-28.699l1.3984-7.1016c0.5-2.3008-0.5-4.6016-2.5-5.8984-2-1.3008-4.5-1.1992-6.3984 0.19922l-26.699 19.902c-1.3984 1.1016-2.3008 2.6992-2.3008 4.5s0.80078 3.5 2.3008 4.5l26.699 19.801c1 0.69922 2.1992 1.1016 3.3984 1.1016 1 0 2.1016-0.30078 3-0.89844 2-1.3008 3-3.6016 2.5-5.8984l-1.3984-7.1016 29.301-0.003906c9.8008 0 17.699-7.8984 17.699-17.699v-10.602c0.10156-1.8984-1.0977-3.5977-2.8984-4.1992zm-2.4023 14.898c0 6.8008-5.5 12.301-12.301 12.301h-32.699c-0.80078 0-1.6016 0.39844-2.1016 1-0.5 0.60156-0.69922 1.3984-0.60156 2.1992l2.1016 10.301c0 0.10156 0 0.19922-0.10156 0.30078-0.19922 0.10156-0.19922 0-0.30078 0l-26.695-19.801s-0.10156-0.10156-0.10156-0.19922c0-0.10156 0.10156-0.19922 0.10156-0.19922l26.699-19.801c0.10156 0 0.10156-0.10156 0.30078 0s0.10156 0.19922 0.10156 0.30078l-2.1016 10.301c-0.19922 0.80078 0 1.6016 0.60156 2.1992 0.5 0.60156 1.3008 1 2.1016 1h32c3.6992 0 7.1992-1.6016 9.6016-4.3984l3.3008-3.8008-0.003907 8.2969z" })
+);
+icons.hero = wp.element.createElement(
+  "svg",
+  {
+    width: "40px",
+    height: "40px",
+    viewBox: "0 0 100 100",
+    xmlns: "http://www.w3.org/2000/svg"
+  },
+  wp.element.createElement("path", { d: "m49.969 7.5c-3.8203 0-6.9062 3.1172-6.9062 6.9375 0 3.8438 3.0859 6.9062 6.9062 6.9062 3.8438 0 6.9688-3.0625 6.9688-6.9062 0-3.8203-3.125-6.9375-6.9688-6.9375zm-30.844 15.312c-4.125 0-4.125 5.4375 0 5.4375h9.3438v-5.4375zm11.406 0v5.4375h10.062v19.438h6.2812v-1.0312h6.2188v1.0312h6.3125v-19.438h10.062v-5.4375zm41 0v5.4375h9.3438c4.125 0 4.125-5.4375 0-5.4375zm-21.562 6.6562l1.3125 3.3125 3.5625 0.1875-2.75 2.2812 0.90625 3.4062-3.0312-1.9375-2.9688 1.9375 0.90625-3.4062-2.75-2.2812 3.5625-0.1875zm-11.438 0.875l-13.438 37.594h13.438zm22.938 0v37.594h13.438zm-20.875 19.438v24.062h7.7812v-17.844h3.25v17.844h7.7812v-24.062h-6.3125v1.0312h-6.2188v-1.0312zm0 26.156v12.688c0 2.1523 1.7227 3.875 3.875 3.875 2.1445 0 3.9062-1.7227 3.9062-3.875v-12.688zm11.031 0v12.688c0 2.1523 1.7617 3.875 3.9062 3.875 2.1523 0 3.875-1.7227 3.875-3.875v-12.688z" })
+);
+icons.featured = wp.element.createElement(
+  "svg",
+  {
+    width: "40px",
+    height: "40px",
+    viewBox: "0 0 100 100",
+    xmlns: "http://www.w3.org/2000/svg"
+  },
+  wp.element.createElement("path", {
+    d: "m51.91 27.891 4.8594 15.051 15.82-0.03125c2 0 2.75 2.4688 0.98828 3.7383l-12.629 9.1406 4.9102 15.039c0.62891 1.9219-1.6797 3.4297-3.1914 2.1406l-12.66-9.2383-12.781 9.3281c-1.7383 1.2617-3.6602-0.44141-2.9297-2.6484l4.7695-14.621-12.809-9.2695c-1.6289-1.1797-0.67187-3.7383 1.3086-3.6094l15.68 0.03125 4.8594-15.051c0.60156-1.8516 3.2109-1.8203 3.8008 0z",
+    fillRule: "evenodd"
+  }),
+  wp.element.createElement("path", { d: "m50 9.7891c22.199 0 40.211 18.012 40.211 40.211s-18.012 40.211-40.211 40.211-40.211-18.012-40.211-40.211 18.012-40.211 40.211-40.211zm0 4c-20 0-36.211 16.211-36.211 36.211s16.211 36.211 36.211 36.211 36.211-16.211 36.211-36.211-16.211-36.211-36.211-36.211z" })
+);
+/* harmony default export */ __webpack_exports__["a"] = (icons);
+
+/***/ }),
+
+/***/ 190:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 191:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SwitcherButton__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ResetControls__ = __webpack_require__(193);
+var __ = wp.i18n.__;
+var Fragment = wp.element.Fragment;
+var _wp$components = wp.components,
+    Button = _wp$components.Button,
+    Icon = _wp$components.Icon,
+    PanelBody = _wp$components.PanelBody,
+    PanelRow = _wp$components.PanelRow;
+var _wp$data = wp.data,
+    withSelect = _wp$data.withSelect,
+    dispatch = _wp$data.dispatch;
+
+
+
+
+
+var SwitcherControls = function SwitcherControls(_ref) {
+  var blocks = _ref.blocks,
+      icons = _ref.icons,
+      layouts = _ref.layouts;
+
+  var blockIds = blocks.map(function (block) {
+    return block.clientId;
+  });
+  return wp.element.createElement(
+    Fragment,
+    null,
+    wp.element.createElement(
+      PanelBody,
+      { title: __("Layout Choices", "jsforwpadvblocks"), opened: true },
+      wp.element.createElement(
+        PanelRow,
+        { className: "layout-switcher" },
+        wp.element.createElement(__WEBPACK_IMPORTED_MODULE_0__SwitcherButton__["a" /* default */], {
+          label: __("Hero", "jsforwpadvblocks"),
+          icon: icons.hero,
+          blockIds: blockIds,
+          layout: layouts.hero
+        }),
+        wp.element.createElement(__WEBPACK_IMPORTED_MODULE_0__SwitcherButton__["a" /* default */], {
+          label: __("Feature", "jsforwpadvblocks"),
+          icon: icons.featured,
+          blockIds: blockIds,
+          layout: layouts.featured
+        })
+      )
+    ),
+    wp.element.createElement(
+      PanelBody,
+      { title: __("Reset Layout", "jsforwpadvblocks") },
+      wp.element.createElement(
+        PanelRow,
+        null,
+        wp.element.createElement(__WEBPACK_IMPORTED_MODULE_1__ResetControls__["a" /* default */], { layout: layouts.default })
+      )
+    )
+  );
+};
+/* harmony default export */ __webpack_exports__["a"] = (withSelect(function (select) {
+  return {
+    blocks: select("core/editor").getBlocks()
+  };
+})(SwitcherControls));
+
+/***/ }),
+
+/***/ 192:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var Icon = wp.components.Icon;
+var withDispatch = wp.data.withDispatch;
+
+
+var SwitcherButton = function SwitcherButton(_ref) {
+  var label = _ref.label,
+      icon = _ref.icon,
+      layout = _ref.layout,
+      blockIds = _ref.blockIds,
+      removeBlocks = _ref.removeBlocks,
+      resetBlocks = _ref.resetBlocks,
+      insertBlock = _ref.insertBlock,
+      insertBlocks = _ref.insertBlocks;
+
+  return wp.element.createElement(
+    "button",
+    {
+      onClick: function onClick() {
+        console.log(label);
+        // removeBlocks(blockIds);
+        resetBlocks([]);
+        insertBlocks(layout);
+      }
+    },
+    wp.element.createElement(Icon, { icon: icon }),
+    wp.element.createElement(
+      "span",
+      null,
+      label
+    )
+  );
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (withDispatch(function (dispatch) {
+  var _dispatch = dispatch("core/editor"),
+      removeBlocks = _dispatch.removeBlocks,
+      resetBlocks = _dispatch.resetBlocks,
+      insertBlocks = _dispatch.insertBlocks,
+      insertBlock = _dispatch.insertBlock;
+
+  return {
+    removeBlocks: removeBlocks,
+    resetBlocks: resetBlocks,
+    insertBlock: insertBlock,
+    insertBlocks: insertBlocks
+  };
+})(SwitcherButton));
+
+/***/ }),
+
+/***/ 193:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var __ = wp.i18n.__;
+var Fragment = wp.element.Fragment;
+var _wp$components = wp.components,
+    Button = _wp$components.Button,
+    Modal = _wp$components.Modal;
+var withDispatch = wp.data.withDispatch;
+var _wp$compose = wp.compose,
+    compose = _wp$compose.compose,
+    withState = _wp$compose.withState;
+
+
+var ResetControls = function ResetControls(_ref) {
+  var isOpen = _ref.isOpen,
+      setState = _ref.setState,
+      layout = _ref.layout,
+      resetBlocks = _ref.resetBlocks,
+      insertBlocks = _ref.insertBlocks;
+
+  return wp.element.createElement(
+    Fragment,
+    null,
+    wp.element.createElement(
+      Button,
+      { isLink: true, isDestructive: true, onClick: function onClick() {
+          return setState({ isOpen: true });
+        } },
+      __("Reset Layout", "jsforwpadvblocks")
+    ),
+    isOpen && wp.element.createElement(
+      Modal,
+      {
+        className: "layout-switcher-reset",
+        title: __("Warning!", "jsforwpadvblocks"),
+        onRequestClose: function onRequestClose() {
+          return setState({ isOpen: false });
+        }
+      },
+      wp.element.createElement(
+        "p",
+        null,
+        __("This action will remove all blocks", "jsforwpadvblocks"),
+        wp.element.createElement(
+          "strong",
+          null,
+          __("This can be undone before leaving the page with the Undo option.", "jsforwpadvblocks")
+        )
+      ),
+      wp.element.createElement(
+        "p",
+        null,
+        wp.element.createElement(
+          Button,
+          {
+            isDefault: true,
+            onClick: function onClick() {
+              resetBlocks([]);
+              insertBlocks(layout);
+              setState({ isOpen: false });
+            }
+          },
+          __("Reset Layout", "jsforwpadvblocks")
+        )
+      )
+    )
+  );
+};
+/* harmony default export */ __webpack_exports__["a"] = (compose(withState({
+  isOpen: false
+}), withDispatch(function (dispatch) {
+  var _dispatch = dispatch("core/editor"),
+      resetBlocks = _dispatch.resetBlocks,
+      insertBlocks = _dispatch.insertBlocks;
+
+  return {
+    resetBlocks: resetBlocks,
+    insertBlocks: insertBlocks
+  };
+}))(ResetControls));
 
 /***/ })
 
