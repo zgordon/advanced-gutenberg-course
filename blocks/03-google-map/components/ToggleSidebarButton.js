@@ -8,14 +8,10 @@ const ToggleSidebarButton = ({
   closeGeneralSidebar,
   openGeneralSidebar
 }) => {
-  const toggleGeneralSidebar = isEditorSidebarOpened
-    ? closeGeneralSidebar
-    : openGeneralSidebar;
-
   if (isEditorSidebarOpened) return null;
   return (
-    <Button className="is-button is-primary" onClick={openGeneralSidebar}>
-      Open Block Settings
+    <Button isDefault onClick={openGeneralSidebar}>
+      {__("Open Block Settings", "jsforwpadvblocks")}
     </Button>
   );
 };
@@ -27,17 +23,12 @@ export default compose(
     };
   }),
   withDispatch((dispatch, ownProps, { select }) => {
-    const { getBlockSelectionStart } = select("core/editor");
     const { openGeneralSidebar, closeGeneralSidebar } = dispatch(
       "core/edit-post"
     );
-
     return {
-      openGeneralSidebar: () =>
-        openGeneralSidebar(
-          getBlockSelectionStart() ? "edit-post/block" : "edit-post/document"
-        ),
-      closeGeneralSidebar: closeGeneralSidebar
+      openGeneralSidebar: () => openGeneralSidebar("edit-post/block"),
+      closeGeneralSidebar
     };
   })
 )(ToggleSidebarButton);

@@ -49,6 +49,7 @@ export default class Edit extends Component {
   }
 
   render() {
+    console.log(this.state.apiKey);
     const {
       attributes: { text },
       className,
@@ -83,7 +84,7 @@ export default class Edit extends Component {
             </PanelRow>
           </PanelBody>
         </InspectorControls>
-        <div className={className} style={{ width: "100%", height: "400px" }}>
+        <div className={className} style={{ width: "100%", height: "100%" }}>
           {this.state.apiKey === "" ? (
             <p>
               Please enter an API key in the block settings{" "}
@@ -91,10 +92,9 @@ export default class Edit extends Component {
             </p>
           ) : (
             <MyMapComponent
-              isMarkerShown
               googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${
                 this.state.apiKey
-              }&v=3.exp&libraries=geometry,drawing,places`}
+              }&v=3.exp&libraries=geocoding,places`}
               loadingElement={<div style={{ height: `100%` }} />}
               containerElement={<div style={{ height: `300px` }} />}
               mapElement={<div style={{ height: `100%` }} />}
