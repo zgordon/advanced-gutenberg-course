@@ -72,7 +72,6 @@ msgid "Edit"
 msgstr ""
 
 #: blocks/03-with-global-settings/edit.js:113
-#: blocks/04-custom-data-store/edit.js:34
 msgid "Please enter a block settings value in the block settings"
 msgstr ""
 
@@ -81,7 +80,7 @@ msgid "Loading"
 msgstr ""
 
 #: blocks/03-with-global-settings/edit.js:66
-#: blocks/04-custom-data-store/edit.js:15
+#: blocks/04-custom-data-store/edit.js:16
 msgid "Block Setting"
 msgstr ""
 
@@ -90,7 +89,7 @@ msgid "Please enter a setting"
 msgstr ""
 
 #: blocks/03-with-global-settings/edit.js:87
-#: blocks/04-custom-data-store/edit.js:26
+#: blocks/04-custom-data-store/edit.js:27
 msgid "Save Setting"
 msgstr ""
 
@@ -113,6 +112,14 @@ msgstr ""
 
 #: blocks/03-with-global-settings/index.js:33
 msgid "Withing With Global Setting"
+msgstr ""
+
+#: blocks/04-custom-data-store/edit.js:42
+msgid "Set Setting"
+msgstr ""
+
+#: blocks/04-custom-data-store/edit.js:44
+msgid "Example block with custom data store"
 msgstr ""
 
 #: blocks/04-custom-data-store/index.js:19

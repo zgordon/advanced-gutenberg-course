@@ -2,23 +2,14 @@ const { data, apiFetch } = wp;
 const { registerStore } = data;
 
 const DEFAULT_STATE = {
-  prices: {},
-  discountPercent: 0
+  setting: ""
 };
 
 const actions = {
-  setPrice(item, price) {
+  setSetting(setting) {
     return {
-      type: "SET_PRICE",
-      item,
-      price
-    };
-  },
-
-  startSale(discountPercent) {
-    return {
-      type: "START_SALE",
-      discountPercent
+      type: "SET_SETTING",
+      setting
     };
   },
 
@@ -33,19 +24,10 @@ const actions = {
 registerStore("my-shop", {
   reducer(state = DEFAULT_STATE, action) {
     switch (action.type) {
-      case "SET_PRICE":
+      case "SET_SETTING":
         return {
           ...state,
-          prices: {
-            ...state.prices,
-            [action.item]: action.price
-          }
-        };
-
-      case "START_SALE":
-        return {
-          ...state,
-          discountPercent: action.discountPercent
+          setting: action.setting
         };
     }
 
@@ -55,11 +37,9 @@ registerStore("my-shop", {
   actions,
 
   selectors: {
-    getPrice(state, item) {
-      const { prices, discountPercent } = state;
-      const price = prices[item];
-
-      return price * (1 - 0.01 * discountPercent);
+    getSetting(state) {
+      const { setting } = state;
+      return setting;
     }
   },
 
@@ -70,10 +50,10 @@ registerStore("my-shop", {
   },
 
   resolvers: {
-    *getPrice(item) {
-      const path = "/wp/v2/prices/" + item;
-      const price = yield actions.fetchFromAPI(path);
-      return actions.setPrice(item, price);
+    *getSetting() {
+      const path = "/jsforwpadvgb/v1/block-setting";
+      const setting = yield actions.fetchFromAPI(path);
+      return actions.setSetting(setting);
     }
   }
 });

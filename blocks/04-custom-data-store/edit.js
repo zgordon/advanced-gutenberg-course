@@ -3,11 +3,12 @@ const { Component, Fragment } = wp.element;
 const { InspectorControls } = wp.editor;
 const { PanelBody, PanelRow, TextControl, Button, Spinner } = wp.components;
 const { apiFetch } = wp;
+const { withSelect, withDispatch } = wp.data;
+const { compose } = wp.compose;
 
-export default class Edit extends Component {
+class Edit extends Component {
   render() {
-    const { className } = this.props;
-
+    const { className, setting, setSetting } = this.props;
     return (
       <Fragment>
         <InspectorControls>
@@ -31,13 +32,32 @@ export default class Edit extends Component {
         </InspectorControls>
         <div className={className}>
           <p>
-            {__(
-              "Please enter a block settings value in the block settings",
-              "jsforwpadvblocks"
-            )}
+            {setting}
+            <Button
+              isPrimary
+              onClick={() => {
+                setSetting("#####");
+              }}
+            >
+              {__("Set Setting", "jsforwpadvblocks")}
+            </Button>
+            {__("Example block with custom data store", "jsforwpadvblocks")}
           </p>
         </div>
       </Fragment>
     );
   }
 }
+
+export default compose([
+  withSelect(select => {
+    return {
+      setting: select("my-shop").getSetting()
+    };
+  }),
+  withDispatch(dispatch => {
+    return {
+      setSetting: dispatch("my-shop").setSetting
+    };
+  })
+])(Edit);

@@ -5363,11 +5363,8 @@ var registerBlockType = wp.blocks.registerBlockType;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_defineProperty__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_defineProperty___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_defineProperty__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_extends__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_extends__);
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_extends__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_extends__);
 
 
 var _wp = wp,
@@ -5377,22 +5374,14 @@ var registerStore = data.registerStore;
 
 
 var DEFAULT_STATE = {
-  prices: {},
-  discountPercent: 0
+  setting: ""
 };
 
 var actions = {
-  setPrice: function setPrice(item, price) {
+  setSetting: function setSetting(setting) {
     return {
-      type: "SET_PRICE",
-      item: item,
-      price: price
-    };
-  },
-  startSale: function startSale(discountPercent) {
-    return {
-      type: "START_SALE",
-      discountPercent: discountPercent
+      type: "SET_SETTING",
+      setting: setting
     };
   },
   fetchFromAPI: function fetchFromAPI(path) {
@@ -5409,14 +5398,9 @@ registerStore("my-shop", {
     var action = arguments[1];
 
     switch (action.type) {
-      case "SET_PRICE":
-        return __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_extends___default()({}, state, {
-          prices: __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_extends___default()({}, state.prices, __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_defineProperty___default()({}, action.item, action.price))
-        });
-
-      case "START_SALE":
-        return __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_extends___default()({}, state, {
-          discountPercent: action.discountPercent
+      case "SET_SETTING":
+        return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_extends___default()({}, state, {
+          setting: action.setting
         });
     }
 
@@ -5427,13 +5411,10 @@ registerStore("my-shop", {
   actions: actions,
 
   selectors: {
-    getPrice: function getPrice(state, item) {
-      var prices = state.prices,
-          discountPercent = state.discountPercent;
+    getSetting: function getSetting(state) {
+      var setting = state.setting;
 
-      var price = prices[item];
-
-      return price * (1 - 0.01 * discountPercent);
+      return setting;
     }
   },
 
@@ -5444,26 +5425,26 @@ registerStore("my-shop", {
   },
 
   resolvers: {
-    getPrice: /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function getPrice(item) {
-      var path, price;
-      return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function getPrice$(_context) {
+    getSetting: /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function getSetting() {
+      var path, setting;
+      return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function getSetting$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              path = "/wp/v2/prices/" + item;
+              path = "/jsforwpadvgb/v1/block-setting";
               _context.next = 3;
               return actions.fetchFromAPI(path);
 
             case 3:
-              price = _context.sent;
-              return _context.abrupt("return", actions.setPrice(item, price));
+              setting = _context.sent;
+              return _context.abrupt("return", actions.setSetting(setting));
 
             case 5:
             case "end":
               return _context.stop();
           }
         }
-      }, getPrice, this);
+      }, getSetting, this);
     })
   }
 });
@@ -6250,36 +6231,7 @@ if (hadRuntime) {
 
 
 /***/ }),
-/* 143 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-var _defineProperty = __webpack_require__(55);
-
-var _defineProperty2 = _interopRequireDefault(_defineProperty);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = function (obj, key, value) {
-  if (key in obj) {
-    (0, _defineProperty2.default)(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-};
-
-/***/ }),
+/* 143 */,
 /* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6359,6 +6311,10 @@ var _wp$components = wp.components,
     Spinner = _wp$components.Spinner;
 var _wp = wp,
     apiFetch = _wp.apiFetch;
+var _wp$data = wp.data,
+    withSelect = _wp$data.withSelect,
+    withDispatch = _wp$data.withDispatch;
+var compose = wp.compose.compose;
 
 var Edit = function (_Component) {
   __WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_inherits___default()(Edit, _Component);
@@ -6372,8 +6328,10 @@ var Edit = function (_Component) {
   __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_createClass___default()(Edit, [{
     key: "render",
     value: function render() {
-      var className = this.props.className;
-
+      var _props = this.props,
+          className = _props.className,
+          setting = _props.setting,
+          setSetting = _props.setSetting;
 
       return wp.element.createElement(
         Fragment,
@@ -6414,7 +6372,18 @@ var Edit = function (_Component) {
           wp.element.createElement(
             "p",
             null,
-            __("Please enter a block settings value in the block settings", "jsforwpadvblocks")
+            setting,
+            wp.element.createElement(
+              Button,
+              {
+                isPrimary: true,
+                onClick: function onClick() {
+                  setSetting("#####");
+                }
+              },
+              __("Set Setting", "jsforwpadvblocks")
+            ),
+            __("Example block with custom data store", "jsforwpadvblocks")
           )
         )
       );
@@ -6424,7 +6393,15 @@ var Edit = function (_Component) {
   return Edit;
 }(Component);
 
-/* harmony default export */ __webpack_exports__["a"] = (Edit);
+/* harmony default export */ __webpack_exports__["a"] = (compose([withSelect(function (select) {
+  return {
+    setting: select("my-shop").getSetting()
+  };
+}), withDispatch(function (dispatch) {
+  return {
+    setSetting: dispatch("my-shop").setSetting
+  };
+})])(Edit));
 
 /***/ }),
 /* 147 */
