@@ -1,10 +1,6 @@
 # Advanced Gutenberg Block Development Course for WordPress
 
-![Course Banner](https://dzwonsemrish7.cloudfront.net/items/1J3M310N0S1x170k1d0D/Cover%20GB.png)
-
-## A Course from Zac Gordon on JS for WP
-
-[View the course on https://javascriptforwp.com/ >>](https://javascriptforwp.com/product/advanced-gutenberg-development/)
+[View the course on https://javascriptforwp.com/](https://javascriptforwp.com/product/advanced-gutenberg-development/)
 
 ## Course Outline
 
