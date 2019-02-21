@@ -2,7 +2,7 @@ const { data, apiFetch } = wp;
 const { registerStore } = data;
 
 const DEFAULT_STATE = {
-  setting: ""
+  setting: "START"
 };
 
 const actions = {
@@ -17,6 +17,14 @@ const actions = {
     return {
       type: "FETCH_FROM_API",
       path
+    };
+  },
+
+  saveToAPI(path, setting) {
+    return {
+      type: "SAVE_TO_API",
+      path,
+      setting
     };
   }
 };
@@ -46,6 +54,14 @@ registerStore("my-shop", {
   controls: {
     FETCH_FROM_API(action) {
       return apiFetch({ path: action.path });
+    },
+
+    SAVE_TO_API(action) {
+      return apiFetch({
+        path: action.path,
+        method: "post",
+        body: JSON.stringify(action.setting)
+      });
     }
   },
 
@@ -53,6 +69,11 @@ registerStore("my-shop", {
     *getSetting() {
       const path = "/jsforwpadvgb/v1/block-setting";
       const setting = yield actions.fetchFromAPI(path);
+      return actions.setSetting(setting);
+    },
+    *setSetting() {
+      const path = "/jsforwpadvgb/v1/block-setting";
+      const setting = yield actions.saveToAPI(path, setting);
       return actions.setSetting(setting);
     }
   }
