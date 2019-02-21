@@ -5454,7 +5454,7 @@ registerStore("my-shop", {
 
             case 3:
               setting = _context.sent;
-              return _context.abrupt("return", actions.setSetting(setting));
+              return _context.abrupt("return", actions.getSetting(setting));
 
             case 5:
             case "end":
@@ -5464,18 +5464,21 @@ registerStore("my-shop", {
       }, getSetting, this);
     }),
     setSetting: /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function setSetting() {
-      var path, setting;
+      var path, newSetting;
       return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function setSetting$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
               path = "/jsforwpadvgb/v1/block-setting";
+              // ??????
+              // How do I get access to the settings here
+
               _context2.next = 3;
               return actions.saveToAPI(path, setting);
 
             case 3:
-              setting = _context2.sent;
-              return _context2.abrupt("return", actions.setSetting(setting));
+              newSetting = _context2.sent;
+              return _context2.abrupt("return", actions.setSetting(path, newSetting));
 
             case 5:
             case "end":

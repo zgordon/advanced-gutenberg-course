@@ -69,12 +69,15 @@ registerStore("my-shop", {
     *getSetting() {
       const path = "/jsforwpadvgb/v1/block-setting";
       const setting = yield actions.fetchFromAPI(path);
-      return actions.setSetting(setting);
+      return actions.getSetting(setting);
     },
     *setSetting() {
       const path = "/jsforwpadvgb/v1/block-setting";
-      const setting = yield actions.saveToAPI(path, setting);
-      return actions.setSetting(setting);
+      // ??????
+      // How do I get access to the settings here
+      const newSetting = yield actions.saveToAPI(path, setting);
+      // ??????
+      return actions.setSetting(path, newSetting);
     }
   }
 });
