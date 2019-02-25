@@ -63,31 +63,31 @@ msgstr ""
 msgid "Data API Example"
 msgstr ""
 
-#: blocks/03-with-global-settings/edit.js:101
+#: blocks/03-with-global-settings/edit.js:102
 msgid "Cancel"
 msgstr ""
 
-#: blocks/03-with-global-settings/edit.js:106
+#: blocks/03-with-global-settings/edit.js:108
 msgid "Global Setting Saved"
 msgstr ""
 
-#: blocks/03-with-global-settings/edit.js:108
+#: blocks/03-with-global-settings/edit.js:117
 msgid "Edit"
 msgstr ""
 
-#: blocks/03-with-global-settings/edit.js:118
+#: blocks/03-with-global-settings/edit.js:127
 msgid "Please enter a block settings value in the block settings"
 msgstr ""
 
-#: blocks/03-with-global-settings/edit.js:60
+#: blocks/03-with-global-settings/edit.js:56
 msgid "Loading"
 msgstr ""
 
-#: blocks/03-with-global-settings/edit.js:69
+#: blocks/03-with-global-settings/edit.js:65
 msgid "Block Setting"
 msgstr ""
 
-#: blocks/03-with-global-settings/edit.js:76
+#: blocks/03-with-global-settings/edit.js:72
 msgid "Please enter a setting"
 msgstr ""
 

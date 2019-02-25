@@ -23,38 +23,34 @@ function setSetting(setting) {
 export default class Edit extends Component {
   state = {
     blockSetting: "",
-    isLoadingSetting: true,
-    isSavingSetting: false,
-    isEditingSetting: false
+    isLoading: true,
+    isSaving: false,
+    isEditing: false
   };
 
   updateSetting = async () => {
-    this.setState({ isSavingSetting: true });
+    this.setState({ isSaving: true });
     const blockSetting = await setSetting(this.state.blockSetting);
     this.setState({
       blockSetting,
-      isLoadingSetting: false,
-      isSavingSetting: false,
-      isEditingSetting: false
+      isLoading: false,
+      isSaving: false,
+      isEditing: false
     });
-  };
-
-  toggleIsEditing = () => {
-    this.setState({ isEditingSetting: !this.state.isEditingSetting });
   };
 
   async componentDidMount() {
     const blockSetting = await getSetting();
     this.setState({
       blockSetting,
-      isLoadingSetting: false
+      isLoading: false
     });
   }
 
   render() {
     const { className } = this.props;
 
-    if (this.state.isLoadingSetting) {
+    if (this.state.isLoading) {
       return (
         <p>
           <Spinner /> {__("Loading", "jsforwpadvblocks")}
@@ -70,41 +66,54 @@ export default class Edit extends Component {
             initialOpen={true}
           >
             <PanelRow>
-              {this.state.isEditingSetting || this.state.blockSetting === "" ? (
+              {this.state.isEditing || this.state.blockSetting === "" ? (
                 <p>
                   <TextControl
                     label={__("Please enter a setting", "jsforwpadvblocks")}
                     value={this.state.blockSetting}
                     onChange={blockSetting => {
-                      if (!this.state.isSavingSetting)
-                        this.setState({ blockSetting });
+                      if (!this.state.isSaving) {
+                        this.setState({
+                          blockSetting,
+                          isEditing: true
+                        });
+                      }
                     }}
                   />
                   <Button
                     isPrimary
-                    disabled={this.state.isSavingSetting}
+                    disabled={this.state.isSaving}
                     onClick={() => {
                       this.updateSetting();
                     }}
                   >
                     {__("Save Setting", "jsforwpadvblocks")}
                   </Button>{" "}
-                  <Button
-                    isDefault
-                    disabled={this.state.isSavingSetting}
-                    onClick={async () => {
-                      const blockSetting = await getSetting();
-                      this.setState({ blockSetting });
-                      this.toggleIsEditing();
-                    }}
-                  >
-                    {__("Cancel", "jsforwpadvblocks")}
-                  </Button>
+                  {this.state.blockSetting !== "" && (
+                    <Button
+                      isDefault
+                      disabled={this.state.isSaving}
+                      onClick={async () => {
+                        this.setState({ isEditing: false });
+                        const blockSetting = await getSetting();
+                        this.setState({ blockSetting });
+                      }}
+                    >
+                      {__("Cancel", "jsforwpadvblocks")}
+                    </Button>
+                  )}
                 </p>
               ) : (
                 <Fragment>
                   <p>{__("Global Setting Saved", "jsforwpadvblocks")}</p>
-                  <Button isDefault onClick={this.toggleIsEditing}>
+                  <Button
+                    isDefault
+                    onClick={() =>
+                      this.setState({
+                        isEditing: true
+                      })
+                    }
+                  >
                     {__("Edit", "jsforwpadvblocks")}
                   </Button>
                 </Fragment>
