@@ -4,6 +4,22 @@ const { InspectorControls } = wp.editor;
 const { PanelBody, PanelRow, TextControl, Button, Spinner } = wp.components;
 const { apiFetch } = wp;
 
+function getSetting() {
+  return apiFetch({ path: "/jsforwpadvgb/v1/block-setting" })
+    .then(blockSetting => blockSetting)
+    .catch(error => console.error(error));
+}
+
+function setSetting(setting) {
+  return apiFetch({
+    path: "/jsforwpadvgb/v1/block-setting",
+    method: "POST",
+    body: setting
+  })
+    .then(blockSetting => blockSetting)
+    .catch(error => console.error(error));
+}
+
 export default class Edit extends Component {
   state = {
     blockSetting: "",
@@ -12,44 +28,31 @@ export default class Edit extends Component {
     isEditingSetting: false
   };
 
-  updateSetting = () => {
+  updateSetting = async () => {
     this.setState({ isSavingSetting: true });
-    apiFetch({
-      path: "/jsforwpadvgb/v1/block-setting",
-      method: "POST",
-      body: this.state.blockSetting
-    })
-      .then(blockSetting => {
-        this.setState({
-          blockSetting,
-          isLoadingSetting: false,
-          isSavingSetting: false,
-          isEditingSetting: false
-        });
-      })
-      .catch(error => alert(error));
+    const blockSetting = await setSetting(this.state.blockSetting);
+    this.setState({
+      blockSetting,
+      isLoadingSetting: false,
+      isSavingSetting: false,
+      isEditingSetting: false
+    });
   };
 
   toggleIsEditing = () => {
     this.setState({ isEditingSetting: !this.state.isEditingSetting });
   };
 
-  componentDidMount() {
-    apiFetch({ path: "/jsforwpadvgb/v1/block-setting" })
-      .then(blockSetting => {
-        this.setState({
-          blockSetting,
-          isLoadingSetting: false
-        });
-      })
-      .catch(error => console.error(error));
+  async componentDidMount() {
+    const blockSetting = await getSetting();
+    this.setState({
+      blockSetting,
+      isLoadingSetting: false
+    });
   }
 
   render() {
     const { className } = this.props;
-
-    const blockSettingData = wp.data.select("jsforwp-advgb").getBlockSettings();
-    console.log(blockSettingData);
 
     if (this.state.isLoadingSetting) {
       return (
@@ -89,7 +92,9 @@ export default class Edit extends Component {
                   <Button
                     isDefault
                     disabled={this.state.isSavingSetting}
-                    onClick={() => {
+                    onClick={async () => {
+                      const blockSetting = await getSetting();
+                      this.setState({ blockSetting });
                       this.toggleIsEditing();
                     }}
                   >

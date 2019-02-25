@@ -64,37 +64,35 @@ msgid "Data API Example"
 msgstr ""
 
 #: blocks/03-with-global-settings/edit.js:101
+msgid "Cancel"
+msgstr ""
+
+#: blocks/03-with-global-settings/edit.js:106
 msgid "Global Setting Saved"
 msgstr ""
 
-#: blocks/03-with-global-settings/edit.js:103
+#: blocks/03-with-global-settings/edit.js:108
 msgid "Edit"
 msgstr ""
 
-#: blocks/03-with-global-settings/edit.js:113
+#: blocks/03-with-global-settings/edit.js:118
 msgid "Please enter a block settings value in the block settings"
 msgstr ""
 
-#: blocks/03-with-global-settings/edit.js:57
+#: blocks/03-with-global-settings/edit.js:60
 msgid "Loading"
 msgstr ""
 
-#: blocks/03-with-global-settings/edit.js:66
-#: blocks/04-custom-data-store/edit.js:16
+#: blocks/03-with-global-settings/edit.js:69
 msgid "Block Setting"
 msgstr ""
 
-#: blocks/03-with-global-settings/edit.js:73
+#: blocks/03-with-global-settings/edit.js:76
 msgid "Please enter a setting"
 msgstr ""
 
-#: blocks/03-with-global-settings/edit.js:87
-#: blocks/04-custom-data-store/edit.js:27
+#: blocks/03-with-global-settings/edit.js:90
 msgid "Save Setting"
-msgstr ""
-
-#: blocks/03-with-global-settings/edit.js:96
-msgid "Cancel"
 msgstr ""
 
 #: blocks/03-with-global-settings/index.js:18
@@ -102,7 +100,6 @@ msgid "With Global Settings"
 msgstr ""
 
 #: blocks/03-with-global-settings/index.js:19
-#: blocks/04-custom-data-store/index.js:20
 msgid "An example block for showing how to save global settings."
 msgstr ""
 
@@ -112,46 +109,6 @@ msgstr ""
 
 #: blocks/03-with-global-settings/index.js:33
 msgid "Withing With Global Setting"
-msgstr ""
-
-#: blocks/04-custom-data-store/edit.js:42
-msgid "Set Setting"
-msgstr ""
-
-#: blocks/04-custom-data-store/edit.js:44
-msgid "Example block with custom data store"
-msgstr ""
-
-#: blocks/04-custom-data-store/index.js:19
-msgid "Custom Store"
-msgstr ""
-
-#: blocks/04-custom-data-store/index.js:29
-msgid "Redux"
-msgstr ""
-
-#: blocks/04-custom-data-store/index.js:34
-msgid "With Custom Data Store"
-msgstr ""
-
-#: blocks/05-shoutout-styles/index.js:20
-msgid "Shoutout"
-msgstr ""
-
-#: blocks/05-shoutout-styles/index.js:21
-msgid "An example block for working with Styles API."
-msgstr ""
-
-#: blocks/05-shoutout-styles/index.js:29
-msgid "Call to Action"
-msgstr ""
-
-#: blocks/05-shoutout-styles/index.js:60
-msgid "Headline"
-msgstr ""
-
-#: blocks/05-shoutout-styles/index.js:65
-msgid "Shoutout Text"
 msgstr ""
 
 #: plugins/01-plugin-sidebar-demo/index.js:20
