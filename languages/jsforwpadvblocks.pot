@@ -55,15 +55,73 @@ msgstr ""
 msgid "Shoutout Text"
 msgstr ""
 
+#: blocks/03-google-map/components/ToggleSidebarButton.js:14
+msgid "Open Block Settings"
+msgstr ""
+
+#: blocks/03-google-map/edit.js:73
+msgid "API Key"
+msgstr ""
+
+#: blocks/03-google-map/index.js:26
+msgid "Google Map"
+msgstr ""
+
+#: blocks/03-google-map/index.js:27
+msgid "An example block for working with the Google Maps API."
+msgstr ""
+
+#: blocks/03-google-map/index.js:36
+#: blocks/04-block-settings/index.js:24
+msgid "Location"
+msgstr ""
+
+#: blocks/04-block-settings/components/ApiForm.js:25
+#: blocks/04-block-settings/components/BlockSettingsForm.js:25
+msgid "Enter Block Setting"
+msgstr ""
+
+#: blocks/04-block-settings/components/ApiForm.js:36
+#: blocks/04-block-settings/components/BlockSettingsForm.js:36
+msgid "Save Setting"
+msgstr ""
+
+#: blocks/04-block-settings/components/ApiForm.js:43
+#: blocks/04-block-settings/components/BlockSettingsForm.js:43
+msgid "Cancel"
+msgstr ""
+
+#: blocks/04-block-settings/components/ApiForm.js:48
+#: blocks/04-block-settings/components/BlockSettingsForm.js:48
+msgid "Setting Saved"
+msgstr ""
+
+#: blocks/04-block-settings/components/ApiForm.js:51
+#: blocks/04-block-settings/components/BlockSettingsForm.js:51
+msgid "Edit Setting"
+msgstr ""
+
+#: blocks/04-block-settings/edit.js:69
+msgid "Block Setting"
+msgstr ""
+
+#: blocks/04-block-settings/edit.js:84
+msgid " Please enter a Block Setting in the block inspector."
+msgstr ""
+
+#: blocks/04-block-settings/index.js:15
+msgid "Block Settings"
+msgstr ""
+
+#: blocks/04-block-settings/index.js:16
+msgid "An example block how to create global block settings."
+msgstr ""
+
 #: plugins/01-toc/index.js:18
 msgid "JS for WP TOC"
 msgstr ""
 
 #: plugins/02-layout-switcher/components/ResetControls.js:10
-#: plugins/02-layout-switcher/components/ResetControls.js:15
-#: plugins/02-layout-switcher/components/ResetControls.js:14
-#: plugins/02-layout-switcher/components/ResetControls.js:13
-#: plugins/02-layout-switcher/components/ResetControls.js:12
 #: plugins/02-layout-switcher/components/SwitcherControls.js:29
 msgid "Reset Layout"
 msgstr ""

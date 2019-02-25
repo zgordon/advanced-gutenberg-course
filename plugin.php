@@ -58,11 +58,17 @@ function _get_plugin_url() {
 
 
 
-// Enqueue JS and CSS
+// Register and Enqueue JS and CSS
 include __DIR__ . '/lib/register-scripts.php';
 
-// Register block server side
+// Register blocks
 include __DIR__ . '/lib/register-blocks.php';
 
-// Register block server side
+// Register block categories
 include __DIR__ . '/lib/block-categories.php';
+
+// Setup Plugin Options in Database
+include __DIR__ . '/lib/wp-options.php';
+
+// Register custom API endpoints
+include __DIR__ . '/lib/rest-api-endpoints.php';
