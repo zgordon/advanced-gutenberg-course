@@ -130,7 +130,10 @@ export default class Edit extends Component {
               )}
             </p>
           ) : (
-            <p>{this.state.blockSetting}</p>
+            <p>
+              {__("Global Setting: ", "jsforwpadvblocks")}
+              {this.state.blockSetting}
+            </p>
           )}
         </div>
       </Fragment>

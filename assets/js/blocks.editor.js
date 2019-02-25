@@ -5567,6 +5567,7 @@ var Edit = function (_Component) {
           ) : wp.element.createElement(
             "p",
             null,
+            __("Global Setting: ", "jsforwpadvblocks"),
             this.state.blockSetting
           )
         )

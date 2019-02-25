@@ -79,6 +79,10 @@ msgstr ""
 msgid "Please enter a block settings value in the block settings"
 msgstr ""
 
+#: blocks/03-with-global-settings/edit.js:134
+msgid "Global Setting: "
+msgstr ""
+
 #: blocks/03-with-global-settings/edit.js:56
 msgid "Loading"
 msgstr ""
