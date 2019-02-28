@@ -67,5 +67,5 @@ include __DIR__ . '/lib/block-categories.php';
 // Register blocks server side
 include __DIR__ . '/lib/register-blocks.php';
 
-// Register block tempaltes
-// include __DIR__ . '/lib/block-templates.php';
+// Register any PHP block filters
+include __DIR__ . '/lib/block-filters.php';

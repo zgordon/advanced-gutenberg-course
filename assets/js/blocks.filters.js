@@ -66,12 +66,16 @@
 /******/ ({
 
 /***/ 187:
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__get_save_element__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__get_save_element___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__get_save_element__);
 /**
  * Import example filters
  */
-// import "./get-save-element";
+
 // import "./get-save-content-extra-props";
 // import "./get-block-default-class-name";
 // import "./get-block-attributes";
@@ -79,6 +83,28 @@
 // import "./remove-cover-block-alignment";
 // import "./add-heading-full-align";
 // import "./add-code-attributes-and-controls";
+
+/***/ }),
+
+/***/ 202:
+/***/ (function(module, exports) {
+
+var addFilter = wp.hooks.addFilter;
+
+// Wrap all quote blocks with a custom wrapper
+
+var quoteWrapperFilter = function quoteWrapperFilter(el, type, attributes) {
+  if (type.name === "core/quote") {
+    return wp.element.createElement(
+      "div",
+      { className: "MYWRAPPER" },
+      el
+    );
+  }
+  return el;
+};
+
+addFilter("blocks.getSaveElement", "jsforwpadvgb/quote-wrapper", quoteWrapperFilter);
 
 /***/ })
 
