@@ -22,7 +22,7 @@ export default registerBlockType("jsforwpadvblocks/shoutout-styles", {
     "An example block for working with Styles API.",
     "jsforwpadvblocks"
   ),
-  category: "jsforwpadvblocks",
+    category: "jsforwpadvblocks",
   icon: {
     src: "megaphone"
   },

@@ -57,7 +57,7 @@ function block_filters(){
 	wp_enqueue_script( 
 		"jsforwp-adv-gb-filters-js",
 		_get_plugin_url() . $filters_js_path,
-		['wp-hooks', 'lodash'],
+		['wp-hooks', 'lodash', 'jsforwp-adv-gb-editor-js'],
 		filemtime( _get_plugin_directory() . $filters_js_path ),
 		true
 	);

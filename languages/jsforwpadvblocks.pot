@@ -83,6 +83,18 @@ msgstr ""
 msgid "Shoutout Text"
 msgstr ""
 
+#: filters/registerBlockType.js:17
+msgid "Code Snippet"
+msgstr ""
+
+#: filters/registerBlockType.js:20
+msgid "Use this for maximum codiness 💃"
+msgstr ""
+
+#: filters/registerBlockType.js:32
+msgid "💻"
+msgstr ""
+
 #: plugins/01-plugin-sidebar-demo/index.js:20
 msgid "Sidebar Header"
 msgstr ""
