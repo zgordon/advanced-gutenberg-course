@@ -5,9 +5,11 @@ const { PanelBody, PanelRow, TextControl, Button, Spinner } = wp.components;
 const { apiFetch } = wp;
 
 function getSetting() {
-  return apiFetch({ path: "/jsforwpadvgb/v1/block-setting" })
+  return apiFetch({
+    path: "/jsforwpadvgb/v1/block-setting"
+  })
     .then(blockSetting => blockSetting)
-    .catch(error => console.error(error));
+    .catch(error => error);
 }
 
 function setSetting(setting) {
@@ -17,7 +19,7 @@ function setSetting(setting) {
     body: setting
   })
     .then(blockSetting => blockSetting)
-    .catch(error => console.error(error));
+    .catch(error => error);
 }
 
 export default class Edit extends Component {
@@ -33,7 +35,6 @@ export default class Edit extends Component {
     const blockSetting = await setSetting(this.state.blockSetting);
     this.setState({
       blockSetting,
-      isLoading: false,
       isSaving: false,
       isEditing: false
     });
@@ -63,7 +64,7 @@ export default class Edit extends Component {
         <InspectorControls>
           <PanelBody
             title={__("Block Setting", "jsforwpadvblocks")}
-            initialOpen={true}
+            initialOpen
           >
             <PanelRow>
               {this.state.isEditing || this.state.blockSetting === "" ? (
@@ -89,30 +90,28 @@ export default class Edit extends Component {
                   >
                     {__("Save Setting", "jsforwpadvblocks")}
                   </Button>{" "}
-                  {this.state.blockSetting !== "" && (
-                    <Button
-                      isDefault
-                      disabled={this.state.isSaving}
-                      onClick={async () => {
-                        this.setState({ isEditing: false });
-                        const blockSetting = await getSetting();
-                        this.setState({ blockSetting });
-                      }}
-                    >
-                      {__("Cancel", "jsforwpadvblocks")}
-                    </Button>
-                  )}
+                  <Button
+                    isDefault
+                    disabled={this.state.isSaving}
+                    onClick={async () => {
+                      this.setState({ isEditing: false });
+                      const blockSetting = await getSetting();
+                      this.setState({ blockSetting });
+                    }}
+                  >
+                    {__("Cancel", "jsforwpadvblocks")}
+                  </Button>
                 </p>
               ) : (
                 <Fragment>
                   <p>{__("Global Setting Saved", "jsforwpadvblocks")}</p>
                   <Button
                     isDefault
-                    onClick={() =>
+                    onClick={() => {
                       this.setState({
                         isEditing: true
-                      })
-                    }
+                      });
+                    }}
                   >
                     {__("Edit", "jsforwpadvblocks")}
                   </Button>
@@ -125,7 +124,7 @@ export default class Edit extends Component {
           {this.state.blockSetting === "" ? (
             <p>
               {__(
-                "Please enter a block settings value in the block settings",
+                "Please enter a block settings value in the block settings.",
                 "jsforwpadvblocks"
               )}
             </p>

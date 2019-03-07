@@ -2,6 +2,7 @@
  * Block dependencies
  */
 import icon from "./icon";
+import Edit from "./edit";
 
 /**
  * Internal block libraries
@@ -9,20 +10,17 @@ import icon from "./icon";
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 
-import Edit from "./edit";
-
 /**
  * Register block
  */
-export default registerBlockType("jsforwpadvblocks/google-map", {
+export default registerBlockType("jsforwpadvblocks/with-global-settings", {
   title: __("With Global Settings", "jsforwpadvblocks"),
   description: __(
-    "An example block for showing how to save global settings.",
+    "Example block with global block settings",
     "jsforwpadvblocks"
   ),
   category: "jsforwpadvblocks",
   icon: {
-    // background: "rgba(254, 243, 224, 0.52)",
     src: icon
   },
   keywords: [__("API Key", "jsforwpadvblocks")],
@@ -30,6 +28,6 @@ export default registerBlockType("jsforwpadvblocks/google-map", {
     return <Edit {...props} />;
   },
   save: props => {
-    return <p>{__("Withing With Global Setting", "jsforwpadvblocks")}</p>;
+    return <p>{__("Show block global settings", "jsforwpadvblocks")}</p>;
   }
 });
