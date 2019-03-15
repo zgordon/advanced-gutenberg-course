@@ -67,52 +67,52 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: blocks/03-with-global-settings/edit.js:108
+#: blocks/03-with-global-settings/edit.js:107
 msgid "Global Setting Saved"
 msgstr ""
 
-#: blocks/03-with-global-settings/edit.js:117
+#: blocks/03-with-global-settings/edit.js:116
 msgid "Edit"
 msgstr ""
 
-#: blocks/03-with-global-settings/edit.js:127
-msgid "Please enter a block settings value in the block settings"
+#: blocks/03-with-global-settings/edit.js:126
+msgid "Please enter a block settings value in the block settings."
 msgstr ""
 
-#: blocks/03-with-global-settings/edit.js:134
+#: blocks/03-with-global-settings/edit.js:133
 msgid "Global Setting: "
 msgstr ""
 
-#: blocks/03-with-global-settings/edit.js:56
+#: blocks/03-with-global-settings/edit.js:57
 msgid "Loading"
 msgstr ""
 
-#: blocks/03-with-global-settings/edit.js:65
+#: blocks/03-with-global-settings/edit.js:66
 msgid "Block Setting"
 msgstr ""
 
-#: blocks/03-with-global-settings/edit.js:72
+#: blocks/03-with-global-settings/edit.js:73
 msgid "Please enter a setting"
 msgstr ""
 
-#: blocks/03-with-global-settings/edit.js:90
+#: blocks/03-with-global-settings/edit.js:91
 msgid "Save Setting"
 msgstr ""
 
-#: blocks/03-with-global-settings/index.js:18
+#: blocks/03-with-global-settings/index.js:17
 msgid "With Global Settings"
 msgstr ""
 
-#: blocks/03-with-global-settings/index.js:19
-msgid "An example block for showing how to save global settings."
+#: blocks/03-with-global-settings/index.js:18
+msgid "Example block with global block settings"
 msgstr ""
 
-#: blocks/03-with-global-settings/index.js:28
+#: blocks/03-with-global-settings/index.js:26
 msgid "API Key"
 msgstr ""
 
-#: blocks/03-with-global-settings/index.js:33
-msgid "Withing With Global Setting"
+#: blocks/03-with-global-settings/index.js:31
+msgid "Show block global settings"
 msgstr ""
 
 #: plugins/01-plugin-sidebar-demo/index.js:20
