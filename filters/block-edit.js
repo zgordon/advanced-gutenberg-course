@@ -1,7 +1,7 @@
 const { createHigherOrderComponent, withState } = wp.compose;
 const { Fragment } = wp.element;
-const { InspectorControls } = wp.editor;
-const { PanelBody, ToggleControl } = wp.components;
+const { InspectorControls, Toolbar } = wp.editor;
+const { PanelBody, PanelRow, ToggleControl } = wp.components;
 
 const MyToggleControl = withState({
   hasWrapper: false
@@ -19,15 +19,17 @@ const MyToggleControl = withState({
 const withInspectorControls = createHigherOrderComponent(BlockEdit => {
   return props => {
     if (props.name === "core/paragraph") {
-      console.log(props);
       props.setAttributes({ wrapper: true });
+      console.log(props);
       return (
         <Fragment>
           <BlockEdit {...props} />
           {props.attributes.wrapper && (
             <InspectorControls>
               <PanelBody>
-                <MyToggleControl setAttributes={props.setAttributes} />
+                <PanelRow>
+                  <MyToggleControl setAttributes={props.setAttributes} />
+                </PanelRow>
               </PanelBody>
             </InspectorControls>
           )}

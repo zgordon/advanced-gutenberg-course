@@ -2,7 +2,7 @@
  * Import example filters
  */
 // import "./registerBlockType";
-import "./get-save-element";
+// import "./get-save-element";
 // import "./get-save-content-extra-props";
 // import "./get-block-default-class-name";
 // import "./get-block-attributes";
