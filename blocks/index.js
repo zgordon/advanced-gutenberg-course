@@ -3,6 +3,7 @@
  */
 import "./01-gallery";
 import "./02-data-example";
-import "./03-shoutout-styles";
+import "./03-with-global-settings";
 
-import "./block-styles";
+// import "./05-shoutout-styles";
+// import "./block-styles";

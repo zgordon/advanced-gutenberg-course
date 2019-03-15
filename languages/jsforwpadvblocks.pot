@@ -63,24 +63,56 @@ msgstr ""
 msgid "Data API Example"
 msgstr ""
 
-#: blocks/03-shoutout-styles/index.js:20
-msgid "Shoutout"
+#: blocks/03-with-global-settings/edit.js:102
+msgid "Cancel"
 msgstr ""
 
-#: blocks/03-shoutout-styles/index.js:21
-msgid "An example block for working with Styles API."
+#: blocks/03-with-global-settings/edit.js:108
+msgid "Global Setting Saved"
 msgstr ""
 
-#: blocks/03-shoutout-styles/index.js:29
-msgid "Call to Action"
+#: blocks/03-with-global-settings/edit.js:117
+msgid "Edit"
 msgstr ""
 
-#: blocks/03-shoutout-styles/index.js:60
-msgid "Headline"
+#: blocks/03-with-global-settings/edit.js:127
+msgid "Please enter a block settings value in the block settings"
 msgstr ""
 
-#: blocks/03-shoutout-styles/index.js:65
-msgid "Shoutout Text"
+#: blocks/03-with-global-settings/edit.js:134
+msgid "Global Setting: "
+msgstr ""
+
+#: blocks/03-with-global-settings/edit.js:56
+msgid "Loading"
+msgstr ""
+
+#: blocks/03-with-global-settings/edit.js:65
+msgid "Block Setting"
+msgstr ""
+
+#: blocks/03-with-global-settings/edit.js:72
+msgid "Please enter a setting"
+msgstr ""
+
+#: blocks/03-with-global-settings/edit.js:90
+msgid "Save Setting"
+msgstr ""
+
+#: blocks/03-with-global-settings/index.js:18
+msgid "With Global Settings"
+msgstr ""
+
+#: blocks/03-with-global-settings/index.js:19
+msgid "An example block for showing how to save global settings."
+msgstr ""
+
+#: blocks/03-with-global-settings/index.js:28
+msgid "API Key"
+msgstr ""
+
+#: blocks/03-with-global-settings/index.js:33
+msgid "Withing With Global Setting"
 msgstr ""
 
 #: plugins/01-plugin-sidebar-demo/index.js:20

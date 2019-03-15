@@ -64,6 +64,12 @@ include __DIR__ . '/lib/register-scripts.php';
 // Register block categories
 include __DIR__ . '/lib/block-categories.php';
 
+// Setup Global Block Setting Options Setting
+include __DIR__ . '/lib/wp-options.php';
+
+// Register REST API Endpoint
+include __DIR__ . '/lib/rest-api-endpoint.php';
+
 // Register blocks server side
 include __DIR__ . '/lib/register-blocks.php';
 
