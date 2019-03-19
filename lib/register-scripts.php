@@ -66,8 +66,17 @@ add_action( "enqueue_block_editor_assets", __NAMESPACE__ . '\plugin_assets' );
  */
 function plugin_assets() {
 
+	$filters_js_path = "/assets/js/filters.editor.js";
 	$plugin_js_path = "/assets/js/plugins.editor.js";
 	$plugin_css_path = "/assets/css/plugins.editor.css";
+
+	wp_enqueue_script( 
+		"jsforwp-adv-gb-filters-js",
+		_get_plugin_url() . $filters_js_path,
+		$js_dependencies,
+		filemtime( _get_plugin_directory() . $filters_js_path ),
+		true	
+	);
 
 	wp_enqueue_script( 
 		"jsforwp-adv-gb-plugin-js",
