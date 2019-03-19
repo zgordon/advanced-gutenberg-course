@@ -12,6 +12,11 @@ add_filter( 'block_categories', function( $categories, $post ) {
                 'icon' => 'wordpress-alt',
 				'title' => __( 'JS for WP - Advanced Blocks', 'jsforwpadvblocks' ),
 			],
+			[
+                'slug' => 'recommended',
+                'icon' => 'star-filled',
+				'title' => __( 'Recommended Blocks', 'jsforwpadvblocks' ),
+			],
 		]
 	);
 }, 10, 2 );

@@ -123,6 +123,18 @@ msgstr ""
 msgid "Show block global settings"
 msgstr ""
 
+#: filters/registerBlockType.js:14
+msgid "Code Snippet"
+msgstr ""
+
+#: filters/registerBlockType.js:17
+msgid "Use for maximum codiness 💃"
+msgstr ""
+
+#: filters/registerBlockType.js:32
+msgid "💻"
+msgstr ""
+
 #: plugins/01-plugin-sidebar-demo/index.js:19
 msgid "Plugin Sidebar Demo"
 msgstr ""
