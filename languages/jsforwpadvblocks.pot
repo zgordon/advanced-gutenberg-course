@@ -123,6 +123,14 @@ msgstr ""
 msgid "Show block global settings"
 msgstr ""
 
+#: filters/extendCodeBlockDemo.js:61
+msgid "Custom Settings"
+msgstr ""
+
+#: filters/extendCodeBlockDemo.js:63
+msgid "High Contrast"
+msgstr ""
+
 #: plugins/01-plugin-sidebar-demo/index.js:19
 msgid "Plugin Sidebar Demo"
 msgstr ""
