@@ -65,112 +65,15 @@
 /************************************************************************/
 /******/ ({
 
-/***/ 216:
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-  Copyright (c) 2017 Jed Watson.
-  Licensed under the MIT License (MIT), see
-  http://jedwatson.github.io/classnames
-*/
-/* global define */
-
-(function () {
-	'use strict';
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames () {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg) && arg.length) {
-				var inner = classNames.apply(null, arg);
-				if (inner) {
-					classes.push(inner);
-				}
-			} else if (argType === 'object') {
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if (typeof module !== 'undefined' && module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else if (true) {
-		// register as 'classnames', consistent with npm package name
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
-			return classNames;
-		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else {
-		window.classNames = classNames;
-	}
-}());
-
-
-/***/ }),
-
 /***/ 223:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__getSaveContentExtraProps__ = __webpack_require__(224);
 // Filters entry point
 
 // import "./registerBlockType";
 // import "./getSaveElement";
-
-
-/***/ }),
-
-/***/ 224:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_classnames__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_classnames__);
-var addFilter = wp.hooks.addFilter;
-
-
-
-
-addFilter("blocks.getSaveContent.extraProps", "jsforwpadvgb/get-save-content-extra-props", extendWithGetSaveContentExtraProps);
-
-function extendWithGetSaveContentExtraProps(props) {
-  // Add class of "no-citation" if a quote has no citation
-  if ("wp-block-quote" === props.className && !props.children[1]) {
-    return lodash.merge(props, {
-      className: __WEBPACK_IMPORTED_MODULE_0_classnames___default()(props.className, "no-citation")
-    });
-  }
-
-  // Add background to code on the frontend
-  if ("wp-block-code" === props.className) {
-    return lodash.merge(props, {
-      style: {
-        backgroundColor: "black",
-        color: "white"
-      }
-    });
-  }
-  return props;
-}
+// import "./getSaveContentExtraProps";
+// import "./getBlockDefaultClassName";
 
 /***/ })
 
