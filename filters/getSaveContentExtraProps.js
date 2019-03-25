@@ -2,15 +2,22 @@ const { addFilter } = wp.hooks;
 
 import classnames from "classnames";
 
-function customSaveContentProps(props) {
-  // Add class of "no-citation" if a quote with no citation
-  if (props.className === "wp-block-quote" && !props.children[1]) {
+addFilter(
+  "blocks.getSaveContent.extraProps",
+  "jsforwpadvgb/get-save-content-extra-props",
+  extendWithGetSaveContentExtraProps
+);
+
+function extendWithGetSaveContentExtraProps(props) {
+  // Add class of "no-citation" if a quote has no citation
+  if ("wp-block-quote" === props.className && !props.children[1]) {
     return lodash.merge(props, {
       className: classnames(props.className, "no-citation")
     });
   }
+
   // Add background to code on the frontend
-  if (props.className === "wp-block-code") {
+  if ("wp-block-code" === props.className) {
     return lodash.merge(props, {
       style: {
         backgroundColor: "black",
@@ -18,12 +25,5 @@ function customSaveContentProps(props) {
       }
     });
   }
-
   return props;
 }
-
-addFilter(
-  "blocks.getSaveContent.extraProps",
-  "jsforwpadvgb/add-background-color-style",
-  customSaveContentProps
-);

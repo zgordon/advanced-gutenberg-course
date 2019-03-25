@@ -1,33 +1,33 @@
-const { createHigherOrderComponent } = wp.compose;
+const { __ } = wp.i18n;
+const { addFilter } = wp.hooks;
 const { Fragment } = wp.element;
 const { InspectorControls } = wp.editor;
 const { PanelBody, ToggleControl } = wp.components;
-const { addFilter } = wp.hooks;
+const { createHigherOrderComponent } = wp.compose;
 
-import "./style.scss";
 import classnames from "classnames";
+import "./style.scss";
 
-// Add new attribute to code block
 addFilter(
   "blocks.registerBlockType",
-  "jsforwp-advgb/add-code-attributes",
+  "jsforwpadvgb/add-code-attributes",
   addCodeAttributes
 );
-// Modify the Edit Setting to Add Prop and Controls
+
 addFilter(
   "editor.BlockEdit",
-  "jsforwp-advgb/add-code-inspector-controls",
+  "jsforwpadvgb/add-code-inspector-controls",
   addCodeInspectorControls
 );
-// Modify save function
+
 addFilter(
   "blocks.getSaveElement",
-  "jsforwp-advgb/modify-save-setting",
-  modifySaveSetting
+  "jsforwpadvgb/modify-code-save-settings",
+  modifyCodeSaveSettings
 );
 
 function addCodeAttributes(settings, name) {
-  if (name !== "core/code") return settings;
+  if ("core/code" !== name) return settings;
 
   settings.supports = lodash.merge({}, settings.supports, {
     align: ["full", "wide"]
@@ -46,7 +46,7 @@ function addCodeAttributes(settings, name) {
 function addCodeInspectorControls(BlockEdit) {
   const withInspectorControls = createHigherOrderComponent(BlockEdit => {
     return props => {
-      if (props.name !== "core/code") return <BlockEdit {...props} />;
+      if ("core/code" !== props.name) return <BlockEdit {...props} />;
 
       return (
         <Fragment>
@@ -58,9 +58,9 @@ function addCodeInspectorControls(BlockEdit) {
             <BlockEdit {...props} />
           </div>
           <InspectorControls>
-            <PanelBody>
+            <PanelBody title={__("Custom Settings", "jsforwpadvblocks")}>
               <ToggleControl
-                label="High Contrast"
+                label={__("High Contrast", "jsforwpadvblocks")}
                 checked={props.attributes.highContrast}
                 onChange={highContrast => props.setAttributes({ highContrast })}
               />
@@ -69,12 +69,12 @@ function addCodeInspectorControls(BlockEdit) {
         </Fragment>
       );
     };
-  }, "withInspectorControl");
+  });
   return withInspectorControls(BlockEdit);
 }
 
-function modifySaveSetting(el, type, attributes) {
-  if (type.name === "core/code" && attributes.highContrast) {
+function modifyCodeSaveSettings(el, block, attributes) {
+  if ("core/code" === block.name && attributes.highContrast) {
     el.props.className = classnames(el.props.className, {
       "high-contrast": attributes.highContrast
     });

@@ -1,12 +1,7 @@
-/**
- * Import example filters
- */
+// Filters entry point
+
 // import "./registerBlockType";
-// import "./get-save-element";
-// import "./get-save-content-extra-props";
-// import "./get-block-default-class-name";
-// import "./get-block-attributes";
-// import "./block-edit";
-// import "./remove-cover-block-alignment";
-// import "./add-heading-full-align";
-// import "./add-code-attributes-and-controls";
+// import "./getSaveElement";
+// import "./getSaveContentExtraProps";
+// import "./getBlockDefaultClassName";
+// import "./extendCodeBlockDemo";
