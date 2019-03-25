@@ -2,7 +2,7 @@
 
 namespace Adv_Gutenberg_Courses\Example_Blocks;
 
-$js_dependencies = [ 'wp-plugins', 'wp-element', 'wp-edit-post', 'wp-i18n', 'wp-api-request', 'wp-data', 'wp-components', 'wp-blocks', 'wp-editor', 'wp-compose' ];
+$js_dependencies = [ 'wp-plugins', 'wp-element', 'wp-edit-post', 'wp-i18n', 'wp-api-request', 'wp-data', 'wp-components', 'wp-blocks', 'wp-editor', 'wp-compose', 'wp-hooks', 'lodash' ];
 
 add_action( 'init', __NAMESPACE__ . '\register_block_assets' );
 /**

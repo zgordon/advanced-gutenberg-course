@@ -72,3 +72,6 @@ include __DIR__ . '/lib/rest-api-endpoint.php';
 
 // Register block server side
 include __DIR__ . '/lib/register-blocks.php';
+
+// Register any PHP block filters
+// include __DIR__ . '/lib/block-filters.php';
