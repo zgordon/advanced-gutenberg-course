@@ -6,7 +6,7 @@ add_action( 'init', __NAMESPACE__ . '\register_blocks', 40 );
 /**
  * Enqueue block editor only JavaScript and CSS.
  */
-function register_blocks() {	
+function register_blocks() {
 
     // Fail if block editor is not supported
 	if ( ! function_exists( 'register_block_type' ) ) {
@@ -17,17 +17,17 @@ function register_blocks() {
     $blocks = [
         "jsforwpadvblocks/gallery",
         "jsforwpadvblocks/data-example",
-        "jsforwpadvblocks/gallery",
+        "jsforwpadvblocks/with-global-settings",
     ];
 
     // Register each block with same CSS and JS
     foreach( $blocks as $block ) {
-        if( "jsforwpadvblocks/gallery" === $block ) {            
+        if( "jsforwpadvblocks/gallery" === $block ) {
             register_block_type( $block, [
                 'editor_script' => 'jsforwp-adv-gb-editor-js',
                 'editor_style'  => 'jsforwp-adv-gb-editor-css',
                 'style' => 'jsforwp-adv-gb-css',
-                'attributes' => [                    
+                'attributes' => [
                     'images' => [
                         'type' => "array",
                         'default' => []
@@ -41,14 +41,14 @@ function register_blocks() {
                         'default' => true
                     ]
                 ]
-             ] );	  
+             ] );
         }
-        else {            
+        else {
             register_block_type( $block, [
                 'editor_script' => 'jsforwp-adv-gb-editor-js',
                 'editor_style'  => 'jsforwp-adv-gb-editor-css',
                 'style' => 'jsforwp-adv-gb-css'
-             ] );	  
+             ] );
         }
     }
 
