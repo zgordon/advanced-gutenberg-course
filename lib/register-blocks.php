@@ -17,7 +17,6 @@ function register_blocks() {
     $blocks = [
         "jsforwpadvblocks/gallery",
         "jsforwpadvblocks/data-example",
-        "jsforwpadvblocks/gallery",
     ];
 
     // Register each block with same CSS and JS
