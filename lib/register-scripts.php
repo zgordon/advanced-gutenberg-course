@@ -71,7 +71,7 @@ function block_filters(){
 		true
 	);
 
-	// Enqueue our plugin JavaScript
+	// Enqueue our plugin styles
 	wp_enqueue_style( 
 		"jsforwp-adv-gb-plugins-css",
 		_get_plugin_url() . $plugins_style_path,
