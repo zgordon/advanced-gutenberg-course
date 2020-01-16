@@ -13,7 +13,7 @@ const BlockButton = ({ block, isBlockSelected }) => {
       })}
       onClick={() => dispatch("core/editor").selectBlock(block.clientId)}
     >
-      <span class="editor-block-icon has-colors">{blockType.icon.src}</span>
+      <span className="block-editor-block-icon has-colors">{blockType.icon.src}</span>
       {blockType.title}
     </Button>
   );
